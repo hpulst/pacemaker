@@ -11,41 +11,52 @@ class HomePage extends StatelessWidget {
     return DefaultTabController(
       length: myTabs.length,
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('Marathon in 3:15 Std'),
-          centerTitle: true,
-          bottom: TabBar(
-            tabs: myTabs,
-          ),
-        ),
-        body: ListView(children: [
-          Card(
-            child: ListTile(
-              title: Center(
-                child: Text(
-                  'Woche 1 und 2',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              title: Text('Marathon in 3:15 Std'),
+              centerTitle: true,
+              bottom: TabBar(
+                tabs: myTabs,
               ),
-              dense: true,
+              floating: true,
+              // flexibleSpace: Placeholder(),
+              // expandedHeight: 20,
             ),
-          ),
-          MakeListTile('Mo.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
-          MakeListTile('Di.', 'Ruhetag', '', ''),
-          MakeListTile('Mi.', '13km', '59:30 min  4:35 min/km', '85-90%'),
-          MakeListTile('Do.', '15km', '1:25 Std   5:40 min/km', '75-80%'),
-          MakeListTile('Fr.', 'Ruhetag', '', ''),
-          MakeListTile('Sa.', '3 x 2 km in 8:10 min Trabpause 5 min',
-              '5:10 min/km', '90-95%'),
-          MakeListTile('So.', '15km', '1:18 Std   5:20 min/km', '75-80%'),
-          MakeListTile('Mo.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
-          MakeListTile('Di.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
-          MakeListTile('Mi.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
-          MakeListTile('Do.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
-          MakeListTile('Fr.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
-          MakeListTile('Sa.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
-          MakeListTile('So.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
-        ]),
+            SliverList(
+              delegate: SliverChildBuilderDelegate((context, index) {
+                return ListView(children: [
+                  MakeListTile(
+                      'Mo.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
+                  MakeListTile('Di.', 'Ruhetag', '', ''),
+                  MakeListTile(
+                      'Mi.', '13km', '59:30 min  4:35 min/km', '85-90%'),
+                  MakeListTile(
+                      'Do.', '15km', '1:25 Std   5:40 min/km', '75-80%'),
+                  MakeListTile('Fr.', 'Ruhetag', '', ''),
+                  MakeListTile('Sa.', '3 x 2 km in 8:10 min Trabpause 5 min',
+                      '5:10 min/km', '90-95%'),
+                  MakeListTile(
+                      'So.', '15km', '1:18 Std   5:20 min/km', '75-80%'),
+                  MakeListTile(
+                      'Mo.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
+                  MakeListTile(
+                      'Di.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
+                  MakeListTile(
+                      'Mi.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
+                  MakeListTile(
+                      'Do.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
+                  MakeListTile(
+                      'Fr.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
+                  MakeListTile(
+                      'Sa.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
+                  MakeListTile(
+                      'So.', '15km', '1:18 Std   5:10 min/km', '75-80%'),
+                ]);
+              }),
+            ),
+          ],
+        ),
       ),
     );
   }

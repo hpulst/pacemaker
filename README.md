@@ -1,7 +1,7 @@
 <!-- <img height="125px" width="125px" src="./images/rabbit.png" alt="Pacer"/> -->
 # Pacemaker 🏃
 
-Workout plan for 10K, Half Marathon & Marathon
+The App provides a workout plan for 10K, Half Marathon & Marathon using Flutter.
 
 ## Getting Started
 

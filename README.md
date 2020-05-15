@@ -1,5 +1,4 @@
-<img height="125px" width="125px" src="./images/rabbit.png" alt="Pacer"/>
-
+<!-- <img height="125px" width="125px" src="./images/rabbit.png" alt="Pacer"/> -->
 # Pacemaker 🏃
 
 Workout plan for 10K, Half Marathon & Marathon

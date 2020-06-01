@@ -1,10 +1,18 @@
+import 'package:Pacemaker/model/model.dart';
 import 'package:flutter/material.dart';
+import 'package:sqflite/sqflite.dart';
+import 'package:Pacemaker/data/data.dart';
+import 'package:Pacemaker/model/model.dart';
 
 class HomePage extends StatelessWidget {
   final List<Tab> myTabs = [
     Tab(text: 'Schedule'),
     Tab(text: 'History'),
   ];
+
+  void initState() {
+    WorkoutTable();
+  }
 
   @override
   Widget build(BuildContext context) {

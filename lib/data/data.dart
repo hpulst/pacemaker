@@ -9,6 +9,7 @@ import 'package:sqflite/sqflite.dart';
 class WorkoutTable {
   // Define a function that inserts workouts into the database
   Future<void> insertTimeTable(WorkoutTable dataTable) async {
+    print('WorkoutTable');
     // Avoid errors caused by flutter upgrade.
     // Importing 'package:flutter/widgets.dart' is required.
     WidgetsFlutterBinding.ensureInitialized();
@@ -60,7 +61,7 @@ class WorkoutTable {
       // Query the table for all The Dogs.
       final List<Map<String, dynamic>> maps = await db.query('workouts');
 
-      // Convert the List<Map<String, dynamic> into a List<Dog>.
+      // Convert the List<Map<String, dynamic> into a List<workouts>.
       return List.generate(maps.length, (i) {
         return Workout(
           id: maps[i]['id'],
@@ -74,7 +75,8 @@ class WorkoutTable {
       });
     }
 
-// Now, use the method above to retrieve all the dogs.
+// Now, use the method above to retrieve all the workouts.
     print(await workouts());
+    print('waiting');
   }
 }

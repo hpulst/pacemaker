@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'tabs/home.dart';
+import 'home.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

@@ -21,14 +21,32 @@ class _MyHomePageState extends State<HomePage> {
 
   Widget format(Workout item) {
     return Card(
-      child: ListTile(
-        // leading: Text(
-        //   weekDay,
-        //   style: TextStyle(fontSize: 20.0),
-        // ),
-        title: Text(item.weekday),
-        // subtitle: Text(time),
-        // trailing: Text(heartRate),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ListTile(
+            leading: Text(
+              item.weekday,
+              style: TextStyle(fontSize: 20.0),
+            ),
+            title: Text(item.km + '    ' + item.pace),
+            subtitle: Text(item.time),
+            trailing: Text(item.heartrate),
+          ),
+          ButtonBar(
+            alignment: MainAxisAlignment.start,
+            children: [
+              IconButton(
+                  icon: Icon(Icons.check_circle),
+                  color: Theme.of(context).accentColor,
+                  onPressed: null),
+              IconButton(
+                  icon: Icon(Icons.cancel),
+                  color: Theme.of(context).accentColor,
+                  onPressed: null)
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -54,30 +72,6 @@ class _MyHomePageState extends State<HomePage> {
     refresh();
   }
 
-  // void _create(BuildContext context) {
-  //   showDialog(
-  //       context: context,
-  //       builder: (BuildContext context) {
-  //         return AlertDialog(
-  //           title: Text("Create New Task"),
-  //           actions: <Widget>[
-  //             FlatButton(
-  //                 child: Text('Cancel'),
-  //                 onPressed: () => Navigator.of(context).pop()),
-  //             FlatButton(child: Text('Save'), onPressed: () => _save())
-  //           ],
-  //           content: TextField(
-  //             autofocus: true,
-  //             decoration: InputDecoration(
-  //                 labelText: 'Task Name', hintText: 'e.g. pick up bread'),
-  //             onChanged: (value) {
-  //               _task = value;
-  //             },
-  //           ),
-  //         );
-  //       });
-  // }
-
   @override
   void initState() {
     refresh();
@@ -85,6 +79,19 @@ class _MyHomePageState extends State<HomePage> {
   }
 
   void refresh() async {
+    // _task = 'Montag';
+    Workout item = Workout(
+      // id: 0,
+      weekday: 'So.',
+      km: '15km',
+      time: '1:18 Std',
+      pace: '5:10 min/km',
+      intensity: 'MD',
+      heartrate: '75-80%',
+      // complete: false,
+    );
+
+    await DB.insert(Workout.table, item);
     List<Map<String, dynamic>> _results = await DB.query(Workout.table);
     _tasks = _results.map((item) => Workout.fromMap(item)).toList();
     setState(() {});
@@ -96,7 +103,7 @@ class _MyHomePageState extends State<HomePage> {
       length: myTabs.length,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Marathon in 3:15 Std'),
+          title: Text('Marathon in 3:30 Std'),
           centerTitle: true,
           bottom: TabBar(
             tabs: myTabs,

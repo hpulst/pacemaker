@@ -1,4 +1,4 @@
-import 'package:Pacemaker/model/model.dart';
+import 'package:Pacemaker/models/model.dart';
 
 class Workout extends Model {
   static String table = 'marathon';

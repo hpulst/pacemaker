@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:Pacemaker/model/model.dart';
-import 'package:Pacemaker/model/workout_model.dart';
+import 'package:Pacemaker/models/model.dart';
+import 'package:Pacemaker/models/workout_model.dart';
 import 'package:sqflite/sqflite.dart';
 
 abstract class DBHelper {

@@ -1,4 +1,4 @@
-import 'package:Pacemaker/model/workout_model.dart';
+import 'package:Pacemaker/models/workout_model.dart';
 import 'package:flutter/material.dart';
 
 class CardTile {

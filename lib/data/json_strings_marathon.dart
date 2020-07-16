@@ -1,5 +1,5 @@
 abstract class JsonStrings {
-  static final String marathon = '''
+  static final String marathon330 = '''
 [
   {
     "order": 1,

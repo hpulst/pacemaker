@@ -15,31 +15,6 @@ class Explore extends StatelessWidget {
           title: Text('Workout plans'),
           backgroundColor: Colors.white,
           centerTitle: true,
-          actions: [
-            PopupMenuButton(
-              itemBuilder: (context) => [
-                PopupMenuItem(
-                    value: 1,
-                    child: Row(
-                      children: [
-                        Icon(Icons.clear_all),
-                        SizedBox(width: 5.0),
-                        Text('Mark all as done'),
-                      ],
-                    )),
-                PopupMenuItem(
-                    value: 2,
-                    child: Row(
-                      children: [
-                        Icon(Icons.restore),
-                        SizedBox(width: 5.0),
-                        Text('Restart'),
-                      ],
-                    )),
-              ],
-              offset: Offset(0, 100),
-            ),
-          ],
           bottom: TabBar(
             tabs: myTabs,
             indicatorColor: Colors.blueAccent,

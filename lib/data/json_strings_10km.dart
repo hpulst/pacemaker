@@ -1,5 +1,5 @@
 abstract class JsonStrings {
-  static final String tenK = '''
+  static final String tenK42 = '''
 [
   {
     "order": 1,

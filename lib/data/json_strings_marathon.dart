@@ -1,4 +1,37 @@
 abstract class JsonStrings {
+  static final String listOfMarathonTimes = '''
+  [
+   {
+    "order": 1,
+    "workout": "Marathon in 4:00 Std",
+    },
+    {
+    "order": 2,
+    "workout": "Marathon in 3:45 Std",
+    },
+    {
+    "order": 3,
+    "workout": "Marathon in 3:30 Std",
+    },
+    {
+    "order": 4,
+    "workout": "Marathon in 3:15 Std",
+    },
+    {
+    "order": 5,
+    "workout": Marathon in 3:00 Std",
+    },
+    {
+    "order": 6,
+    "workout": "Marathon in 2:50 Std",
+    },
+    {
+    "order": 7,
+    "workout": "Marathon in 2:40 Std",
+    },
+  ] 
+  ''';
+
   static final String marathon330 = '''
 [
   {

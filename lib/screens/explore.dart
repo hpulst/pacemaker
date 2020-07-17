@@ -1,3 +1,6 @@
+import 'package:Pacemaker/tabs/halfmarathon.dart';
+import 'package:Pacemaker/tabs/marathon.dart';
+import 'package:Pacemaker/tabs/tenkilometres.dart';
 import 'package:flutter/material.dart';
 
 class Explore extends StatelessWidget {
@@ -22,8 +25,14 @@ class Explore extends StatelessWidget {
             unselectedLabelColor: Theme.of(context).accentColor,
           ),
         ),
-        body: TabBarView(
-          children: [],
+        body: SafeArea(
+          child: TabBarView(
+            children: [
+              MarathonPage(),
+              HalfmarathonPage(),
+              TenKilometresPage(),
+            ],
+          ),
         ),
       ),
     );

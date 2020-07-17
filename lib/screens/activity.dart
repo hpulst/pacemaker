@@ -1,5 +1,5 @@
-import 'package:Pacemaker/ui/history.dart';
-import 'package:Pacemaker/ui/schedule.dart';
+import 'package:Pacemaker/tabs/history.dart';
+import 'package:Pacemaker/tabs/schedule.dart';
 import 'package:flutter/material.dart';
 
 class Activity extends StatelessWidget {

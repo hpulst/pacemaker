@@ -1,4 +1,41 @@
 abstract class JsonStrings {
+  static final String listOfTenKilometres = '''
+  [
+   {
+    "order": 1,
+    "workout": "10 km in 50 min",
+    },
+    {
+    "order": 2,
+    "workout": "10 km in 46 min",
+    },
+    {
+    "order": 3,
+    "workout": "10 km in 44 min",
+    },
+    {
+    "order": 4,
+    "workout": "10 km in 42 min",
+    },
+    {
+    "order": 5,
+    "workout": 10 km in 40 min",
+    },
+    {
+    "order": 6,
+    "workout": "10 km in 38 min",
+    },
+    {
+    "order": 7,
+    "workout": "10 km in 36 min",
+    },
+    {
+    "order": 8,
+    "workout": "10 km in 34 min",
+    }
+  ] 
+  ''';
+
   static final String tenK42 = '''
 [
   {

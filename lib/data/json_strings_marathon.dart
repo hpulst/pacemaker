@@ -1,33 +1,33 @@
-abstract class JsonStrings {
-  static final String listOfMarathonTimes = '''
+abstract class JsonMarathon {
+  static final String listOfMarathons = '''
   [
    {
     "order": 1,
-    "workout": "Marathon in 4:00 Std",
+    "workout": "Halfmarathon in 1:45 Std",
     },
     {
     "order": 2,
-    "workout": "Marathon in 3:45 Std",
+    "workout": "Halfmarathon in 1:40 Std",
     },
     {
     "order": 3,
-    "workout": "Marathon in 3:30 Std",
+    "workout": "Halfmarathon in 1:35 Std",
     },
     {
     "order": 4,
-    "workout": "Marathon in 3:15 Std",
+    "workout": "Halfmarathon in 1:30 Std",
     },
     {
     "order": 5,
-    "workout": Marathon in 3:00 Std",
+    "workout": Halfmarathon in 1:25 Std,
     },
     {
     "order": 6,
-    "workout": "Marathon in 2:50 Std",
+    "workout": "Halfmarathon in 1:20 Std",
     },
     {
     "order": 7,
-    "workout": "Marathon in 2:40 Std",
+    "workout": "Halfmarathon in 1:15 Std",
     },
   ] 
   ''';
@@ -40,11 +40,7 @@ abstract class JsonStrings {
     "week": "Woche 1",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 2,
@@ -56,7 +52,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 3,
@@ -68,7 +64,7 @@ abstract class JsonStrings {
     "pace": "04:55 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 4,
@@ -76,11 +72,7 @@ abstract class JsonStrings {
     "week": "Woche 1",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 5,
@@ -92,7 +84,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 6,
@@ -104,7 +96,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 7,
@@ -116,7 +108,7 @@ abstract class JsonStrings {
     "pace": "06:00  min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 8,
@@ -124,11 +116,7 @@ abstract class JsonStrings {
     "week": "Woche 2",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 9,
@@ -140,7 +128,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 10,
@@ -152,7 +140,7 @@ abstract class JsonStrings {
     "pace": "04:55  min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 11,
@@ -160,11 +148,7 @@ abstract class JsonStrings {
     "week": "Woche 2",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 12,
@@ -176,7 +160,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 13,
@@ -188,7 +172,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 14,
@@ -200,7 +184,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 15,
@@ -208,11 +192,7 @@ abstract class JsonStrings {
     "week": "Woche 3",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 16,
@@ -224,7 +204,7 @@ abstract class JsonStrings {
     "pace": "06:30 min/km",
     "intensity": "SL",
     "heartrate": "<65",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 17,
@@ -236,7 +216,7 @@ abstract class JsonStrings {
     "pace": "05:15 min/km",
     "intensity": "MD",
     "heartrate": "75-80",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 18,
@@ -248,7 +228,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 19,
@@ -256,11 +236,7 @@ abstract class JsonStrings {
     "week": "Woche 3",
     "weekday": "Freitag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 20,
@@ -268,11 +244,10 @@ abstract class JsonStrings {
     "week": "Woche 3",
     "weekday": "Samstag",
     "km": "10 km Testlauf in 46:00 min",
-    "time": "",
     "pace": "04:36 min/km",
     "intensity": "TD",
     "heartrate": "85-90",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 21,
@@ -284,7 +259,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 22,
@@ -292,11 +267,8 @@ abstract class JsonStrings {
     "week": "Woche 4",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
     "pace": "04:55  min/km",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 23,
@@ -308,7 +280,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 24,
@@ -316,11 +288,10 @@ abstract class JsonStrings {
     "week": "Woche 4",
     "weekday": "Mittwoch",
     "km": "3 x 3 km in 14:15 min, Trabpause 5 min",
-    "time": "",
     "pace": "04:45 min/km",
     "intensity": "TD",
     "heartrate": "85-90",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 25,
@@ -328,11 +299,7 @@ abstract class JsonStrings {
     "week": "Woche 4",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 26,
@@ -344,7 +311,7 @@ abstract class JsonStrings {
     "pace": "05:15 min/km",
     "intensity": "MD",
     "heartrate": "75-80",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 27,
@@ -356,7 +323,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 28,
@@ -368,7 +335,7 @@ abstract class JsonStrings {
     "pace": "06:30 min/km",
     "intensity": "SL",
     "heartrate": "<65",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 29,
@@ -376,11 +343,7 @@ abstract class JsonStrings {
     "week": "Woche 5",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 30,
@@ -392,7 +355,7 @@ abstract class JsonStrings {
     "pace": "04:55 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 31,
@@ -404,7 +367,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 32,
@@ -412,11 +375,7 @@ abstract class JsonStrings {
     "week": "Woche 5",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 33,
@@ -428,7 +387,7 @@ abstract class JsonStrings {
     "pace": "05:15 min/km",
     "intensity": "MD",
     "heartrate": "75-80",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 34,
@@ -440,7 +399,7 @@ abstract class JsonStrings {
     "pace": "05:40 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 35,
@@ -452,7 +411,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 36,
@@ -460,11 +419,7 @@ abstract class JsonStrings {
     "week": "Woche 6",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 37,
@@ -476,7 +431,7 @@ abstract class JsonStrings {
     "pace": "04:55 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 38,
@@ -488,7 +443,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 39,
@@ -496,11 +451,7 @@ abstract class JsonStrings {
     "week": "Woche 6",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 40,
@@ -512,7 +463,7 @@ abstract class JsonStrings {
     "pace": "05:15 min/km",
     "intensity": "MD",
     "heartrate": "75-80",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 41,
@@ -524,7 +475,7 @@ abstract class JsonStrings {
     "pace": "05:40 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 42,
@@ -536,7 +487,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 43,
@@ -544,11 +495,7 @@ abstract class JsonStrings {
     "week": "Woche 7",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 44,
@@ -560,7 +507,7 @@ abstract class JsonStrings {
     "pace": "06:30 min/km",
     "intensity": "SL",
     "heartrate": "<65",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 45,
@@ -572,7 +519,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 46,
@@ -584,7 +531,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 47,
@@ -592,11 +539,7 @@ abstract class JsonStrings {
     "week": "Woche 7",
     "weekday": "Freitag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 48,
@@ -604,11 +547,10 @@ abstract class JsonStrings {
     "week": "Woche 7",
     "weekday": "Samstag",
     "km": "10 km Testlauf in 45:30 min",
-    "time": "",
     "pace": "04:33 min/km",
     "intensity": "TD",
     "heartrate": "85-90",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 49,
@@ -620,7 +562,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 50,
@@ -628,11 +570,7 @@ abstract class JsonStrings {
     "week": "Woche 8",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 51,
@@ -644,7 +582,7 @@ abstract class JsonStrings {
     "pace": "05:15 min/km",
     "intensity": "MD",
     "heartrate": "75-80",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 52,
@@ -656,7 +594,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 53,
@@ -664,11 +602,7 @@ abstract class JsonStrings {
     "week": "Woche 8",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 54,
@@ -676,11 +610,10 @@ abstract class JsonStrings {
     "week": "Woche 8",
     "weekday": "Freitag",
     "km": "8×1 km, Trabpause 3 min",
-    "time": "",
     "pace": "04:25 min/km",
     "intensity": "SWL",
     "heartrate": "90-95",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 55,
@@ -692,7 +625,7 @@ abstract class JsonStrings {
     "pace": "06:30 min/km",
     "intensity": "SL",
     "heartrate": "<65",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 56,
@@ -704,7 +637,7 @@ abstract class JsonStrings {
     "pace": "05:40 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 57,
@@ -712,11 +645,7 @@ abstract class JsonStrings {
     "week": "Woche 9",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 58,
@@ -728,7 +657,7 @@ abstract class JsonStrings {
     "pace": "04:55 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 59,
@@ -740,7 +669,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 60,
@@ -748,11 +677,7 @@ abstract class JsonStrings {
     "week": "Woche 9",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 61,
@@ -760,11 +685,10 @@ abstract class JsonStrings {
     "week": "Woche 9",
     "weekday": "Freitag",
     "km": "15×1 km, Trabpause 1 min",
-    "time": "",
     "pace": "05:00 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 62,
@@ -776,7 +700,7 @@ abstract class JsonStrings {
     "pace": "05:40 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 63,
@@ -788,7 +712,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 64,
@@ -796,11 +720,7 @@ abstract class JsonStrings {
     "week": "Woche 10",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 65,
@@ -812,7 +732,7 @@ abstract class JsonStrings {
     "pace": "04:55 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 66,
@@ -824,7 +744,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 67,
@@ -832,11 +752,7 @@ abstract class JsonStrings {
     "week": "Woche 10",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 68,
@@ -844,11 +760,10 @@ abstract class JsonStrings {
     "week": "Woche 10",
     "weekday": "Freitag",
     "km": "15×1 km, Trabpause 1 min",
-    "time": "",
     "pace": "05:00 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 69,
@@ -860,7 +775,7 @@ abstract class JsonStrings {
     "pace": "05:40 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 70,
@@ -872,7 +787,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 71,
@@ -880,11 +795,7 @@ abstract class JsonStrings {
     "week": "Woche 11",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 72,
@@ -896,7 +807,7 @@ abstract class JsonStrings {
     "pace": "06:30 min/km",
     "intensity": "SL",
     "heartrate": "<65",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 73,
@@ -908,7 +819,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 74,
@@ -920,7 +831,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 75,
@@ -928,11 +839,7 @@ abstract class JsonStrings {
     "week": "Woche 11",
     "weekday": "Freitag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 76,
@@ -940,11 +847,10 @@ abstract class JsonStrings {
     "week": "Woche 11",
     "weekday": "Samstag",
     "km": "10 km Testlauf in 45:00 min",
-    "time": "",
     "pace": "04:30 min/km",
     "intensity": "TD",
     "heartrate": "85-90",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 77,
@@ -956,7 +862,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 78,
@@ -964,11 +870,7 @@ abstract class JsonStrings {
     "week": "Woche 12",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 79,
@@ -980,7 +882,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 80,
@@ -992,7 +894,7 @@ abstract class JsonStrings {
     "pace": "05:15 min/km",
     "intensity": "MD",
     "heartrate": "75-80",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 81,
@@ -1000,11 +902,7 @@ abstract class JsonStrings {
     "week": "Woche 12",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 82,
@@ -1012,11 +910,10 @@ abstract class JsonStrings {
     "week": "Woche 12",
     "weekday": "Freitag",
     "km": "3 x 3 km in 14:15 min, Trabpause 5 min",
-    "time": "",
     "pace": "04:45 min/km",
     "intensity": "TD",
     "heartrate": "85-90",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 83,
@@ -1028,7 +925,7 @@ abstract class JsonStrings {
     "pace": "06:30 min/km",
     "intensity": "SL",
     "heartrate": "<65",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 84,
@@ -1036,11 +933,10 @@ abstract class JsonStrings {
     "week": "Woche 12",
     "weekday": "Sonntag",
     "km": "20 x 1 km, Trabpause 2 min",
-    "time": "",
     "pace": "05:00 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 85,
@@ -1048,11 +944,7 @@ abstract class JsonStrings {
     "week": "Woche 13",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 86,
@@ -1064,7 +956,7 @@ abstract class JsonStrings {
     "pace": "04:50 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 87,
@@ -1076,7 +968,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 88,
@@ -1084,11 +976,7 @@ abstract class JsonStrings {
     "week": "Woche 13",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 89,
@@ -1096,11 +984,10 @@ abstract class JsonStrings {
     "week": "Woche 13",
     "weekday": "Freitag",
     "km": "8 x 1 km, Trabpause 3 min",
-    "time": "",
     "pace": "04:25 min/km",
     "intensity": "SWL",
     "heartrate": "90-95",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 90,
@@ -1112,7 +999,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 91,
@@ -1124,7 +1011,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 92,
@@ -1132,11 +1019,7 @@ abstract class JsonStrings {
     "week": "Woche 14",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 93,
@@ -1148,7 +1031,7 @@ abstract class JsonStrings {
     "pace": "04:50 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 94,
@@ -1160,7 +1043,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 95,
@@ -1168,11 +1051,7 @@ abstract class JsonStrings {
     "week": "Woche 14",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 96,
@@ -1180,11 +1059,10 @@ abstract class JsonStrings {
     "week": "Woche 14",
     "weekday": "Freitag",
     "km": "8 x 1 km, Trabpause 3 min",
-    "time": "",
     "pace": "04:25 min/km",
     "intensity": "SWL",
     "heartrate": "90-95",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 97,
@@ -1196,7 +1074,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 98,
@@ -1208,7 +1086,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 99,
@@ -1216,11 +1094,7 @@ abstract class JsonStrings {
     "week": "Woche 15",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 100,
@@ -1232,7 +1106,7 @@ abstract class JsonStrings {
     "pace": "06:30 min/km",
     "intensity": "SL",
     "heartrate": "<65",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 101,
@@ -1244,7 +1118,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 102,
@@ -1256,7 +1130,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 103,
@@ -1264,11 +1138,7 @@ abstract class JsonStrings {
     "week": "Woche 15",
     "weekday": "Freitag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 104,
@@ -1276,11 +1146,10 @@ abstract class JsonStrings {
     "week": "Woche 15",
     "weekday": "Samstag",
     "km": "10 km Testlauf in 45:00 min",
-    "time": "",
     "pace": "04:30 min/km",
     "intensity": "SWL",
     "heartrate": "90-95",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 105,
@@ -1292,7 +1161,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 106,
@@ -1300,11 +1169,7 @@ abstract class JsonStrings {
     "week": "Woche 16",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 107,
@@ -1316,7 +1181,7 @@ abstract class JsonStrings {
     "pace": "05:15 min/km",
     "intensity": "MD",
     "heartrate": "75-80",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 108,
@@ -1328,7 +1193,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 109,
@@ -1336,11 +1201,7 @@ abstract class JsonStrings {
     "week": "Woche 16",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 110,
@@ -1348,11 +1209,10 @@ abstract class JsonStrings {
     "week": "Woche 16",
     "weekday": "Freitag",
     "km": "3 x 2 km in 8:50 min, Trabpause 4 min",
-    "time": "",
     "pace": "04:25 min/km",
     "intensity": "TD",
     "heartrate": "85-90",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 111,
@@ -1364,7 +1224,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 112,
@@ -1376,7 +1236,7 @@ abstract class JsonStrings {
     "pace": "05:40 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 113,
@@ -1384,11 +1244,7 @@ abstract class JsonStrings {
     "week": "Woche 17",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 114,
@@ -1400,7 +1256,7 @@ abstract class JsonStrings {
     "pace": "04:50 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 115,
@@ -1412,7 +1268,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 116,
@@ -1420,11 +1276,7 @@ abstract class JsonStrings {
     "week": "Woche 17",
     "weekday": "Donnerstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 117,
@@ -1436,7 +1288,7 @@ abstract class JsonStrings {
     "pace": "05:40  min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 118,
@@ -1444,11 +1296,10 @@ abstract class JsonStrings {
     "week": "Woche 17",
     "weekday": "Samstag",
     "km": "3 x 5 km in 25:00 min, Trabpause 5 min",
-    "time": "",
     "pace": "05:00 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 119,
@@ -1460,7 +1311,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 120,
@@ -1468,11 +1319,7 @@ abstract class JsonStrings {
     "week": "Woche 18",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 121,
@@ -1480,11 +1327,10 @@ abstract class JsonStrings {
     "week": "Woche 18",
     "weekday": "Dienstag",
     "km": "8 x 1 km, Trabpause 3 min",
-    "time": "",
     "pace": "04:25 min/km",
     "intensity": "SWL",
     "heartrate": "90-95",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 122,
@@ -1496,7 +1342,7 @@ abstract class JsonStrings {
     "pace": "06:30 min/km",
     "intensity": "SL",
     "heartrate": "<65",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 123,
@@ -1508,7 +1354,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 124,
@@ -1516,11 +1362,7 @@ abstract class JsonStrings {
     "week": "Woche 18",
     "weekday": "Freitag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 125,
@@ -1532,7 +1374,7 @@ abstract class JsonStrings {
     "pace": "05:50 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 126,
@@ -1544,7 +1386,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 127,
@@ -1552,11 +1394,10 @@ abstract class JsonStrings {
     "week": "Woche 19",
     "weekday": "Montag",
     "km": "10 km Testlauf in 44:00 min",
-    "time": "",
     "pace": "04:24 min/km",
     "intensity": "SWL",
     "heartrate": "90-95",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 128,
@@ -1564,11 +1405,7 @@ abstract class JsonStrings {
     "week": "Woche 19",
     "weekday": "Dienstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 129,
@@ -1580,7 +1417,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 130,
@@ -1588,11 +1425,10 @@ abstract class JsonStrings {
     "week": "Woche 19",
     "weekday": "Donnerstag",
     "km": "3 x 5 km in 25:00 min, Trabpause 5 min",
-    "time": "",
     "pace": "05:00 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 131,
@@ -1604,7 +1440,7 @@ abstract class JsonStrings {
     "pace": "05:50 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 132,
@@ -1612,11 +1448,7 @@ abstract class JsonStrings {
     "week": "Woche 19",
     "weekday": "Samstag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 133,
@@ -1628,7 +1460,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 134,
@@ -1640,7 +1472,7 @@ abstract class JsonStrings {
     "pace": "04:58 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 135,
@@ -1652,7 +1484,7 @@ abstract class JsonStrings {
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "70-75",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 136,
@@ -1660,11 +1492,10 @@ abstract class JsonStrings {
     "week": "Woche 20",
     "weekday": "Mittwoch",
     "km": "10 km, 5:30min/km, nach einer halben Std. 2 km in 8:50 min",
-    "time": "",
     "pace": "05:30 min/km",
     "intensity": "LD",
     "heartrate": "85-90",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 137,
@@ -1676,7 +1507,7 @@ abstract class JsonStrings {
     "pace": "06:00 min/km",
     "intensity": "SL",
     "heartrate": 65,
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 138,
@@ -1684,11 +1515,7 @@ abstract class JsonStrings {
     "week": "Woche 20",
     "weekday": "Freitag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 139,
@@ -1696,11 +1523,7 @@ abstract class JsonStrings {
     "week": "Woche 20",
     "weekday": "Samstag",
     "km": "30 min spielerisches Laufen",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 140,
@@ -1712,7 +1535,7 @@ abstract class JsonStrings {
     "pace": "04:58 min/km",
     "intensity": "SD",
     "heartrate": "80-85",
-    "complete": "FALSE"
+    "complete": false
     }
   ]
   ''';

@@ -1,6 +1,4 @@
-import 'package:Pacemaker/tabs/halfmarathon.dart';
-import 'package:Pacemaker/tabs/marathon.dart';
-import 'package:Pacemaker/tabs/tenkilometres.dart';
+import 'package:Pacemaker/tabs/workouts.dart';
 import 'package:flutter/material.dart';
 
 class Explore extends StatelessWidget {

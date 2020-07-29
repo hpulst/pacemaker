@@ -17,6 +17,8 @@ dependencies:
   firebase_analytics: ^5.0.2
   json_annotation: ^3.0.1
   json_serializable: ^3.3.0
+  animations: ^1.1.2
+
 
 
 dev_dependencies:

@@ -1,35 +1,43 @@
-abstract class JsonStrings {
+abstract class JsonHalfMarathon {
   static final String listOfHalfmarathons = '''
   [
    {
-    "order": 1,
-    "workout": "Marathon in 4:00 Std",
+    "workout": "Half marathon in 1:15 Std"
     },
     {
-    "order": 2,
-    "workout": "Marathon in 3:45 Std",
+    "workout": "Half marathon in 1:20 Std"
     },
     {
-    "order": 3,
-    "workout": "Marathon in 3:30 Std",
+    "workout": "Half marathon in 1:25 Std"
     },
     {
-    "order": 4,
-    "workout": "Marathon in 3:15 Std",
+    "workout": "Half marathon in 1:30 Std"
     },
     {
-    "order": 5,
-    "workout": Marathon in 3:00 Std",
+    "workout": "Half marathon in 1:35 Std"
     },
     {
-    "order": 6,
-    "workout": "Marathon in 2:50 Std",
+    "workout": "Half marathon in 1:40 Std"
     },
     {
-    "order": 7,
-    "workout": "Marathon in 2:40 Std",
-    },
+    "workout": "Half marathon in 1:45 Std"
+    }
   ] 
+  ''';
+
+  static final String listOfMarathons = '''
+  [
+    {
+      "aString": "Blah, blah, blah.",
+      "anInt": 1,
+      "aDouble": 1.0
+    },
+    {
+      "aString": "Blah, blah, blah.",
+      "anInt": 1,
+      "aDouble": 1.0
+    }
+  ]
   ''';
 
   static final String halfmarathon130 = '''

@@ -2,33 +2,26 @@ abstract class JsonMarathon {
   static final String listOfMarathons = '''
   [
    {
-    "order": 1,
-    "workout": "Halfmarathon in 1:45 Std",
+    "workout": "Marathon in 2:40 Std"
     },
     {
-    "order": 2,
-    "workout": "Halfmarathon in 1:40 Std",
+    "workout": "Marathon in 2:50 Std"
     },
     {
-    "order": 3,
-    "workout": "Halfmarathon in 1:35 Std",
+    "workout": "Marathon in 3:00 Std"
     },
     {
-    "order": 4,
-    "workout": "Halfmarathon in 1:30 Std",
+    "workout": "Marathon in 3:15 Std"
     },
     {
-    "order": 5,
-    "workout": Halfmarathon in 1:25 Std,
+    "workout": "Marathon in 3:30 Std"
     },
     {
-    "order": 6,
-    "workout": "Halfmarathon in 1:20 Std",
+    "workout": "Marathon in 3:45 Std"
     },
     {
-    "order": 7,
-    "workout": "Halfmarathon in 1:15 Std",
-    },
+    "workout": "Marathon in 4:00 Std"
+    }
   ] 
   ''';
 

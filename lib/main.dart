@@ -6,7 +6,6 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Pacemaker',
       theme: ThemeData(
         primarySwatch: Colors.grey,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        // visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomePage(),
     );

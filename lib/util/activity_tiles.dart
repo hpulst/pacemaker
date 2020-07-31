@@ -29,7 +29,7 @@ class ComplexObjectView extends StatelessWidget {
   Widget build(BuildContext context) {
     final random = Random();
     final localTheme = Theme.of(context).textTheme;
-    if (complexObject == null) return Text('NULL', style: localTheme.bodyText2);
+    // if (complexObject == null) return Text('NULL', style: localTheme.bodyText2);
 
     return Container(
       decoration: new BoxDecoration(

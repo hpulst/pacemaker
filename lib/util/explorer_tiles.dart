@@ -30,7 +30,7 @@ class SimpleObjectView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localTheme = Theme.of(context).textTheme;
-    if (simpleObject == null) return Text('NULL', style: localTheme.bodyText2);
+    // if (simpleObject == null) return Text('NULL', style: localTheme.bodyText2);
 
     return Container(
       decoration: new BoxDecoration(

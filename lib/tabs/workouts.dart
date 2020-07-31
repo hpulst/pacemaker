@@ -4,7 +4,7 @@ import 'package:Pacemaker/data/json_strings_10km.dart';
 import 'package:Pacemaker/data/json_strings_marathon.dart';
 import 'package:Pacemaker/data/json_strings_halfmarathon.dart';
 import 'package:Pacemaker/models/converted_object.dart';
-import 'package:Pacemaker/util/card_tile.dart';
+import 'package:Pacemaker/util/explorer_tiles.dart';
 
 class MarathonPage extends StatelessWidget {
   @override
@@ -12,7 +12,7 @@ class MarathonPage extends StatelessWidget {
     final dynamic parsedJson = json.decode(JsonMarathon.listOfMarathons);
 
     final dynamic deserializedObjects =
-        parsedJson.map((o) => MarathonObjectSimple.fromJson(o));
+        parsedJson.map((o) => WorkoutObjectSimple.fromJson(o));
 
     final dynamic listOfObjects = deserializedObjects.toList();
     return ListView(
@@ -31,7 +31,7 @@ class HalfmarathonPage extends StatelessWidget {
         json.decode(JsonHalfMarathon.listOfHalfmarathons);
 
     final dynamic deserializedObjects =
-        parsedJson.map((o) => MarathonObjectSimple.fromJson(o));
+        parsedJson.map((o) => WorkoutObjectSimple.fromJson(o));
 
     final dynamic listOfObjects = deserializedObjects.toList();
     return ListView(
@@ -50,7 +50,7 @@ class TenKilometresPage extends StatelessWidget {
         json.decode(JsonTenKilometres.listOfTenKilometres);
 
     final dynamic deserializedObjects =
-        parsedJson.map((o) => MarathonObjectSimple.fromJson(o));
+        parsedJson.map((o) => WorkoutObjectSimple.fromJson(o));
 
     final dynamic listOfObjects = deserializedObjects.toList();
     return ListView(

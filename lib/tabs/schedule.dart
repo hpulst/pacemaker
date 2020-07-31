@@ -1,6 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:convert';
+import 'package:Pacemaker/util/activity_tiles.dart';
 import 'package:flutter/material.dart';
-import 'package:Pacemaker/models/workout_model.dart';
+import 'package:Pacemaker/data/json_strings_marathon.dart';
+import 'package:Pacemaker/models/converted_object.dart';
 
 class SchedulePage extends StatefulWidget {
   SchedulePage({Key key}) : super(key: key);
@@ -12,44 +14,17 @@ class SchedulePage extends StatefulWidget {
 class _SchedulePageState extends State<SchedulePage> {
   @override
   Widget build(BuildContext context) {
-    return _buildBody(context);
-  }
+    final dynamic parsedJson = jsonDecode(JsonMarathon.marathon315);
 
-  Widget _buildBody(BuildContext context) {
-    return StreamBuilder<QuerySnapshot>(
-      stream: Firestore.instance.collection('marathon').snapshots(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) return LinearProgressIndicator();
-        return _buildList(context, snapshot.data.documents);
-      },
-    );
-  }
+    final dynamic deserializedObjects =
+        parsedJson.map((o) => WorkoutObjectComplex.fromJson(o));
 
-  Widget _buildList(BuildContext context, List<DocumentSnapshot> snapshot) {
-    print('Hi');
+    final dynamic listOfObjects = deserializedObjects.toList();
     return ListView(
-      padding: EdgeInsets.only(top: 20.0),
-      children: snapshot.map((data) => _buildListItem(context, data)).toList(),
-    );
-  }
-
-  Widget _buildListItem(BuildContext context, DocumentSnapshot data) {
-    final record = Workout.fromSnapshot(data);
-    print(data);
-    print('Hello');
-
-    return Padding(
-      key: ValueKey(record.week),
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey),
-          borderRadius: BorderRadius.circular(5.0),
-        ),
-        child: ListTile(
-          title: Text(record.weekday),
-        ),
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      children: [
+        ComplexObjectViewList(listOfObjects),
+      ],
     );
   }
 }

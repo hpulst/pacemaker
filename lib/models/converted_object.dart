@@ -1,9 +1,5 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-class MarathonObject {
-  const MarathonObject({
+class WorkoutObjectComplex {
+  const WorkoutObjectComplex({
     this.order,
     this.workout,
     this.week,
@@ -27,10 +23,10 @@ class MarathonObject {
   final String heartrate;
   final bool complete;
 
-  factory MarathonObject.fromJson(Map<String, dynamic> json) {
+  factory WorkoutObjectComplex.fromJson(Map<String, dynamic> json) {
     if (json == null) return null;
 
-    return MarathonObject(
+    return WorkoutObjectComplex(
       order: json['order'] as int,
       workout: json['workout'] as String,
       week: json['week'] as String,
@@ -45,17 +41,17 @@ class MarathonObject {
   }
 }
 
-class MarathonObjectSimple {
-  const MarathonObjectSimple({
+class WorkoutObjectSimple {
+  const WorkoutObjectSimple({
     this.workout,
   });
 
   final String workout;
 
-  factory MarathonObjectSimple.fromJson(Map<String, dynamic> json) {
+  factory WorkoutObjectSimple.fromJson(Map<String, dynamic> json) {
     if (json == null) return null;
 
-    return MarathonObjectSimple(
+    return WorkoutObjectSimple(
       workout: json['workout'] as String,
     );
   }

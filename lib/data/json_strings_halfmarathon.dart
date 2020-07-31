@@ -52,7 +52,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 2,
@@ -64,7 +64,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 3,
@@ -76,7 +76,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:30 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 4,
@@ -88,7 +88,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 5,
@@ -100,7 +100,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 6,
@@ -112,7 +112,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:05 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 7,
@@ -124,7 +124,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 8,
@@ -136,7 +136,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 9,
@@ -148,7 +148,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 10,
@@ -160,7 +160,7 @@ abstract class JsonHalfMarathon {
     "pace": "6:00 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 11,
@@ -172,7 +172,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 12,
@@ -184,7 +184,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 13,
@@ -196,7 +196,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:50 min/km",
     "intensity": "SD",
     "heartrate": "80-85%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 14,
@@ -208,7 +208,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:15 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 15,
@@ -220,7 +220,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 16,
@@ -232,7 +232,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 17,
@@ -244,7 +244,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 18,
@@ -256,7 +256,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:35 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 19,
@@ -268,7 +268,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 20,
@@ -280,7 +280,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:20 min/km",
     "intensity": "LD",
     "heartrate": "70-75%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 21,
@@ -292,7 +292,7 @@ abstract class JsonHalfMarathon {
     "pace": "6:00 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 22,
@@ -304,7 +304,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 23,
@@ -316,7 +316,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:30 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 24,
@@ -328,7 +328,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 25,
@@ -340,7 +340,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 26,
@@ -352,7 +352,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 27,
@@ -364,7 +364,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:05 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 28,
@@ -376,7 +376,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 29,
@@ -388,7 +388,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 30,
@@ -400,7 +400,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:30 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 31,
@@ -412,7 +412,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 32,
@@ -424,7 +424,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 33,
@@ -436,7 +436,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 34,
@@ -448,7 +448,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:05 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 35,
@@ -460,7 +460,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 36,
@@ -472,7 +472,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 37,
@@ -484,7 +484,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 38,
@@ -496,7 +496,7 @@ abstract class JsonHalfMarathon {
     "pace": "6:00 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 39,
@@ -508,7 +508,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 40,
@@ -520,7 +520,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 41,
@@ -532,7 +532,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 42,
@@ -544,7 +544,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:12 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 43,
@@ -556,7 +556,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 44,
@@ -568,7 +568,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 45,
@@ -580,7 +580,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 46,
@@ -592,7 +592,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:50 min/km",
     "intensity": "SD",
     "heartrate": "80-85%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 47,
@@ -604,7 +604,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 48,
@@ -616,7 +616,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:25 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 49,
@@ -628,7 +628,7 @@ abstract class JsonHalfMarathon {
     "pace": "6:00 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 50,
@@ -640,7 +640,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 51,
@@ -652,7 +652,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:30 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 52,
@@ -664,7 +664,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 53,
@@ -676,7 +676,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 54,
@@ -688,7 +688,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 55,
@@ -700,7 +700,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:20 min/km 4:50 min/km 4:20 min/km",
     "intensity": "LD SD TD",
     "heartrate": "80-85%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 56,
@@ -712,7 +712,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:20 min/km",
     "intensity": "LD",
     "heartrate": "70-75%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 57,
@@ -724,7 +724,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 58,
@@ -736,7 +736,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:30 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 59,
@@ -748,7 +748,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 60,
@@ -760,7 +760,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 61,
@@ -772,7 +772,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 62,
@@ -784,7 +784,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:20 min/km 4:50 min/km 4:20 min/km",
     "intensity": "LD SD TD",
     "heartrate": "80-85%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 63,
@@ -796,7 +796,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:20 min/km",
     "intensity": "LD",
     "heartrate": "70-75%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 64,
@@ -808,7 +808,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 65,
@@ -820,7 +820,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 66,
@@ -832,7 +832,7 @@ abstract class JsonHalfMarathon {
     "pace": "6:00 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 67,
@@ -844,7 +844,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 68,
@@ -856,7 +856,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 69,
@@ -868,7 +868,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 70,
@@ -880,7 +880,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:09 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 71,
@@ -892,7 +892,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 72,
@@ -904,7 +904,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 73,
@@ -916,7 +916,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 74,
@@ -928,7 +928,7 @@ abstract class JsonHalfMarathon {
     "pace": "6:00 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 75,
@@ -940,7 +940,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 76,
@@ -952,7 +952,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:35 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 77,
@@ -964,7 +964,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:20 min/km",
     "intensity": "LD",
     "heartrate": "70-75%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 78,
@@ -976,7 +976,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 79,
@@ -988,7 +988,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:25 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 80,
@@ -1000,7 +1000,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 81,
@@ -1012,7 +1012,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 82,
@@ -1024,7 +1024,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 83,
@@ -1036,7 +1036,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:07 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 84,
@@ -1048,7 +1048,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:20 min/km",
     "intensity": "LD",
     "heartrate": "70-75%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 85,
@@ -1060,7 +1060,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 86,
@@ -1072,7 +1072,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:25 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 87,
@@ -1084,7 +1084,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 88,
@@ -1096,7 +1096,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 89,
@@ -1108,7 +1108,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 90,
@@ -1120,7 +1120,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:07 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 91,
@@ -1132,7 +1132,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:20 min/km",
     "intensity": "LD",
     "heartrate": "70-75%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 92,
@@ -1144,7 +1144,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 93,
@@ -1156,7 +1156,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 94,
@@ -1168,7 +1168,7 @@ abstract class JsonHalfMarathon {
     "pace": "6:00 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 95,
@@ -1180,7 +1180,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 96,
@@ -1192,7 +1192,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 97,
@@ -1204,7 +1204,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 98,
@@ -1216,7 +1216,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:07 min/km 4:16 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 99,
@@ -1228,7 +1228,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 100,
@@ -1240,7 +1240,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 101,
@@ -1252,7 +1252,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 102,
@@ -1264,7 +1264,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:25 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 103,
@@ -1276,7 +1276,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 104,
@@ -1288,7 +1288,7 @@ abstract class JsonHalfMarathon {
     "pace": "6:00 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 105,
@@ -1300,7 +1300,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:20 min/km",
     "intensity": "LD",
     "heartrate": "70-75%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 106,
@@ -1312,7 +1312,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 107,
@@ -1324,7 +1324,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:25 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 108,
@@ -1336,7 +1336,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "SL",
     "heartrate": "<65%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 109,
@@ -1348,7 +1348,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:35 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 110,
@@ -1360,7 +1360,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 111,
@@ -1372,7 +1372,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:20 min/km",
     "intensity": "LD",
     "heartrate": "70-75%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 112,
@@ -1384,7 +1384,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 113,
@@ -1396,7 +1396,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:16 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 114,
@@ -1408,7 +1408,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 115,
@@ -1420,7 +1420,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 116,
@@ -1432,7 +1432,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:20 min/km",
     "intensity": "LD",
     "heartrate": "70-75%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 117,
@@ -1444,7 +1444,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 118,
@@ -1456,7 +1456,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "LD",
     "heartrate": "70-75%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 119,
@@ -1468,7 +1468,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:06 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 120,
@@ -1480,7 +1480,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:40 min/km",
     "intensity": "LD",
     "heartrate": "70-75%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 121,
@@ -1492,7 +1492,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 122,
@@ -1504,7 +1504,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 123,
@@ -1516,7 +1516,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:05 min/km",
     "intensity": "TD",
     "heartrate": "85-90%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 124,
@@ -1528,7 +1528,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 125,
@@ -1540,7 +1540,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:20 min/km",
     "intensity": "LD",
     "heartrate": "70-75%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 126,
@@ -1552,7 +1552,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:10 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 127,
@@ -1564,7 +1564,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:15 min/km Wettkampftempo",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 128,
@@ -1576,7 +1576,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 129,
@@ -1588,7 +1588,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:05 min/km 4:15 min/km",
     "intensity": "MD SWL",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 130,
@@ -1600,7 +1600,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:00 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 131,
@@ -1612,7 +1612,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 132,
@@ -1624,7 +1624,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 133,
@@ -1636,7 +1636,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:15 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 134,
@@ -1648,7 +1648,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:15 min/km Wettkampftempo",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 135,
@@ -1660,7 +1660,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 136,
@@ -1672,7 +1672,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:05 min/km 4:15 min/km",
     "intensity": "MD SWL",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 137,
@@ -1684,7 +1684,7 @@ abstract class JsonHalfMarathon {
     "pace": "5:00 min/km",
     "intensity": "MD",
     "heartrate": "75-80%",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 138,
@@ -1696,7 +1696,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 139,
@@ -1708,7 +1708,7 @@ abstract class JsonHalfMarathon {
     "pace": "",
     "intensity": "",
     "heartrate": "",
-    "complete": "FALSE"
+    "complete": false
   },
   {
     "order": 140,
@@ -1720,7 +1720,7 @@ abstract class JsonHalfMarathon {
     "pace": "4:15 min/km",
     "intensity": "SWL",
     "heartrate": "90-95%",
-    "complete": "FALSE"
+    "complete": false
   }
 ] ''';
 }

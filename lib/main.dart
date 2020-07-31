@@ -1,13 +1,7 @@
-import 'package:Pacemaker/services/dbhelper.dart';
 import 'package:flutter/material.dart';
-
 import 'home.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await DBHelper.init();
-
   runApp(MyApp());
 }
 

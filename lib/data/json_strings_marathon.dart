@@ -25,6 +25,35 @@ abstract class JsonMarathon {
   ] 
   ''';
 
+  static final String marathon315 = '''
+[
+  {
+    "order": 1,
+    "workout": "marathon315",
+    "week": "Woche 1",
+    "weekday": "Dienstag",
+    "km": "15 km",
+    "time": "1:23 Std",
+    "pace": "05:30 min/km",
+    "intensity": "LD",
+    "heartrate": "70-75",
+    "complete": false
+  },
+  {
+    "order": 2,
+    "workout": "marathon315",
+    "week": "Woche 1",
+    "weekday": "Mittwoch",
+    "km": "12 km",
+    "time": "59:00 min",
+    "pace": "04:55 min/km",
+    "intensity": "SD",
+    "heartrate": "80-85",
+    "complete": false
+    } 
+  ] 
+  ''';
+
   static final String marathon330 = '''
 [
   {

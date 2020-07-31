@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'screens/history_page.dart';
 import 'screens/schedule_page.dart';
+=======
+import 'pages/history_page.dart';
+import 'pages/schedule_page.dart';
+>>>>>>> a3ec036a60edb62ad2814aee8e645566b49af498
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);

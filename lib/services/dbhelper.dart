@@ -2,10 +2,7 @@ import 'dart:async';
 import 'package:Pacemaker/model/model.dart';
 import 'package:Pacemaker/model/workout_model.dart';
 import 'package:sqflite/sqflite.dart';
-<<<<<<< HEAD
-=======
 import 'package:path/path.dart';
->>>>>>> a3ec036a60edb62ad2814aee8e645566b49af498
 
 abstract class DBHelper {
   static Database _db;

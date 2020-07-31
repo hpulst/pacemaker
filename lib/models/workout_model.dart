@@ -1,4 +1,5 @@
 import 'package:Pacemaker/models/model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Workout extends Model {
   static String table = 'marathon';
@@ -24,36 +25,16 @@ class Workout extends Model {
       this.heartrate,
       this.complete});
 
-  // Convert a Workout into a Map. The keys must correspond to the names of the
-  // columns in the database.
-  Map<String, dynamic> toMap() {
-    Map<String, dynamic> map = {
-      'week': week,
-      'weekday': weekday,
-      'km': km,
-      'time': time,
-      'pace': pace,
-      'intensity': intensity,
-      'heartrate': heartrate,
-      'complete': complete,
-    };
-    if (id != null) {
-      map['id'] = id;
-    }
-    return map;
-  }
+  Workout.fromMap(Map<String, dynamic> map)
+      : id = map['id'],
+        week = map['week'],
+        weekday = map['weekday'],
+        km = map['km'],
+        time = map['time'],
+        pace = map['pace'],
+        intensity = map['intensity'],
+        heartrate = map['heartrate'],
+        complete = map['complete'];
 
-  static Workout fromMap(Map<String, dynamic> map) {
-    return Workout(
-      id: map['id'],
-      week: map['week'],
-      weekday: map['weekday'],
-      km: map['km'],
-      time: map['time'],
-      pace: map['pace'],
-      intensity: map['intensity'],
-      heartrate: map['heartrate'],
-      complete: map['complete'] == 1,
-    );
-  }
+  Workout.fromSnapshot(DocumentSnapshot snapshot) : this.fromMap(snapshot.data);
 }

@@ -52,7 +52,25 @@ abstract class JsonMarathon {
     "complete": false
     }, 
     {
-    "order": 24,
+    "order": 84,
+    "workout": "marathon330",
+    "week": "Woche 12",
+    "weekday": "Sonntag",
+    "km": "20 x 1 km, Trabpause 2 min",
+    "pace": "05:00 min/km",
+    "intensity": "SD",
+    "heartrate": "80%-85%",
+    "complete": false
+    },
+    {
+    "order": 138,
+    "workout": "marathon330",
+    "week": "Woche 20",
+    "weekday": "Freitag",
+    "km": "Ruhetag",
+    "complete": false
+    },
+    {
     "workout": "marathon330",
     "week": "Woche 4",
     "weekday": "Mittwoch",
@@ -117,7 +135,7 @@ abstract class JsonMarathon {
     "time": "1:24 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -141,7 +159,7 @@ abstract class JsonMarathon {
     "time": "1:06 Std",
     "pace": "06:00  min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -193,7 +211,7 @@ abstract class JsonMarathon {
     "time": "1:24 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -217,7 +235,7 @@ abstract class JsonMarathon {
     "time": "1:06 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -237,7 +255,7 @@ abstract class JsonMarathon {
     "time": "1:38 Std",
     "pace": "06:30 min/km",
     "intensity": "SL",
-    "heartrate": "<65",
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -292,7 +310,7 @@ abstract class JsonMarathon {
     "time": "1:00 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -368,7 +386,7 @@ abstract class JsonMarathon {
     "time": "1:38 Std",
     "pace": "06:30 min/km",
     "intensity": "SL",
-    "heartrate": "<65",
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -400,7 +418,7 @@ abstract class JsonMarathon {
     "time": "1:36 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -476,7 +494,7 @@ abstract class JsonMarathon {
     "time": "1:36 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -540,7 +558,7 @@ abstract class JsonMarathon {
     "time": "1:38 Std",
     "pace": "06:30 min/km",
     "intensity": "SL",
-    "heartrate": "<65",
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -595,7 +613,7 @@ abstract class JsonMarathon {
     "time": "1:00 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -658,7 +676,7 @@ abstract class JsonMarathon {
     "time": "1:38 Std",
     "pace": "06:30 min/km",
     "intensity": "SL",
-    "heartrate": "<65",
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -702,7 +720,7 @@ abstract class JsonMarathon {
     "time": "1:30 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -745,7 +763,7 @@ abstract class JsonMarathon {
     "time": "1:12 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -777,7 +795,7 @@ abstract class JsonMarathon {
     "time": "1:30 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -812,7 +830,7 @@ abstract class JsonMarathon {
     "complete": false
   },
   {
-    "order": 70%,
+    "order": 70,
     "workout": "marathon330",
     "week": "Woche 10",
     "weekday": "Sonntag",
@@ -820,7 +838,7 @@ abstract class JsonMarathon {
     "time": "1:12 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -840,7 +858,7 @@ abstract class JsonMarathon {
     "time": "1:38 Std",
     "pace": "06:30 min/km",
     "intensity": "SL",
-    "heartrate": "<65",
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -868,7 +886,7 @@ abstract class JsonMarathon {
     "complete": false
   },
   {
-    "order": 75%,
+    "order": 75,
     "workout": "marathon330",
     "week": "Woche 11",
     "weekday": "Freitag",
@@ -895,7 +913,7 @@ abstract class JsonMarathon {
     "time": "1:00 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -919,7 +937,7 @@ abstract class JsonMarathon {
     "complete": false
   },
   {
-    "order": 80%,
+    "order": 80,
     "workout": "marathon330",
     "week": "Woche 12",
     "weekday": "Mittwoch",
@@ -958,7 +976,7 @@ abstract class JsonMarathon {
     "time": "1:38 Std",
     "pace": "06:30 min/km",
     "intensity": "SL",
-    "heartrate": "<65",
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -973,7 +991,7 @@ abstract class JsonMarathon {
     "complete": false
   },
   {
-    "order": 85%,
+    "order": 85,
     "workout": "marathon330",
     "week": "Woche 13",
     "weekday": "Montag",
@@ -1001,7 +1019,7 @@ abstract class JsonMarathon {
     "time": "2:00 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -1024,7 +1042,7 @@ abstract class JsonMarathon {
     "complete": false
   },
   {
-    "order": 90%,
+    "order": 90,
     "workout": "marathon330",
     "week": "Woche 13",
     "weekday": "Samstag",
@@ -1076,11 +1094,11 @@ abstract class JsonMarathon {
     "time": "2:00 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
-    "order": 95%,
+    "order": 95,
     "workout": "marathon330",
     "week": "Woche 14",
     "weekday": "Donnerstag",
@@ -1139,7 +1157,7 @@ abstract class JsonMarathon {
     "time": "1:38 Std",
     "pace": "06:30 min/km",
     "intensity": "SL",
-    "heartrate": "<65",
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -1194,7 +1212,7 @@ abstract class JsonMarathon {
     "time": "1:30 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -1257,7 +1275,7 @@ abstract class JsonMarathon {
     "time": "1:30 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -1301,7 +1319,7 @@ abstract class JsonMarathon {
     "time": "1:30 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -1344,7 +1362,7 @@ abstract class JsonMarathon {
     "time": "1:00 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -1375,7 +1393,7 @@ abstract class JsonMarathon {
     "time": "2:10 Std",
     "pace": "06:30 min/km",
     "intensity": "SL",
-    "heartrate": "<65",
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -1407,7 +1425,7 @@ abstract class JsonMarathon {
     "time": "2:55 Std",
     "pace": "05:50 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -1419,7 +1437,7 @@ abstract class JsonMarathon {
     "time": "1:00 Std",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -1473,7 +1491,7 @@ abstract class JsonMarathon {
     "time": "2:55 Std",
     "pace": "05:50 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {
@@ -1540,7 +1558,7 @@ abstract class JsonMarathon {
     "time": "48:00 min",
     "pace": "06:00 min/km",
     "intensity": "SL",
-    "heartrate": 65,
+    "heartrate": "65%",
     "complete": false
   },
   {

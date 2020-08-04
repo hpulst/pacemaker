@@ -149,6 +149,50 @@ class _ArticleDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          flex: 2,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(week + " - " + weekday,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  )),
+              const Padding(
+                padding: EdgeInsets.only(bottom: 3.0),
+              ),
+              Text(
+                km,
+                style: TextStyle(fontSize: 12),
+              ),
+              Text(
+                time + " in " + pace,
+                style: TextStyle(fontSize: 12),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                intensity + " with " + heartrate,
+                style: TextStyle(fontSize: 11.0),
+              ),
+              // Text(
+              //   heartrate,
+              //   style: TextStyle(fontSize: 11.0),
+              // ),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 }

@@ -36,7 +36,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -48,12 +48,24 @@ abstract class JsonMarathon {
     "time": "59:00 min",
     "pace": "04:55 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
-    } 
+    }, 
+    {
+    "order": 24,
+    "workout": "marathon330",
+    "week": "Woche 4",
+    "weekday": "Mittwoch",
+    "km": "14:15 min",
+    "time": "59:00 min",
+    "pace": "04:45 min/km",
+    "intensity": "TD",
+    "heartrate": "85%-90%",
+    "complete": false
+  }
   ] 
   ''';
-
+// "km": "3 x 3 km in 14:15 min, Trabpause 5 min",
   static final String marathon330 = '''
 [
   {
@@ -73,7 +85,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -85,7 +97,7 @@ abstract class JsonMarathon {
     "time": "59:00 min",
     "pace": "04:55 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -117,7 +129,7 @@ abstract class JsonMarathon {
     "time": "2:01 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -149,7 +161,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -161,7 +173,7 @@ abstract class JsonMarathon {
     "time": "59:00 min",
     "pace": "04:55  min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -193,7 +205,7 @@ abstract class JsonMarathon {
     "time": "2:01 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -237,7 +249,7 @@ abstract class JsonMarathon {
     "time": "52:30 min",
     "pace": "05:15 min/km",
     "intensity": "MD",
-    "heartrate": "75-80",
+    "heartrate": "75%-80%",
     "complete": false
   },
   {
@@ -249,7 +261,7 @@ abstract class JsonMarathon {
     "time": "1:50 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -268,7 +280,7 @@ abstract class JsonMarathon {
     "km": "10 km Testlauf in 46:00 min",
     "pace": "04:36 min/km",
     "intensity": "TD",
-    "heartrate": "85-90",
+    "heartrate": "85%-90%",
     "complete": false
   },
   {
@@ -301,7 +313,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -312,7 +324,7 @@ abstract class JsonMarathon {
     "km": "3 x 3 km in 14:15 min, Trabpause 5 min",
     "pace": "04:45 min/km",
     "intensity": "TD",
-    "heartrate": "85-90",
+    "heartrate": "85%-90%",
     "complete": false
   },
   {
@@ -332,7 +344,7 @@ abstract class JsonMarathon {
     "time": "52:30 min",
     "pace": "05:15 min/km",
     "intensity": "MD",
-    "heartrate": "75-80",
+    "heartrate": "75%-80%",
     "complete": false
   },
   {
@@ -344,7 +356,7 @@ abstract class JsonMarathon {
     "time": "2:01 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -376,7 +388,7 @@ abstract class JsonMarathon {
     "time": "1:04 Std",
     "pace": "04:55 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -408,7 +420,7 @@ abstract class JsonMarathon {
     "time": "52:30 min",
     "pace": "05:15 min/km",
     "intensity": "MD",
-    "heartrate": "75-80",
+    "heartrate": "75%-80%",
     "complete": false
   },
   {
@@ -420,7 +432,7 @@ abstract class JsonMarathon {
     "time": "2:22 Std",
     "pace": "05:40 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -432,7 +444,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -452,7 +464,7 @@ abstract class JsonMarathon {
     "time": "1:04 Std",
     "pace": "04:55 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -484,7 +496,7 @@ abstract class JsonMarathon {
     "time": "52:30 min",
     "pace": "05:15 min/km",
     "intensity": "MD",
-    "heartrate": "75-80",
+    "heartrate": "75%-80%",
     "complete": false
   },
   {
@@ -496,7 +508,7 @@ abstract class JsonMarathon {
     "time": "2:22 Std",
     "pace": "05:40 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -508,7 +520,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -540,7 +552,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -552,7 +564,7 @@ abstract class JsonMarathon {
     "time": "1:50 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -571,7 +583,7 @@ abstract class JsonMarathon {
     "km": "10 km Testlauf in 45:30 min",
     "pace": "04:33 min/km",
     "intensity": "TD",
-    "heartrate": "85-90",
+    "heartrate": "85%-90%",
     "complete": false
   },
   {
@@ -603,7 +615,7 @@ abstract class JsonMarathon {
     "time": "52:30 min",
     "pace": "05:15 min/km",
     "intensity": "MD",
-    "heartrate": "75-80",
+    "heartrate": "75%-80%",
     "complete": false
   },
   {
@@ -615,7 +627,7 @@ abstract class JsonMarathon {
     "time": "1:50 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -634,7 +646,7 @@ abstract class JsonMarathon {
     "km": "8×1 km, Trabpause 3 min",
     "pace": "04:25 min/km",
     "intensity": "SWL",
-    "heartrate": "90-95",
+    "heartrate": "90%-95%",
     "complete": false
   },
   {
@@ -658,7 +670,7 @@ abstract class JsonMarathon {
     "time": "2:22 Std",
     "pace": "05:40 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -678,7 +690,7 @@ abstract class JsonMarathon {
     "time": "1:04 Std",
     "pace": "04:55 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -709,7 +721,7 @@ abstract class JsonMarathon {
     "km": "15×1 km, Trabpause 1 min",
     "pace": "05:00 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -721,7 +733,7 @@ abstract class JsonMarathon {
     "time": "2:22 Std",
     "pace": "05:40 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -753,7 +765,7 @@ abstract class JsonMarathon {
     "time": "1:04 Std",
     "pace": "04:55 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -784,7 +796,7 @@ abstract class JsonMarathon {
     "km": "15×1 km, Trabpause 1 min",
     "pace": "05:00 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -796,11 +808,11 @@ abstract class JsonMarathon {
     "time": "2:22 Std",
     "pace": "05:40 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
-    "order": 70,
+    "order": 70%,
     "workout": "marathon330",
     "week": "Woche 10",
     "weekday": "Sonntag",
@@ -840,7 +852,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -852,11 +864,11 @@ abstract class JsonMarathon {
     "time": "1:50 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
-    "order": 75,
+    "order": 75%,
     "workout": "marathon330",
     "week": "Woche 11",
     "weekday": "Freitag",
@@ -871,7 +883,7 @@ abstract class JsonMarathon {
     "km": "10 km Testlauf in 45:00 min",
     "pace": "04:30 min/km",
     "intensity": "TD",
-    "heartrate": "85-90",
+    "heartrate": "85%-90%",
     "complete": false
   },
   {
@@ -903,11 +915,11 @@ abstract class JsonMarathon {
     "time": "1:50 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
-    "order": 80,
+    "order": 80%,
     "workout": "marathon330",
     "week": "Woche 12",
     "weekday": "Mittwoch",
@@ -915,7 +927,7 @@ abstract class JsonMarathon {
     "time": "52:30 min",
     "pace": "05:15 min/km",
     "intensity": "MD",
-    "heartrate": "75-80",
+    "heartrate": "75%-80%",
     "complete": false
   },
   {
@@ -934,7 +946,7 @@ abstract class JsonMarathon {
     "km": "3 x 3 km in 14:15 min, Trabpause 5 min",
     "pace": "04:45 min/km",
     "intensity": "TD",
-    "heartrate": "85-90",
+    "heartrate": "85%-90%",
     "complete": false
   },
   {
@@ -957,11 +969,11 @@ abstract class JsonMarathon {
     "km": "20 x 1 km, Trabpause 2 min",
     "pace": "05:00 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
-    "order": 85,
+    "order": 85%,
     "workout": "marathon330",
     "week": "Woche 13",
     "weekday": "Montag",
@@ -977,7 +989,7 @@ abstract class JsonMarathon {
     "time": "1:03 Std",
     "pace": "04:50 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -1008,11 +1020,11 @@ abstract class JsonMarathon {
     "km": "8 x 1 km, Trabpause 3 min",
     "pace": "04:25 min/km",
     "intensity": "SWL",
-    "heartrate": "90-95",
+    "heartrate": "90%-95%",
     "complete": false
   },
   {
-    "order": 90,
+    "order": 90%,
     "workout": "marathon330",
     "week": "Woche 13",
     "weekday": "Samstag",
@@ -1020,7 +1032,7 @@ abstract class JsonMarathon {
     "time": "2:17 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1032,7 +1044,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1052,7 +1064,7 @@ abstract class JsonMarathon {
     "time": "1:03 Std",
     "pace": "04:50 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -1068,7 +1080,7 @@ abstract class JsonMarathon {
     "complete": false
   },
   {
-    "order": 95,
+    "order": 95%,
     "workout": "marathon330",
     "week": "Woche 14",
     "weekday": "Donnerstag",
@@ -1083,7 +1095,7 @@ abstract class JsonMarathon {
     "km": "8 x 1 km, Trabpause 3 min",
     "pace": "04:25 min/km",
     "intensity": "SWL",
-    "heartrate": "90-95",
+    "heartrate": "90%-95%",
     "complete": false
   },
   {
@@ -1095,7 +1107,7 @@ abstract class JsonMarathon {
     "time": "2:17 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1107,7 +1119,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1139,7 +1151,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1151,7 +1163,7 @@ abstract class JsonMarathon {
     "time": "1:50Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1170,7 +1182,7 @@ abstract class JsonMarathon {
     "km": "10 km Testlauf in 45:00 min",
     "pace": "04:30 min/km",
     "intensity": "SWL",
-    "heartrate": "90-95",
+    "heartrate": "90%-95%",
     "complete": false
   },
   {
@@ -1202,7 +1214,7 @@ abstract class JsonMarathon {
     "time": "52:30 min",
     "pace": "05:15 min/km",
     "intensity": "MD",
-    "heartrate": "75-80",
+    "heartrate": "75%-80%",
     "complete": false
   },
   {
@@ -1214,7 +1226,7 @@ abstract class JsonMarathon {
     "time": "1:50 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1233,7 +1245,7 @@ abstract class JsonMarathon {
     "km": "3 x 2 km in 8:50 min, Trabpause 4 min",
     "pace": "04:25 min/km",
     "intensity": "TD",
-    "heartrate": "85-90",
+    "heartrate": "85%-90%",
     "complete": false
   },
   {
@@ -1257,7 +1269,7 @@ abstract class JsonMarathon {
     "time": "2:33 Std",
     "pace": "05:40 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1277,7 +1289,7 @@ abstract class JsonMarathon {
     "time": "1:03 Std",
     "pace": "04:50 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -1309,7 +1321,7 @@ abstract class JsonMarathon {
     "time": "2:33 Std",
     "pace": "05:40  min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1320,7 +1332,7 @@ abstract class JsonMarathon {
     "km": "3 x 5 km in 25:00 min, Trabpause 5 min",
     "pace": "05:00 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -1351,7 +1363,7 @@ abstract class JsonMarathon {
     "km": "8 x 1 km, Trabpause 3 min",
     "pace": "04:25 min/km",
     "intensity": "SWL",
-    "heartrate": "90-95",
+    "heartrate": "90%-95%",
     "complete": false
   },
   {
@@ -1375,7 +1387,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1418,7 +1430,7 @@ abstract class JsonMarathon {
     "km": "10 km Testlauf in 44:00 min",
     "pace": "04:24 min/km",
     "intensity": "SWL",
-    "heartrate": "90-95",
+    "heartrate": "90%-95%",
     "complete": false
   },
   {
@@ -1438,7 +1450,7 @@ abstract class JsonMarathon {
     "time": "2:01 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1449,7 +1461,7 @@ abstract class JsonMarathon {
     "km": "3 x 5 km in 25:00 min, Trabpause 5 min",
     "pace": "05:00 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -1481,7 +1493,7 @@ abstract class JsonMarathon {
     "time": "1:30 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1493,7 +1505,7 @@ abstract class JsonMarathon {
     "time": "49:40 Std",
     "pace": "04:58 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
   },
   {
@@ -1505,7 +1517,7 @@ abstract class JsonMarathon {
     "time": "1:23 Std",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "70-75",
+    "heartrate": "70%-75%",
     "complete": false
   },
   {
@@ -1516,7 +1528,7 @@ abstract class JsonMarathon {
     "km": "10 km, 5:30min/km, nach einer halben Std. 2 km in 8:50 min",
     "pace": "05:30 min/km",
     "intensity": "LD",
-    "heartrate": "85-90",
+    "heartrate": "85%-90%",
     "complete": false
   },
   {
@@ -1556,7 +1568,7 @@ abstract class JsonMarathon {
     "time": "3:30 Std",
     "pace": "04:58 min/km",
     "intensity": "SD",
-    "heartrate": "80-85",
+    "heartrate": "80%-85%",
     "complete": false
     }
   ]

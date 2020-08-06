@@ -45,3 +45,4 @@ app.*.map.json
 android/app/google-services.json
 lib/pages/history_page.dart
 lib/pages/schedule_page.dart
+lib/data/json_strings_marathon copy.dart

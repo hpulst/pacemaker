@@ -14,17 +14,23 @@ class SchedulePage extends StatefulWidget {
 class _SchedulePageState extends State<SchedulePage> {
   @override
   Widget build(BuildContext context) {
-    final dynamic parsedJson = jsonDecode(JsonMarathon.marathon315);
+    final dynamic parsedJson = jsonDecode(JsonMarathon.marathon330);
 
     final dynamic deserializedObjects =
         parsedJson.map((o) => WorkoutObjectComplex.fromJson(o));
 
     final dynamic listOfObjects = deserializedObjects.toList();
-    return ListView(
+
+    return ListView.builder(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      children: [
-        ComplexObjectViewList(listOfObjects),
-      ],
+      itemCount: listOfObjects == null ? 0 : listOfObjects.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Column(
+          children: [
+            ComplexObjectView(listOfObjects[index]),
+          ],
+        );
+      },
     );
   }
 }

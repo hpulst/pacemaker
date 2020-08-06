@@ -16,6 +16,7 @@ class Explore extends StatelessWidget {
           title: Text('Workout plans'),
           backgroundColor: Colors.white,
           centerTitle: true,
+          elevation: 100,
           bottom: TabBar(
             tabs: myTabs,
             indicatorColor: Colors.blueAccent,

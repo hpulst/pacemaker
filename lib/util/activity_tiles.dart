@@ -1,24 +1,4 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
-
-class ComplexObjectViewList extends StatelessWidget {
-  ComplexObjectViewList(List<dynamic> objects) : complexObjects = objects;
-
-  final List<dynamic> complexObjects;
-
-  @override
-  Widget build(BuildContext context) {
-    final widgets = <Widget>[];
-    for (var i = 0; i < complexObjects.length; i++) {
-      widgets.addAll([
-        ComplexObjectView(complexObjects[i]),
-      ]);
-    }
-    return Column(
-      children: widgets,
-    );
-  }
-}
 
 class ComplexObjectView extends StatelessWidget {
   ComplexObjectView(dynamic obj) : complexObject = obj;
@@ -27,9 +7,9 @@ class ComplexObjectView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final random = Random();
     final localTheme = Theme.of(context).textTheme;
-    // if (complexObject == null) return Text('NULL', style: localTheme.bodyText2);
+    if (complexObject == null)
+      return Text('Choose your workout', style: localTheme.bodyText2);
 
     return Container(
       decoration: new BoxDecoration(
@@ -42,12 +22,8 @@ class ComplexObjectView extends StatelessWidget {
       child: CustomListTile(
         thumbnail: Container(
           decoration: BoxDecoration(
-              color: Color.fromRGBO(
-            random.nextInt(256),
-            random.nextInt(256),
-            random.nextInt(256),
-            1,
-          )),
+            color: buildColor(complexObject.intensity),
+          ),
         ),
         week: complexObject.week,
         weekday: complexObject.weekday,
@@ -59,6 +35,34 @@ class ComplexObjectView extends StatelessWidget {
         complete: complexObject.complete,
       ),
     );
+  }
+
+  Color buildColor(String intensity) {
+    switch (intensity) {
+      case "":
+        return Colors.primaries[12];
+        break;
+      case "SL":
+        return Colors.primaries[11];
+        break;
+      case "LD":
+        return Colors.primaries[10];
+        break;
+      case "MD":
+        return Colors.primaries[9];
+        break;
+      case "SD":
+        return Colors.primaries[1];
+        break;
+      case "TD":
+        return Colors.primaries[0];
+        break;
+      case "SWL":
+        return Colors.primaries[3];
+        break;
+      default:
+        return Colors.primaries[17];
+    }
   }
 }
 
@@ -91,7 +95,7 @@ class CustomListTile extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10.0),
       child: SizedBox(
-        height: 80,
+        height: 60,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -153,11 +157,11 @@ class _ArticleDescription extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          flex: 2,
+          flex: 4,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(week + " - " + weekday,
+              Text(week + ' - ' + weekday,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   )),
@@ -166,11 +170,11 @@ class _ArticleDescription extends StatelessWidget {
               ),
               Text(
                 km,
-                style: TextStyle(fontSize: 12),
+                style: TextStyle(fontSize: 11),
               ),
               Text(
-                time + " in " + pace,
-                style: TextStyle(fontSize: 12),
+                pace != null ? time != null ? time + ' in ' + pace : pace : '',
+                style: TextStyle(fontSize: 11),
               ),
             ],
           ),
@@ -182,13 +186,9 @@ class _ArticleDescription extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
-                intensity + " with " + heartrate,
-                style: TextStyle(fontSize: 11.0),
+                intensity != null ? intensity + ' with ' + heartrate : '',
+                style: TextStyle(fontSize: 8.0),
               ),
-              // Text(
-              //   heartrate,
-              //   style: TextStyle(fontSize: 11.0),
-              // ),
             ],
           ),
         ),

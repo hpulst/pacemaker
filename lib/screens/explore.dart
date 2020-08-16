@@ -1,9 +1,11 @@
 import 'package:Pacemaker/tabs/workouts.dart';
+import 'package:Pacemaker/util/appbar_nested.dart';
 import 'package:flutter/material.dart';
 
 class Explore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String title = 'Marathon plan';
     final List<Tab> myTabs = [
       Tab(text: 'Marathon'),
       Tab(text: 'Half marathon'),
@@ -12,20 +14,13 @@ class Explore extends StatelessWidget {
     return DefaultTabController(
       length: myTabs.length,
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('Workout plans'),
-          backgroundColor: Colors.white,
-          centerTitle: true,
-          elevation: 100,
-          bottom: TabBar(
-            tabs: myTabs,
-            indicatorColor: Colors.blueAccent,
-            labelColor: Colors.blueAccent,
-            unselectedLabelColor: Theme.of(context).accentColor,
-          ),
-        ),
-        body: SafeArea(
-          child: TabBarView(
+        body: NestedScrollView(
+          floatHeaderSlivers: true,
+          headerSliverBuilder:
+              (BuildContext context, bool innerBoxIsScrolled) => <Widget>[
+            CustomSliverAppBar(myTabs: myTabs, title: title),
+          ],
+          body: TabBarView(
             children: [
               MarathonPage(),
               HalfmarathonPage(),

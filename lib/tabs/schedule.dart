@@ -12,6 +12,7 @@ class SchedulePage extends StatefulWidget {
 }
 
 class _SchedulePageState extends State<SchedulePage> {
+  dynamic obj;
   @override
   Widget build(BuildContext context) {
     final dynamic parsedJson = jsonDecode(JsonMarathon.marathon330);
@@ -27,7 +28,11 @@ class _SchedulePageState extends State<SchedulePage> {
       itemBuilder: (BuildContext context, int index) {
         return Column(
           children: [
-            ComplexObjectView(listOfObjects[index]),
+            // obj = listOfObjects[index],
+            if (!listOfObjects[index].complete &&
+                listOfObjects[index].workout == "marathon330")
+              ComplexObjectView(listOfObjects[index]),
+            // obj.complete == false ?? ComplexObjectView(listOfObjects[index]),
           ],
         );
       },

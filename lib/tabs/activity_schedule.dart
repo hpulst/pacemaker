@@ -4,17 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:Pacemaker/data/json_strings_marathon.dart';
 import 'package:Pacemaker/models/converted_object.dart';
 
-class SchedulePage extends StatefulWidget {
-  SchedulePage({Key key}) : super(key: key);
+class ScheduleTab extends StatefulWidget {
+  final String workout;
+
+  ScheduleTab({Key key, this.workout}) : super(key: key);
 
   @override
-  _SchedulePageState createState() => _SchedulePageState();
+  _ScheduleTabState createState() => _ScheduleTabState();
 }
 
-class _SchedulePageState extends State<SchedulePage> {
-  dynamic obj;
+class _ScheduleTabState extends State<ScheduleTab> {
   @override
   Widget build(BuildContext context) {
+    String jsonStrings = 'JsonMarathon.' + widget.workout;
+
     final dynamic parsedJson = jsonDecode(JsonMarathon.marathon330);
 
     final dynamic deserializedObjects =

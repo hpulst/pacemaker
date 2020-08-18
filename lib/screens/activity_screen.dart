@@ -1,9 +1,9 @@
-import 'package:Pacemaker/tabs/history.dart';
-import 'package:Pacemaker/tabs/schedule.dart';
+import 'package:Pacemaker/tabs/activity_history.dart';
+import 'package:Pacemaker/tabs/activity_schedule.dart';
 import 'package:Pacemaker/util/appbar_nested.dart';
 import 'package:flutter/material.dart';
 
-class Activity extends StatelessWidget {
+class ActivityScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String title = 'Marathon in 3:30';
@@ -22,8 +22,8 @@ class Activity extends StatelessWidget {
           ],
           body: TabBarView(
             children: [
-              SchedulePage(),
-              HistoryPage(),
+              ScheduleTab(workout: 'marathon330'),
+              HistoryTab(),
             ],
           ),
         ),

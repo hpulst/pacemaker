@@ -1,5 +1,5 @@
 abstract class JsonMarathon {
-  static final String listOfMarathons = '''
+  static final String listeMarathon = '''
   [
    {
     "name": "Marathon in 2:40 Std",

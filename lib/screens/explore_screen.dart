@@ -5,13 +5,13 @@ import 'package:Pacemaker/tabs/explore_tabs.dart';
 import 'package:Pacemaker/util/appbar_nested.dart';
 import 'package:flutter/material.dart';
 
-class Explore extends StatelessWidget {
+class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    String title = 'Workout plans';
+    String title = 'Trainingspläne';
     final List<Tab> myTabs = [
       Tab(text: 'Marathon'),
-      Tab(text: 'Half marathon'),
+      Tab(text: 'Halbmarathon'),
       Tab(text: '10 km'),
     ];
     return DefaultTabController(
@@ -25,9 +25,9 @@ class Explore extends StatelessWidget {
           ],
           body: TabBarView(
             children: [
-              ExplorePage(JsonMarathon.listOfMarathons),
-              ExplorePage(JsonHalfMarathon.listOfHalfmarathons),
-              ExplorePage(JsonTenKilometres.listOfTenKilometres),
+              ExplorePage(JsonMarathon.listeMarathon),
+              ExplorePage(JsonHalbmarathon.listeHalbmarathon),
+              ExplorePage(Json10Kilometer.listeZehnKilometer),
             ],
           ),
         ),

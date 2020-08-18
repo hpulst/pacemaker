@@ -1,62 +1,62 @@
-abstract class JsonTenKilometres {
-  static final String listOfTenKilometres = '''
+abstract class Json10Kilometer {
+  static final String listeZehnKilometer = '''
   [
    {
     "name": "10 km in 34 min",
-    "workout": "tenK34",
+    "workout": "10Kilometer34",
     "pre10km": "10 km in 36 min",
     "frequency": "130 km pro Woche in 6 Trainingseinheiten"
     },
     {
     "name": "10 km in 36 min",
-    "workout": "tenK36",
+    "workout": "10Kilometer36",
     "pre10km": "10 km in 38:00 min",
     "frequency": "80 bis 90 km pro Woche in 6 Trainingseinheiten"
     },
     {
     "name": "10 km in 38 min",
-    "workout": "tenK38",
+    "workout": "10Kilometer38",
     "pre10km": "10 km in 40:00 min",
     "frequency": "80 bis 90 km pro Woche in 6 Trainingseinheiten"
     },
     {
     "name": "10 km in 40 min",
-    "workout": "tenK40",
+    "workout": "10Kilometer40",
     "pre10km": "10 km in 42:00 min",
     "frequency": "70 bis 80 km pro Woche in 5 Trainingseinheiten"
     },
     {
     "name": "10 km in 42 min",
-    "workout": "tenK42",
+    "workout": "10Kilometer42",
     "pre10km": "10 km in 44:00 min",
     "frequency": "60 bis 70 km pro Woche in 5 Trainingseinheiten"
     },
     {
     "name": "10 km in 44 min",
-    "workout": "tenK44",
+    "workout": "10Kilometer44",
     "pre10km": "10 km in 46 min",
     "frequency": "50 bis 60 km pro Woche in 4 Trainingseinheiten"
     },
     {
     "name": "10 km in 46 min",
-    "workout": "tenK46",
+    "workout": "10Kilometer46",
     "pre10km": "10 km in 50 min",
     "frequency": "40 bis 50 km pro Woche in 4 Trainingseinheiten"
     },
     {
     "name": "10 km in 50 min",
-    "workout": "tenK50",
+    "workout": "10Kilometer50",
     "pre10km": "10 km in 55 min",
     "frequency": "35 bis 45 km pro Woche in 4 Trainingseinheiten"
     }
   ] 
   ''';
 
-  static final String tenK42 = '''
+  static final String zehnKilometer42 = '''
 [
   {
     "order": 1,
-    "workout": "tenK42",
+    "workout": "10Kilometer42",
     "week": "Woche 1",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -68,7 +68,7 @@ abstract class JsonTenKilometres {
   },
   {
     "order": 2,
-    "workout": "tenK42",
+    "workout": "10Kilometer42",
     "week": "Woche 1",
     "weekday": "Dienstag",
     "km": "18 km",
@@ -80,7 +80,7 @@ abstract class JsonTenKilometres {
   },
   {
     "order": 3,
-    "workout": "tenK42",
+    "workout": "10Kilometer42",
     "week": "Woche 1",
     "weekday": "Mittwoch",
     "km": "10 km",

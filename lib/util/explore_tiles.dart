@@ -1,3 +1,4 @@
+import 'package:Pacemaker/screens/details.dart';
 import 'package:flutter/material.dart';
 
 class SimpleObjectView extends StatelessWidget {
@@ -23,7 +24,8 @@ class SimpleObjectView extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => _DetailsPage(
+                    builder: (context) => DetailsScreen(
+                      name: simpleObjects[index].name,
                       workout: simpleObjects[index].workout,
                       premarathon: simpleObjects[index].premarathon,
                       pre10km: simpleObjects[index].pre10km,
@@ -33,38 +35,15 @@ class SimpleObjectView extends StatelessWidget {
                 );
               },
             ),
-            // decoration: new BoxDecoration(
-            //   border: new Border(
-            //     bottom: new BorderSide(
-            //         style: BorderStyle.solid, color: Colors.black26),
-            //   ),
-            //   color: new Color(0xFFFAFAFA),
-            // ),
+            decoration: new BoxDecoration(
+              border: new Border(
+                bottom: new BorderSide(
+                    style: BorderStyle.solid, color: Colors.black26),
+              ),
+              color: new Color(0xFFFAFAFA),
+            ),
           );
         },
-      ),
-    );
-  }
-}
-
-class _DetailsPage extends StatelessWidget {
-  _DetailsPage(
-      {Key key, this.workout, this.premarathon, this.pre10km, this.frequency})
-      : super(key: key);
-
-  final String workout;
-  final String premarathon;
-  final String pre10km;
-  final String frequency;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(workout),
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        flexibleSpace: Text(pre10km != null ? 'Voraussetzung: ' + pre10km : ''),
       ),
     );
   }

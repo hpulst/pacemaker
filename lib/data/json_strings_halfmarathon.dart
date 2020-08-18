@@ -1,56 +1,56 @@
-abstract class JsonHalfMarathon {
-  static final String listOfHalfmarathons = '''
+abstract class JsonHalbmarathon {
+  static final String listeHalbmarathon = '''
   [
    {
-    "name": "Half marathon in 1:15 Std",
-    "workout": "halfmarathon115",
+    "name": "Halbmarathon in 1:15 Std",
+    "workout": "halbmarathon115",
     "pre10km": "10 km in 34 min",
     "frequency": "130 km pro Woche in 6 Trainingseinheiten"
     },
     {
-    "name": "Half marathon in 1:20 Std",
-    "workout": "halfmarathon120",
+    "name": "Halbmarathon in 1:20 Std",
+    "workout": "halbmarathon120",
     "pre10km": "10 km in 36 min",
     "frequency": "100 km pro Woche in 6 Trainingseinheiten"
     },
     {
-    "name": "Half marathon in 1:25 Std",
-    "workout": "halfmarathon125",
+    "name": "Halbmarathon in 1:25 Std",
+    "workout": "halbmarathon125",
     "pre10km": "10 km in 39 min",
     "frequency": "95 km pro Woche in 6 Trainingseinheiten"
     },
     {
-    "name": "Half marathon in 1:30 Std",
-    "workout": "halfmarathon130",
+    "name": "Halbmarathon in 1:30 Std",
+    "workout": "halbmarathon130",
     "pre10km": "10 km in 41 min",
     "frequency": "75 bis 90 km pro Woche in 5 Trainingseinheiten"
     },
     {
-    "name": "Half marathon in 1:35 Std",
-    "workout": "halfmarathon135",
+    "name": "Halbmarathon in 1:35 Std",
+    "workout": "halbmarathon135",
     "pre10km": "10 km in 45 min",
     "frequency": "65 bis 80 km pro Woche in 5 Trainingseinheiten"
     },
     {
-    "name": "Half marathon in 1:40 Std",
-    "workout": "halfmarathon140",
+    "name": "Halbmarathon in 1:40 Std",
+    "workout": "halbmarathon140",
     "pre10km": "10 km in 45:30 min",
     "frequency": "50 bis 70 km pro Woche in 5 Trainingseinheiten"
     },
     {
-    "name": "Half marathon in 1:45 Std",
-    "workout": "halfmarathon145",
+    "name": "Halbmarathon in 1:45 Std",
+    "workout": "halbmarathon145",
     "pre10km": "10 km in 48 min",
     "frequency": "50 bis 60 km pro Woche in 4 Trainingseinheiten"
     }
   ] 
   ''';
 
-  static final String halfmarathon130 = '''
+  static final String halbmarathon130 = '''
 [
   {
     "order": 1,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 1",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -62,7 +62,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 2,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 1",
     "weekday": "Dienstag",
     "km": "18 km",
@@ -74,7 +74,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 3,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 1",
     "weekday": "Mittwoch",
     "km": "10 km",
@@ -86,7 +86,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 4,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 1",
     "weekday": "Donnerstag",
     "km": "15 km",
@@ -98,7 +98,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 5,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 1",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -110,7 +110,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 6,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 1",
     "weekday": "Samstag",
     "km": "6 x 1 km, Trabpause 3 min",
@@ -122,7 +122,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 7,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 1",
     "weekday": "Sonntag",
     "km": "20 km",
@@ -134,7 +134,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 8,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 2",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -146,7 +146,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 9,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 2",
     "weekday": "Dienstag",
     "km": "1:10 Std Fahrtspiel",
@@ -158,7 +158,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 10,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 2",
     "weekday": "Mittwoch",
     "km": "15 km",
@@ -170,7 +170,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 11,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 2",
     "weekday": "Donnerstag",
     "km": "18 km",
@@ -182,7 +182,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 12,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 2",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -194,7 +194,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 13,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 2",
     "weekday": "Samstag",
     "km": "10km",
@@ -206,7 +206,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 14,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 2",
     "weekday": "Sonntag",
     "km": "10 km Testlauf in 42:30 min",
@@ -218,7 +218,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 15,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 3",
     "weekday": "Montag",
     "km": "15 km",
@@ -230,7 +230,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 16,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 3",
     "weekday": "Dienstag",
     "km": "Ruhetag",
@@ -242,7 +242,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 17,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 3",
     "weekday": "Mittwoch",
     "km": "18 km",
@@ -254,7 +254,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 18,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 3",
     "weekday": "Donnerstag",
     "km": "15 x 1 km, Trabpause 1 min",
@@ -266,7 +266,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 19,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 3",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -278,7 +278,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 20,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 3",
     "weekday": "Samstag",
     "km": "20 km",
@@ -290,7 +290,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 21,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 3",
     "weekday": "Sonntag",
     "km": "15 km",
@@ -302,7 +302,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 22,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 4",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -314,7 +314,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 23,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 4",
     "weekday": "Dienstag",
     "km": "10km",
@@ -326,7 +326,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 24,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 4",
     "weekday": "Mittwoch",
     "km": "15 km",
@@ -338,7 +338,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 25,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 4",
     "weekday": "Donnerstag",
     "km": "20 km",
@@ -350,7 +350,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 26,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 4",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -362,7 +362,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 27,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 4",
     "weekday": "Samstag",
     "km": "6 x 1 km, Trabpause 3 min",
@@ -374,7 +374,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 28,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 4",
     "weekday": "Sonntag",
     "km": "20 km",
@@ -386,7 +386,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 29,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 5",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -398,7 +398,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 30,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 5",
     "weekday": "Dienstag",
     "km": "10km",
@@ -410,7 +410,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 31,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 5",
     "weekday": "Mittwoch",
     "km": "15 km",
@@ -422,7 +422,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 32,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 5",
     "weekday": "Donnerstag",
     "km": "20 km",
@@ -434,7 +434,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 33,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 5",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -446,7 +446,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 34,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 5",
     "weekday": "Samstag",
     "km": "6 x 1 km, Trabpause 3 min",
@@ -458,7 +458,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 35,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 5",
     "weekday": "Sonntag",
     "km": "20 km",
@@ -470,7 +470,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 36,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 6",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -482,7 +482,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 37,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 6",
     "weekday": "Dienstag",
     "km": "1:10 Std Fahrtspiel",
@@ -494,7 +494,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 38,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 6",
     "weekday": "Mittwoch",
     "km": "15 km",
@@ -506,7 +506,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 39,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 6",
     "weekday": "Donnerstag",
     "km": "15 km",
@@ -518,7 +518,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 40,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 6",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -530,7 +530,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 41,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 6",
     "weekday": "Samstag",
     "km": "10km",
@@ -542,7 +542,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 42,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 6",
     "weekday": "Sonntag",
     "km": "10 km Testlauf in 42:00 min",
@@ -554,7 +554,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 43,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 7",
     "weekday": "Montag",
     "km": "15 km",
@@ -566,7 +566,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 44,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 7",
     "weekday": "Dienstag",
     "km": "Ruhetag",
@@ -578,7 +578,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 45,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 7",
     "weekday": "Mittwoch",
     "km": "20 km",
@@ -590,7 +590,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 46,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 7",
     "weekday": "Donnerstag",
     "km": "10km",
@@ -602,7 +602,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 47,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 7",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -614,7 +614,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 48,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 7",
     "weekday": "Samstag",
     "km": "3 x 3km in 13:15 min, Trabpause 5 min",
@@ -626,7 +626,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 49,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 7",
     "weekday": "Sonntag",
     "km": "15 km",
@@ -638,7 +638,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 50,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 8",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -650,7 +650,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 51,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 8",
     "weekday": "Dienstag",
     "km": "12km",
@@ -662,7 +662,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 52,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 8",
     "weekday": "Mittwoch",
     "km": "15 km",
@@ -674,7 +674,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 53,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 8",
     "weekday": "Donnerstag",
     "km": "20 km",
@@ -686,7 +686,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 54,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 8",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -698,7 +698,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 55,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 8",
     "weekday": "Samstag",
     "km": "3 km in 16:00 min 3km in 14:30 min 3km in 13:00 min, o. Pause",
@@ -710,7 +710,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 56,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 8",
     "weekday": "Sonntag",
     "km": "20 km",
@@ -722,7 +722,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 57,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 9",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -734,7 +734,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 58,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 9",
     "weekday": "Dienstag",
     "km": "12km",
@@ -746,7 +746,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 59,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 9",
     "weekday": "Mittwoch",
     "km": "15 km",
@@ -758,7 +758,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 60,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 9",
     "weekday": "Donnerstag",
     "km": "20 km",
@@ -770,7 +770,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 61,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 9",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -782,7 +782,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 62,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 9",
     "weekday": "Samstag",
     "km": "3 km in 16:00 min 3km in 14:30 min 3km in 13:00 min, o. Pause",
@@ -794,7 +794,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 63,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 9",
     "weekday": "Sonntag",
     "km": "20 km",
@@ -806,7 +806,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 64,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 10",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -818,7 +818,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 65,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 10",
     "weekday": "Dienstag",
     "km": "1:15 Fahrtspiel",
@@ -830,7 +830,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 66,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 10",
     "weekday": "Mittwoch",
     "km": "15 km",
@@ -842,7 +842,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 67,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 10",
     "weekday": "Donnerstag",
     "km": "15 km",
@@ -854,7 +854,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 68,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 10",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -866,7 +866,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 69,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 10",
     "weekday": "Samstag",
     "km": "10 km",
@@ -878,7 +878,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 70,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 10",
     "weekday": "Sonntag",
     "km": "10 km Testlauf in 41:30 min",
@@ -890,7 +890,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 71,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 11",
     "weekday": "Montag",
     "km": "15 km",
@@ -902,7 +902,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 72,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 11",
     "weekday": "Dienstag",
     "km": "Ruhetag",
@@ -914,7 +914,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 73,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 11",
     "weekday": "Mittwoch",
     "km": "15 km",
@@ -926,7 +926,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 74,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 11",
     "weekday": "Donnerstag",
     "km": "16 km",
@@ -938,7 +938,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 75,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 11",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -950,7 +950,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 76,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 11",
     "weekday": "Samstag",
     "km": "15 x 1 km, Trabpause 1 min",
@@ -962,7 +962,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 77,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 11",
     "weekday": "Sonntag",
     "km": "23 km",
@@ -974,7 +974,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 78,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 12",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -986,7 +986,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 79,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 12",
     "weekday": "Dienstag",
     "km": "12 km",
@@ -998,7 +998,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 80,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 12",
     "weekday": "Mittwoch",
     "km": "15 km",
@@ -1010,7 +1010,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 81,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 12",
     "weekday": "Donnerstag",
     "km": "20 km",
@@ -1022,7 +1022,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 82,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 12",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -1034,7 +1034,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 83,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 12",
     "weekday": "Samstag",
     "km": "4 x 2 km in 8:15 min, Trabpause 1 min",
@@ -1046,7 +1046,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 84,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 12",
     "weekday": "Sonntag",
     "km": "23 km",
@@ -1058,7 +1058,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 85,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 13",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -1070,7 +1070,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 86,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 13",
     "weekday": "Dienstag",
     "km": "12 km",
@@ -1082,7 +1082,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 87,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 13",
     "weekday": "Mittwoch",
     "km": "15 km",
@@ -1094,7 +1094,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 88,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 13",
     "weekday": "Donnerstag",
     "km": "20 km",
@@ -1106,7 +1106,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 89,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 13",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -1118,7 +1118,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 90,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 13",
     "weekday": "Samstag",
     "km": "4 x 2 km in 8:15 min, Trabpause 1 min",
@@ -1130,7 +1130,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 91,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 13",
     "weekday": "Sonntag",
     "km": "23 km",
@@ -1142,7 +1142,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 92,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 14",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -1154,7 +1154,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 93,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 14",
     "weekday": "Dienstag",
     "km": "1:30 Fahrtspiel",
@@ -1166,7 +1166,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 94,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 14",
     "weekday": "Mittwoch",
     "km": "15 km",
@@ -1178,7 +1178,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 95,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 14",
     "weekday": "Donnerstag",
     "km": "20 km",
@@ -1190,7 +1190,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 96,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 14",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -1202,7 +1202,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 97,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 14",
     "weekday": "Samstag",
     "km": "10 km",
@@ -1214,7 +1214,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 98,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 14",
     "weekday": "Sonntag",
     "km": "10 km Testlauf in 41:15 min oder 15 km in 1:04 Std",
@@ -1226,7 +1226,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 99,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 15",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -1238,7 +1238,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 100,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 15",
     "weekday": "Dienstag",
     "km": "20 km",
@@ -1250,7 +1250,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 101,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 15",
     "weekday": "Mittwoch",
     "km": "15 km",
@@ -1262,7 +1262,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 102,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 15",
     "weekday": "Donnerstag",
     "km": "3 x 3km in 13:15 min, Trabpause 5 min",
@@ -1274,7 +1274,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 103,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 15",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -1286,7 +1286,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 104,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 15",
     "weekday": "Samstag",
     "km": "17 km",
@@ -1298,7 +1298,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 105,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 15",
     "weekday": "Sonntag",
     "km": "25 km",
@@ -1310,7 +1310,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 106,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 16",
     "weekday": "Montag",
     "km": "Ruhetag",
@@ -1322,7 +1322,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 107,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 16",
     "weekday": "Dienstag",
     "km": "12 km",
@@ -1334,7 +1334,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 108,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 16",
     "weekday": "Mittwoch",
     "km": "18 km",
@@ -1346,7 +1346,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 109,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 16",
     "weekday": "Donnerstag",
     "km": "15 x 1 km, Trabpause 1 min",
@@ -1358,7 +1358,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 110,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 16",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -1370,7 +1370,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 111,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 16",
     "weekday": "Samstag",
     "km": "25 km",
@@ -1382,7 +1382,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 112,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 16",
     "weekday": "Sonntag",
     "km": "20 km",
@@ -1394,7 +1394,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 113,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 17",
     "weekday": "Montag",
     "km": "2 x 5 km in 21:20 min, Trabpause 10 min, Wettkampftempo",
@@ -1406,7 +1406,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 114,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 17",
     "weekday": "Dienstag",
     "km": "Ruhetag",
@@ -1418,7 +1418,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 115,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 17",
     "weekday": "Mittwoch",
     "km": "20 km",
@@ -1430,7 +1430,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 116,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 17",
     "weekday": "Donnerstag",
     "km": "22 km",
@@ -1442,7 +1442,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 117,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 17",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -1454,7 +1454,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 118,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 17",
     "weekday": "Samstag",
     "km": "15 km",
@@ -1466,7 +1466,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 119,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 17",
     "weekday": "Sonntag",
     "km": "10 km Testlauf in 41:00 min",
@@ -1478,7 +1478,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 120,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 18",
     "weekday": "Montag",
     "km": "10 km",
@@ -1490,7 +1490,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 121,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 18",
     "weekday": "Dienstag",
     "km": "Ruhetag",
@@ -1502,7 +1502,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 122,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 18",
     "weekday": "Mittwoch",
     "km": "20 km",
@@ -1514,7 +1514,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 123,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 18",
     "weekday": "Donnerstag",
     "km": "12 x 400m in 1:38 min, Trabpause 1:30 min",
@@ -1526,7 +1526,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 124,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 18",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -1538,7 +1538,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 125,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 18",
     "weekday": "Samstag",
     "km": "25 km",
@@ -1550,7 +1550,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 126,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 18",
     "weekday": "Sonntag",
     "km": "15 km",
@@ -1562,7 +1562,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 127,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 19",
     "weekday": "Montag",
     "km": "10 km",
@@ -1574,7 +1574,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 128,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 19",
     "weekday": "Dienstag",
     "km": "Ruhetag",
@@ -1586,7 +1586,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 129,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 19",
     "weekday": "Mittwoch",
     "km": "15 km, nach 30 min 2km in 8:30 min",
@@ -1598,7 +1598,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 130,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 19",
     "weekday": "Donnerstag",
     "km": "12 km",
@@ -1610,7 +1610,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 131,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 19",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -1622,7 +1622,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 132,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 19",
     "weekday": "Samstag",
     "km": "30 min spielerisches Laufen",
@@ -1634,7 +1634,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 133,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 19",
     "weekday": "Sonntag",
     "km": "21,095 km",
@@ -1646,7 +1646,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 134,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 20",
     "weekday": "Montag",
     "km": "10 km",
@@ -1658,7 +1658,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 135,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 20",
     "weekday": "Dienstag",
     "km": "Ruhetag",
@@ -1670,7 +1670,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 136,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 20",
     "weekday": "Mittwoch",
     "km": "15 km, nach 30 min 2km in 8:30 min",
@@ -1682,7 +1682,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 137,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 20",
     "weekday": "Donnerstag",
     "km": "12 km",
@@ -1694,7 +1694,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 138,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 20",
     "weekday": "Freitag",
     "km": "Ruhetag",
@@ -1706,7 +1706,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 139,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 20",
     "weekday": "Samstag",
     "km": "30 min spielerisches Laufen",
@@ -1718,7 +1718,7 @@ abstract class JsonHalfMarathon {
   },
   {
     "order": 140,
-    "workout": "halfmarathon130",
+    "workout": "halbmarathon130",
     "week": "Woche 20",
     "weekday": "Sonntag",
     "km": "21,095 km",

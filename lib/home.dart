@@ -52,12 +52,12 @@ class TabNavigationItem {
 
   static List<TabNavigationItem> get items => [
         TabNavigationItem(
-          page: Activity(),
+          page: ActivityScreen(),
           title: Text('Activity'),
           icon: Icon(Icons.dehaze),
         ),
         TabNavigationItem(
-          page: Explore(),
+          page: ExploreScreen(),
           title: Text('Explore'),
           icon: Icon(Icons.search),
         ),

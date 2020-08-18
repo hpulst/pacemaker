@@ -2,42 +2,48 @@ abstract class JsonHalfMarathon {
   static final String listOfHalfmarathons = '''
   [
    {
-    "workout": "Half marathon in 1:15 Std"
+    "name": "Half marathon in 1:15 Std",
+    "workout": "halfmarathon115",
+    "pre10km": "10 km in 34 min",
+    "frequency": "130 km pro Woche in 6 Trainingseinheiten"
     },
     {
-    "workout": "Half marathon in 1:20 Std"
+    "name": "Half marathon in 1:20 Std",
+    "workout": "halfmarathon120",
+    "pre10km": "10 km in 36 min",
+    "frequency": "100 km pro Woche in 6 Trainingseinheiten"
     },
     {
-    "workout": "Half marathon in 1:25 Std"
+    "name": "Half marathon in 1:25 Std",
+    "workout": "halfmarathon125",
+    "pre10km": "10 km in 39 min",
+    "frequency": "95 km pro Woche in 6 Trainingseinheiten"
     },
     {
-    "workout": "Half marathon in 1:30 Std"
+    "name": "Half marathon in 1:30 Std",
+    "workout": "halfmarathon130",
+    "pre10km": "10 km in 41 min",
+    "frequency": "75 bis 90 km pro Woche in 5 Trainingseinheiten"
     },
     {
-    "workout": "Half marathon in 1:35 Std"
+    "name": "Half marathon in 1:35 Std",
+    "workout": "halfmarathon135",
+    "pre10km": "10 km in 45 min",
+    "frequency": "65 bis 80 km pro Woche in 5 Trainingseinheiten"
     },
     {
-    "workout": "Half marathon in 1:40 Std"
+    "name": "Half marathon in 1:40 Std",
+    "workout": "halfmarathon140",
+    "pre10km": "10 km in 45:30 min",
+    "frequency": "50 bis 70 km pro Woche in 5 Trainingseinheiten"
     },
     {
-    "workout": "Half marathon in 1:45 Std"
+    "name": "Half marathon in 1:45 Std",
+    "workout": "halfmarathon145",
+    "pre10km": "10 km in 48 min",
+    "frequency": "50 bis 60 km pro Woche in 4 Trainingseinheiten"
     }
   ] 
-  ''';
-
-  static final String listOfMarathons = '''
-  [
-    {
-      "aString": "Blah, blah, blah.",
-      "anInt": 1,
-      "aDouble": 1.0
-    },
-    {
-      "aString": "Blah, blah, blah.",
-      "anInt": 1,
-      "aDouble": 1.0
-    }
-  ]
   ''';
 
   static final String halfmarathon130 = '''

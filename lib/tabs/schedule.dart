@@ -28,11 +28,9 @@ class _SchedulePageState extends State<SchedulePage> {
       itemBuilder: (BuildContext context, int index) {
         return Column(
           children: [
-            // obj = listOfObjects[index],
             if (!listOfObjects[index].complete &&
                 listOfObjects[index].workout == "marathon330")
               ComplexObjectView(listOfObjects[index]),
-            // obj.complete == false ?? ComplexObjectView(listOfObjects[index]),
           ],
         );
       },

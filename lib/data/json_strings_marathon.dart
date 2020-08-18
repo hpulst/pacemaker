@@ -2,25 +2,52 @@ abstract class JsonMarathon {
   static final String listOfMarathons = '''
   [
    {
-    "workout": "Marathon in 2:40 Std"
+    "name": "Marathon in 2:40 Std",
+    "workout": "marathon240",
+    "premarathon": "Marathon in 2:50 Std",
+    "pre10km": "10 km in 34 min",
+    "frequency": "120 bis 140 km pro Woche in 6-7 Trainingseinheiten"
     },
     {
-    "workout": "Marathon in 2:50 Std"
+    "name": "Marathon in 2:50 Std",
+    "workout": "marathon250",
+    "premarathon": "Marathon in 3:00 Std",
+    "pre10km": "10 km in 36 min",
+    "frequency": "100 bis 130 km pro Woche in 6-7 Trainingseinheiten"
     },
     {
-    "workout": "Marathon in 3:00 Std"
+    "name": "Marathon in 3:00 Std",
+    "workout": "marathon300",
+    "premarathon": "Marathon in 3:15 Std",
+    "pre10km": "10 km in 38 min",
+    "frequency": "80 bis 110 km pro Woche in 6 Trainingseinheiten"
     },
     {
-    "workout": "Marathon in 3:15 Std"
+    "name": "Marathon in 3:15 Std",
+    "workout": "marathon315",
+    "premarathon": "Marathon in 3:30 Std",
+    "pre10km": "10 km in 41 min",
+    "frequency": "75 bis 95 km pro Woche in 5 Trainingseinheiten"
     },
     {
-    "workout": "Marathon in 3:30 Std"
+    "name": "Marathon in 3:30 Std",
+    "workout": "marathon330",
+    "premarathon": "Marathon in 3:45 Std",
+    "pre10km": "10 km in 44 min",
+    "frequency": "70 bis 90 km pro Woche in 5 Trainingseinheiten"
     },
     {
-    "workout": "Marathon in 3:45 Std"
+    "name": "Marathon in 3:45 Std",
+    "workout": "marathon345",
+    "premarathon": "Marathon in 4:00 Std",
+    "pre10km": "10 km in 47 min",
+    "frequency": "60 bis 80 km pro Woche in 5 Trainingseinheiten"
     },
     {
-    "workout": "Marathon in 4:00 Std"
+    "name": "Marathon in 4:00 Std",
+    "workout": "marathon400",
+    "pre10km": "10 km in 50 min",
+    "frequency": "50 bis 70 km pro Woche in 4 Trainingseinheiten"
     }
   ] 
   ''';

@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:Pacemaker/data/json_strings_marathon.dart';
 import 'package:Pacemaker/models/converted_object.dart';
 
-class ScheduleTab extends StatefulWidget {
+class ActivityScheduleTab extends StatefulWidget {
   final String workout;
 
-  ScheduleTab({Key key, this.workout}) : super(key: key);
+  ActivityScheduleTab({Key key, this.workout}) : super(key: key);
 
   @override
-  _ScheduleTabState createState() => _ScheduleTabState();
+  _ActivityScheduleTabState createState() => _ActivityScheduleTabState();
 }
 
-class _ScheduleTabState extends State<ScheduleTab> {
+class _ActivityScheduleTabState extends State<ActivityScheduleTab> {
   @override
   Widget build(BuildContext context) {
     String jsonStrings = 'JsonMarathon.' + widget.workout;
@@ -26,7 +26,7 @@ class _ScheduleTabState extends State<ScheduleTab> {
     final dynamic listOfObjects = deserializedObjects.toList();
 
     return ListView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.zero,
       itemCount: listOfObjects == null ? 0 : listOfObjects.length,
       itemBuilder: (BuildContext context, int index) {
         return Column(
@@ -40,38 +40,3 @@ class _ScheduleTabState extends State<ScheduleTab> {
     );
   }
 }
-
-// Widget _buildListItem(BuildContext context, DocumentSnapshot data) {
-//   final item = Workout.fromSnapshot(data);
-//   return Card(
-//     child: Column(
-//       mainAxisSize: MainAxisSize.min,
-//       children: [
-//         ListTile(
-//           leading: Text(
-//             item.weekday + '\n' + item.week,
-//             style: TextStyle(fontSize: 20.0),
-//           ),
-//           title: Text(item.km + '    ' + item.pace),
-//           subtitle: Text(item.time + '    ' + item.heartrate),
-//           trailing: Icon(Icons.drag_handle),
-//         ),
-//         ButtonBar(
-//           alignment: MainAxisAlignment.start,
-//           children: [
-//             Checkbox(
-//               onChanged: (bool value) {
-//                 DBHelper.blockOrUnblock(item);
-//                 setState(() {
-//                   item.complete = value;
-//                 });
-//               },
-//               value: item.complete,
-//             ),
-//           ],
-//         ),
-//       ],
-//     ),
-//   );
-// }
-// }

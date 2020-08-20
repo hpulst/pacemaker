@@ -1,7 +1,7 @@
-import 'package:Pacemaker/screens/explore.dart';
+import 'package:Pacemaker/screens/explore_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'screens/activity.dart';
+import 'screens/activity_screen.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -52,7 +52,7 @@ class TabNavigationItem {
 
   static List<TabNavigationItem> get items => [
         TabNavigationItem(
-          page: ActivityScreen(),
+          page: ActivityScreen(0),
           title: Text('Activity'),
           icon: Icon(Icons.dehaze),
         ),

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:Pacemaker/models/converted_object.dart';
 import 'package:Pacemaker/util/explore_tiles.dart';
 
-class ExplorePage extends StatelessWidget {
-  ExplorePage(dynamic obj) : jsonStrings = obj;
+class ExploreTab extends StatelessWidget {
+  ExploreTab(dynamic obj) : jsonStrings = obj;
 
   final dynamic jsonStrings;
 

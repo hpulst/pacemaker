@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
+import 'screens/activity_screen.dart';
 
-void main() async {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -12,9 +11,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Pacemaker',
       theme: ThemeData(
-        primarySwatch: Colors.grey,
-        // visualDensity: VisualDensity.adaptivePlatformDensity,
+        primaryTextTheme: TextTheme(
+          headline6: TextStyle(color: Colors.grey[800]),
+        ),
+        appBarTheme: AppBarTheme(
+            color: Colors.white,
+            iconTheme: IconThemeData(color: Colors.grey[800])),
+        // scaffoldBackgroundColor: Colors.red,
       ),
+      routes: {
+        '/schedule': (context) => ActivityScreen(0),
+      },
       home: HomePage(),
     );
   }

@@ -13,11 +13,11 @@ class ComplexObjectView extends StatelessWidget {
 
     return Container(
       decoration: new BoxDecoration(
-        border: new Border(
-          bottom:
-              new BorderSide(style: BorderStyle.solid, color: Colors.black26),
-        ),
-        color: new Color(0xFFFAFAFA),
+        // border: new Border(
+        //   top: new BorderSide(style: BorderStyle.solid, color: Colors.black26),
+        // ),
+        color: Colors.white,
+        // color: new Color(0xFFFAFAFA),
       ),
       child: CustomListTile(
         thumbnail: Container(
@@ -66,7 +66,7 @@ class ComplexObjectView extends StatelessWidget {
   }
 }
 
-class CustomListTile extends StatelessWidget {
+class CustomListTile extends StatefulWidget {
   CustomListTile({
     Key key,
     this.thumbnail,
@@ -91,6 +91,13 @@ class CustomListTile extends StatelessWidget {
   final bool complete;
 
   @override
+  _CustomListTileState createState() => _CustomListTileState();
+}
+
+class _CustomListTileState extends State<CustomListTile> {
+  bool _isSelected = false;
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10.0),
@@ -101,29 +108,73 @@ class CustomListTile extends StatelessWidget {
           children: [
             AspectRatio(
               aspectRatio: 1,
-              child: thumbnail,
+              child: widget.thumbnail,
             ),
-            Column(
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(10.0, 0.0, 2.0, 0.0),
-                    child: _ArticleDescription(
-                      week: week,
-                      weekday: weekday,
-                      km: km,
-                      time: time,
-                      pace: pace,
-                      intensity: intensity,
-                      heartrate: heartrate,
-                      complete: complete,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(10.0, 0.0, 2.0, 0.0),
+                      child: _ArticleDescription(
+                        week: widget.week,
+                        weekday: widget.weekday,
+                        km: widget.km,
+                        time: widget.time,
+                        pace: widget.pace,
+                        intensity: widget.intensity,
+                        heartrate: widget.heartrate,
+                        complete: widget.complete,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            )
+                ],
+              ),
+            ),
+            Container(
+              child: _LabeledCheckbox(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0, vertical: 10.0),
+                value: _isSelected,
+                onChanged: (bool newValue) {
+                  setState(() {
+                    _isSelected = newValue;
+                  });
+                },
+              ),
+            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _LabeledCheckbox extends StatelessWidget {
+  const _LabeledCheckbox({
+    this.padding,
+    this.value,
+    this.onChanged,
+  });
+
+  final EdgeInsets padding;
+  final bool value;
+  final Function onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: padding,
+      child: Row(
+        children: <Widget>[
+          Checkbox(
+            value: value,
+            onChanged: (bool newValue) {
+              onChanged(newValue);
+            },
+          ),
+        ],
       ),
     );
   }

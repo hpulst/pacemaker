@@ -1,50 +1,50 @@
-abstract class Json10Kilometer {
+abstract class Json10km {
   static final String listeZehnKilometer = '''
   [
    {
-    "name": "10 km in 34 min",
+    "name": "10km in 34 min",
     "workout": "10Kilometer34",
     "pre10km": "10 km in 36 min",
     "frequency": "130 km pro Woche in 6 Trainingseinheiten"
     },
     {
-    "name": "10 km in 36 min",
+    "name": "10km in 36 min",
     "workout": "10Kilometer36",
     "pre10km": "10 km in 38:00 min",
     "frequency": "80 bis 90 km pro Woche in 6 Trainingseinheiten"
     },
     {
-    "name": "10 km in 38 min",
+    "name": "10km in 38 min",
     "workout": "10Kilometer38",
     "pre10km": "10 km in 40:00 min",
     "frequency": "80 bis 90 km pro Woche in 6 Trainingseinheiten"
     },
     {
-    "name": "10 km in 40 min",
+    "name": "10km in 40 min",
     "workout": "10Kilometer40",
     "pre10km": "10 km in 42:00 min",
     "frequency": "70 bis 80 km pro Woche in 5 Trainingseinheiten"
     },
     {
-    "name": "10 km in 42 min",
+    "name": "10km in 42 min",
     "workout": "10Kilometer42",
     "pre10km": "10 km in 44:00 min",
     "frequency": "60 bis 70 km pro Woche in 5 Trainingseinheiten"
     },
     {
-    "name": "10 km in 44 min",
+    "name": "10km in 44 min",
     "workout": "10Kilometer44",
     "pre10km": "10 km in 46 min",
     "frequency": "50 bis 60 km pro Woche in 4 Trainingseinheiten"
     },
     {
-    "name": "10 km in 46 min",
+    "name": "10km in 46 min",
     "workout": "10Kilometer46",
     "pre10km": "10 km in 50 min",
     "frequency": "40 bis 50 km pro Woche in 4 Trainingseinheiten"
     },
     {
-    "name": "10 km in 50 min",
+    "name": "10km in 50 min",
     "workout": "10Kilometer50",
     "pre10km": "10 km in 55 min",
     "frequency": "35 bis 45 km pro Woche in 4 Trainingseinheiten"

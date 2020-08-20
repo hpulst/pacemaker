@@ -25,9 +25,9 @@ class ExploreScreen extends StatelessWidget {
           ],
           body: TabBarView(
             children: [
-              ExplorePage(JsonMarathon.listeMarathon),
-              ExplorePage(JsonHalbmarathon.listeHalbmarathon),
-              ExplorePage(Json10Kilometer.listeZehnKilometer),
+              ExploreTab(JsonMarathon.listeMarathon),
+              ExploreTab(JsonHalbmarathon.listeHalbmarathon),
+              ExploreTab(Json10km.listeZehnKilometer),
             ],
           ),
         ),

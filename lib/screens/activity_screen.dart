@@ -4,6 +4,9 @@ import 'package:Pacemaker/util/appbar_nested.dart';
 import 'package:flutter/material.dart';
 
 class ActivityScreen extends StatelessWidget {
+  final int selectedTab;
+  ActivityScreen(this.selectedTab);
+
   @override
   Widget build(BuildContext context) {
     String title = 'Marathon in 3:30';
@@ -12,6 +15,7 @@ class ActivityScreen extends StatelessWidget {
       Tab(text: 'History'),
     ];
     return DefaultTabController(
+      initialIndex: selectedTab,
       length: myTabs.length,
       child: Scaffold(
         body: NestedScrollView(
@@ -22,7 +26,7 @@ class ActivityScreen extends StatelessWidget {
           ],
           body: TabBarView(
             children: [
-              ScheduleTab(workout: 'marathon330'),
+              ActivityScheduleTab(workout: 'marathon330'),
               HistoryTab(),
             ],
           ),

@@ -1,4 +1,4 @@
-import 'package:Pacemaker/screens/details.dart';
+import 'package:Pacemaker/screens/details_screen.dart';
 import 'package:flutter/material.dart';
 
 class SimpleObjectView extends StatelessWidget {
@@ -10,6 +10,7 @@ class SimpleObjectView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
+        padding: EdgeInsets.zero,
         itemCount: simpleObjects.length,
         itemBuilder: (context, index) {
           return Container(

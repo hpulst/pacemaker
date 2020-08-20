@@ -52,7 +52,7 @@ class CustomSliverAppBar extends StatelessWidget with PreferredSizeWidget {
         tabs: myTabs,
         indicatorColor: Colors.blueAccent,
         labelColor: Colors.blueAccent,
-        unselectedLabelColor: Theme.of(context).accentColor,
+        unselectedLabelColor: Colors.grey,
       ),
     );
   }

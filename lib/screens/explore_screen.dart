@@ -2,7 +2,6 @@ import 'package:Pacemaker/data/json_strings_10km.dart';
 import 'package:Pacemaker/data/json_strings_halfmarathon.dart';
 import 'package:Pacemaker/data/json_strings_marathon.dart';
 import 'package:Pacemaker/tabs/explore_tabs.dart';
-import 'package:Pacemaker/util/appbar_nested.dart';
 import 'package:flutter/material.dart';
 
 class ExploreScreen extends StatelessWidget {
@@ -17,19 +16,22 @@ class ExploreScreen extends StatelessWidget {
     return DefaultTabController(
       length: myTabs.length,
       child: Scaffold(
-        body: NestedScrollView(
-          floatHeaderSlivers: true,
-          headerSliverBuilder:
-              (BuildContext context, bool innerBoxIsScrolled) => <Widget>[
-            CustomSliverAppBar(myTabs: myTabs, title: title),
-          ],
-          body: TabBarView(
-            children: [
-              ExploreTab(JsonMarathon.listeMarathon),
-              ExploreTab(JsonHalbmarathon.listeHalbmarathon),
-              ExploreTab(Json10km.listeZehnKilometer),
-            ],
+        appBar: AppBar(
+          title: Text(title),
+          centerTitle: true,
+          bottom: TabBar(
+            tabs: myTabs,
+            indicatorColor: Colors.blueAccent,
+            labelColor: Colors.blueAccent,
+            unselectedLabelColor: Colors.grey,
           ),
+        ),
+        body: TabBarView(
+          children: [
+            ExploreTab(JsonMarathon.listeMarathon),
+            ExploreTab(JsonHalbmarathon.listeHalbmarathon),
+            ExploreTab(Json10km.listeZehnKilometer),
+          ],
         ),
       ),
     );

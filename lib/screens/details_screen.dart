@@ -53,6 +53,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
     final dynamic listOfObjects = deserializedObjects.toList();
 
     final banner = MaterialBanner(
+      backgroundColor: new Color(0xFFFAFAFA),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

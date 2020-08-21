@@ -16,8 +16,8 @@ class ComplexObjectView extends StatelessWidget {
         // border: new Border(
         //   top: new BorderSide(style: BorderStyle.solid, color: Colors.black26),
         // ),
-        color: Colors.white,
-        // color: new Color(0xFFFAFAFA),
+        // color: Colors.white,
+        color: new Color(0xFFFAFAFA),
       ),
       child: CustomListTile(
         thumbnail: Container(
@@ -88,14 +88,14 @@ class CustomListTile extends StatefulWidget {
   final String pace;
   final String intensity;
   final String heartrate;
-  final bool complete;
+  bool complete;
 
   @override
   _CustomListTileState createState() => _CustomListTileState();
 }
 
 class _CustomListTileState extends State<CustomListTile> {
-  bool _isSelected = false;
+  // bool _isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -136,11 +136,13 @@ class _CustomListTileState extends State<CustomListTile> {
               child: _LabeledCheckbox(
                 padding: const EdgeInsets.symmetric(
                     horizontal: 10.0, vertical: 10.0),
-                value: _isSelected,
+                value: widget.complete,
                 onChanged: (bool newValue) {
-                  setState(() {
-                    _isSelected = newValue;
-                  });
+                  setState(
+                    () {
+                      widget.complete = newValue;
+                    },
+                  );
                 },
               ),
             ),

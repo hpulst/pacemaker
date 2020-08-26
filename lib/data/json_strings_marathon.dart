@@ -55,6 +55,14 @@ abstract class JsonMarathon {
   static final String marathon315 = '''
 [
   {
+    "order": 0,
+    "workout": "marathon315",
+    "week": "Woche 1",
+    "weekday": "Montag",
+    "km": "Ruhetag",
+    "complete": false
+  },
+  {
     "order": 1,
     "workout": "marathon315",
     "week": "Woche 1",
@@ -113,14 +121,6 @@ abstract class JsonMarathon {
 // "km": "3 x 3 km in 14:15 min, Trabpause 5 min",
   static final String marathon330 = '''
 [
-  {
-    "order": 0,
-    "workout": "marathon330",
-    "week": "Woche 1",
-    "weekday": "Index 0 Banner Problem",
-    "km": "Ruhetag",
-    "complete": false
-  },
   {
     "order": 1,
     "workout": "marathon330",

@@ -30,6 +30,13 @@ class DetailsScreen extends StatefulWidget {
 
 class _DetailsScreenState extends State<DetailsScreen> {
   var _displayBanner = true;
+  Stream<List> workouts;
+
+  @override
+// void initState (){
+//   workouts = fetchWorkouts(workout);
+//   super.initState();
+// }
 
   @override
   Widget build(BuildContext context) {
@@ -93,21 +100,31 @@ class _DetailsScreenState extends State<DetailsScreen> {
         title: Text(widget.name),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        padding: EdgeInsets.zero,
-        itemCount: listOfObjects == null ? 0 : listOfObjects.length,
-        itemBuilder: (context, index) {
-          if (index == 0 && _displayBanner) {
-            return banner;
-          }
-          return Column(
-            children: [
-              if (!listOfObjects[index].complete &&
-                  listOfObjects[index].workout == widget.workout)
-                ComplexObjectView(listOfObjects[index]),
-            ],
-          );
-        },
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Container(
+              child: banner,
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                return Container(
+                  color: new Color(0xFFFAFAFA),
+                  child: Column(
+                    children: [
+                      if (!listOfObjects[index].complete &&
+                          listOfObjects[index].workout == widget.workout)
+                        ComplexObjectView(listOfObjects[index]),
+                    ],
+                  ),
+                );
+              },
+              childCount: listOfObjects == null ? 0 : listOfObjects.length,
+            ),
+          ),
+        ],
       ),
     );
   }

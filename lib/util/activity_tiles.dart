@@ -17,7 +17,7 @@ class ComplexObjectView extends StatelessWidget {
         //   top: new BorderSide(style: BorderStyle.solid, color: Colors.black26),
         // ),
         // color: Colors.white,
-        color: new Color(0xFFFAFAFA),
+        color: Color(0xFFFAFAFA),
       ),
       child: CustomListTile(
         thumbnail: Container(

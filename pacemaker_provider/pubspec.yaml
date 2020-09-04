@@ -13,6 +13,8 @@ dependencies:
   provider: 
   pedantic: 
   shared_preferences:
+  uuid: 
+
 
 dev_dependencies:
   flutter_test:

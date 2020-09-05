@@ -11,29 +11,29 @@ import 'package:Pacemaker/models/workout_repository.dart';
 /// solutions, such as the the WebClient, which can be seen in the
 /// LocalStorageRepository.
 
-class KeyValueStorage implements WorkoutsRepository {
-  final String key;
-  final KeyValueStore store;
-  final JsonCodec codec;
+// class KeyValueStorage implements WorkoutsRepository {
+//   final String key;
+//   final KeyValueStore store;
+//   final JsonCodec codec;
 
-  const KeyValueStorage(this.key, this.store, [this.codec = json]);
+//   const KeyValueStorage(this.key, this.store, [this.codec = json]);
 
-  @override
-  Future<List<WorkoutEntity>> loadTodos() async {
-    return codec
-        .decode(store.getString(key))['todos']
-        .cast<Map<String, Object>>()
-        .map<WorkoutEntity>(WorkoutEntity.fromJson)
-        .toList(growable: false);
-  }
+//   @override
+//   Future<List<Workout>> loadTodos() async {
+//     return codec
+//         .decode(store.getString(key))['todos']
+//         .cast<Map<String, Object>>()
+//         .map<Workout>(Workout.fromJson)
+//         .toList(growable: false);
+//   }
 
-  @override
-  Future<bool> saveTodos(List<WorkoutEntity> todos) {
-    return store.setString(
-      key,
-      codec.encode({
-        'todos': todos.map((todo) => todo.toJson()).toList(),
-      }),
-    );
-  }
-}
+//   @override
+//   Future<bool> saveTodos(List<Workout> todos) {
+//     return store.setString(
+//       key,
+//       codec.encode({
+//         'todos': todos.map((todo) => todo.toJson()).toList(),
+//       }),
+//     );
+//   }
+// }

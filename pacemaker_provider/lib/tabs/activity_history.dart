@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HistoryTab extends StatefulWidget {
-  HistoryTab({Key key}) : super(key: key);
+class ActivityHistoryTab extends StatefulWidget {
+  ActivityHistoryTab({Key key}) : super(key: key);
 
   @override
-  _HistoryTabState createState() => _HistoryTabState();
+  _ActivityHistoryTabState createState() => _ActivityHistoryTabState();
 }
 
-class _HistoryTabState extends State<HistoryTab> {
+class _ActivityHistoryTabState extends State<ActivityHistoryTab> {
   @override
   Widget build(BuildContext context) {
     return Container(); //Center

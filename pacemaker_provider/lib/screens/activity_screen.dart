@@ -27,7 +27,7 @@ class ActivityScreen extends StatelessWidget {
           body: TabBarView(
             children: [
               ActivityScheduleTab(workout: 'marathon330'),
-              HistoryTab(),
+              ActivityHistoryTab(),
             ],
           ),
         ),

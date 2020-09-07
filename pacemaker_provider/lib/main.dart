@@ -1,3 +1,4 @@
+import 'package:Pacemaker/screens/explore_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => WorkoutListModel(),
         ),
-        ChangeNotifierProxyProvider(create: null, update: null)
+        // ChangeNotifierProxyProvider(create: null, update: null)
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -33,10 +34,12 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
           // scaffoldBackgroundColor: Colors.red,
         ),
+        initialRoute: '/',
         routes: {
-          '/schedule': (context) => ActivityScreen(0),
+          '/': (context) => HomePage(),
+          '/schedule': (context) => ActivityScreen(),
+          '/explore': (context) => ExploreScreen(),
         },
-        // home: HomePage(),
       ),
     );
   }

@@ -7,15 +7,17 @@ import 'package:Pacemaker/models/workout_repository.dart';
 import 'converted_object.dart';
 
 class JsonData implements WorkoutsRepository {
-  final dynamic parsedJson = jsonDecode(JsonMarathon.marathon330);
+  JsonData();
 
-  final dynamic deserializedObjects =
-      parsedJson.map((o) => WorkoutObjectComplex.fromJson(o));
-
-  final dynamic listOfObjects = deserializedObjects.toList();
+  final parsedJson = jsonDecode(JsonMarathon.marathon330);
 
   @override
   Future<List<WorkoutEntity>> loadWorkouts() async {}
+
+  final deserializedObjects =
+      parsedJson.map((o) => WorkoutObjectComplex.fromJson(o));
+
+  final listOfObjects = deserializedObjects.toList();
 
   /// Mock that returns true or false for success or failure. In this case,
   /// it will "Always Succeed"

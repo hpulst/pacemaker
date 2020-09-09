@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:Pacemaker/models/workout_entity.dart';
+import 'package:Pacemaker/models/workout_model.dart';
 import 'package:Pacemaker/models/workout_list_model.dart';
 import 'package:Pacemaker/util/activity_tiles.dart';
 import 'package:flutter/material.dart';
@@ -19,14 +19,14 @@ class ActivityScheduleTab extends StatefulWidget {
 class _ActivityScheduleTabState extends State<ActivityScheduleTab> {
   @override
   Widget build(BuildContext context) {
-    var jsonStrings = 'JsonMarathon.' + widget.workout;
+    // var jsonStrings = 'JsonMarathon.' + widget.workout;
 
-    final dynamic parsedJson = jsonDecode(JsonMarathon.marathon330);
+    // final dynamic parsedJson = jsonDecode(JsonMarathon.marathon330);
 
-    final dynamic deserializedObjects =
-        parsedJson.map((o) => WorkoutObjectComplex.fromJson(o));
+    // final dynamic deserializedObjects =
+    //     parsedJson.map((o) => WorkoutObjectComplex.fromJson(o));
 
-    final dynamic listOfObjects = deserializedObjects.toList();
+    // final dynamic listOfObjects = deserializedObjects.toList();
 
     // var isComplete = context.select<WorkoutListModel, List<Workout>>(
     //     (model) => model.filteredWorkouts);

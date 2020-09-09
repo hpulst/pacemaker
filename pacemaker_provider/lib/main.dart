@@ -2,7 +2,7 @@ import 'package:Pacemaker/screens/explore_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
-import 'home.dart';
+import 'screens/home_screen.dart';
 import 'models/workout_list_model.dart';
 import 'models/workout_repository.dart';
 import 'screens/activity_screen.dart';

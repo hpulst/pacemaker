@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:Pacemaker/models/workout_entity.dart';
+import 'package:Pacemaker/models/workout_model.dart';
 import 'package:Pacemaker/models/workout_repository.dart';
 
 /// Loads and saves a List of Todos using a provided KeyValueStore, which works

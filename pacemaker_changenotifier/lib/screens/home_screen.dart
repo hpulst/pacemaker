@@ -1,7 +1,7 @@
-import 'package:Pacemaker/screens/explore_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'activity_screen.dart';
+import 'explore_screen.dart';
 
 class HomePage extends StatefulWidget {
   @override

@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:Pacemaker/tabs/activity_schedule.dart';
-import 'package:Pacemaker/util/activity_tiles.dart';
+
 import 'package:flutter/material.dart';
-import '../models/converted_object.dart';
+import 'package:pacemaker_changenotifier/models/workout_plan.dart';
+import 'package:pacemaker_changenotifier/util/activity_tiles.dart';
 import '../data/json_strings_marathon.dart';
 import '../data/json_strings_halfmarathon.dart';
 import '../data/json_strings_10km.dart';

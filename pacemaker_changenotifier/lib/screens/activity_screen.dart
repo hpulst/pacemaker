@@ -1,7 +1,7 @@
-import 'package:Pacemaker/tabs/activity_history.dart';
-import 'package:Pacemaker/tabs/activity_schedule.dart';
-import 'package:Pacemaker/util/appbar_nested.dart';
 import 'package:flutter/material.dart';
+import 'package:pacemaker_changenotifier/tabs/activity_history.dart';
+import 'package:pacemaker_changenotifier/tabs/activity_schedule.dart';
+import 'package:pacemaker_changenotifier/util/appbar_nested.dart';
 
 class ActivityScreen extends StatelessWidget {
   // final int selectedTab;

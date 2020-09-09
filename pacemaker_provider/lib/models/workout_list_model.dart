@@ -1,11 +1,14 @@
 import 'dart:collection';
 
-import 'package:Pacemaker/models/workout_entity.dart';
+import 'package:Pacemaker/models/workout_model.dart';
+import 'package:Pacemaker/models/workout_repository.dart';
 import 'package:flutter/material.dart';
 
 enum VisibilityFilter { all, active, completed }
 
 class WorkoutListModel extends ChangeNotifier {
+  final WorkoutsRepository repository;
+
   WorkoutListModel({
     VisibilityFilter filter,
     List<Workout> workouts,
@@ -28,8 +31,8 @@ class WorkoutListModel extends ChangeNotifier {
     // This call tells the widgets that are listening to this model to rebuild.
     notifyListeners();
 
-    return repository.loadTodos().then((loadedTodos) {
-      _todos.addAll(loadedTodos.map(Todo.fromEntity));
+    return repository.loadWorkouts().then((loadedWorkouts) {
+      _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
       _isLoading = false;
       notifyListeners();
     }).catchError((err) {

@@ -1,12 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:pacemaker_changenotifier/models/workout_plan.dart';
 import 'package:pacemaker_changenotifier/util/activity_tiles.dart';
-import '../data/json_strings_marathon.dart';
-import '../data/json_strings_halfmarathon.dart';
-import '../data/json_strings_10km.dart';
-import 'activity_screen.dart';
+import 'package:pacemaker_changenotifier/util/workout_list_view.dart';
 
 class DetailsScreen extends StatefulWidget {
   DetailsScreen(
@@ -30,35 +24,9 @@ class DetailsScreen extends StatefulWidget {
 
 class _DetailsScreenState extends State<DetailsScreen> {
   var _displayBanner = true;
-  Stream<List> workouts;
-
-  @override
-// void initState (){
-//   workouts = fetchWorkouts(workout);
-//   super.initState();
-// }
 
   @override
   Widget build(BuildContext context) {
-    String className;
-    if (widget.workout[0].startsWith('m')) {
-      className = 'Marathon';
-    } else if (widget.workout[0].startsWith('h')) {
-      className = 'Halfmarathon';
-    } else {
-      className = '10km';
-    }
-
-    String jsonStrings = 'Json' + className + '.' + widget.workout;
-
-    // final dynamic parsedJson = jsonDecode('$jsonStrings');
-    final dynamic parsedJson = jsonDecode(JsonMarathon.marathon330);
-
-    final dynamic deserializedObjects =
-        parsedJson.map((o) => WorkoutObjectComplex.fromJson(o));
-
-    final dynamic listOfObjects = deserializedObjects.toList();
-
     final banner = MaterialBanner(
       backgroundColor: new Color(0xFFFAFAFA),
       content: Column(
@@ -100,51 +68,17 @@ class _DetailsScreenState extends State<DetailsScreen> {
         title: Text(widget.name),
         centerTitle: true,
       ),
-      body: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: Container(
-              child: banner,
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool boxIsScrolled) {
+          return <Widget>[
+            SliverToBoxAdapter(
+              child: Container(
+                child: banner,
+              ),
             ),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                return _WorkoutList(index,
-                    listOfObjects: listOfObjects, widget: widget);
-              },
-              childCount: listOfObjects == null ? 0 : listOfObjects.length,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _WorkoutList extends StatelessWidget {
-  const _WorkoutList(
-    this.index, {
-    Key key,
-    @required this.listOfObjects,
-    @required this.widget,
-  }) : super(key: key);
-
-  final int index;
-  final listOfObjects;
-  final DetailsScreen widget;
-
-  @override
-  Widget build(BuildContext context) {
-    // repository: LocalStorageRepository()
-    return Container(
-      color: new Color(0xFFFAFAFA),
-      child: Column(
-        children: [
-          if (!listOfObjects[index].complete &&
-              listOfObjects[index].workout == widget.workout)
-            ComplexObjectView(listOfObjects[index]),
-        ],
+          ];
+        },
+        body: WorkoutListView(),
       ),
     );
   }

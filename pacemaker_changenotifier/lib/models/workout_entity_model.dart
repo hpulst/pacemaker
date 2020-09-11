@@ -1,5 +1,5 @@
-class WorkoutObjectComplex {
-  const WorkoutObjectComplex({
+class WorkoutEntity {
+  const WorkoutEntity({
     this.order,
     this.workout,
     this.week,
@@ -23,10 +23,10 @@ class WorkoutObjectComplex {
   final String heartrate;
   final bool complete;
 
-  factory WorkoutObjectComplex.fromJson(Map<String, dynamic> json) {
+  factory WorkoutEntity.fromJson(Map<String, dynamic> json) {
     if (json == null) return null;
 
-    return WorkoutObjectComplex(
+    return WorkoutEntity(
       order: json['order'] as int,
       workout: json['workout'] as String,
       week: json['week'] as String,

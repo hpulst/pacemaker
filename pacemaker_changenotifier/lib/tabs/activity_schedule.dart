@@ -13,20 +13,6 @@ class ActivityScheduleTab extends StatefulWidget {
 class _ActivityScheduleTabState extends State<ActivityScheduleTab> {
   @override
   Widget build(BuildContext context) {
-    final dynamic listOfObjects = 0;
-
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      itemCount: listOfObjects == null ? 0 : listOfObjects.length,
-      itemBuilder: (BuildContext context, int index) {
-        return Column(
-          children: [
-            if (!listOfObjects[index].complete &&
-                listOfObjects[index].workout == "marathon330")
-              ComplexObjectView(listOfObjects[index]),
-          ],
-        );
-      },
-    );
+    return Center();
   }
 }

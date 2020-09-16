@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import 'models/workout_repository.dart';
 import 'screens/activity_screen.dart';
 import 'screens/explore_screen.dart';
 import 'screens/home_screen.dart';
+import 'util/key_value_storage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyApp(
+    repository: LocalStorageRepository(
+      localStorage: KeyValueStorage(await SharedPreferences.getInstance()),
+    ),
+  ));
 }
 
 class MyApp extends StatelessWidget {
+  final WorkoutsRepository repository;
+
+  const MyApp({@required this.repository});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

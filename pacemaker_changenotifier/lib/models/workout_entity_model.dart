@@ -1,6 +1,6 @@
 class WorkoutEntity {
   const WorkoutEntity({
-    this.order,
+    this.id,
     this.workout,
     this.week,
     this.weekday,
@@ -12,7 +12,7 @@ class WorkoutEntity {
     this.complete,
   });
 
-  final int order;
+  final String id;
   final String workout;
   final String week;
   final String weekday;
@@ -23,11 +23,11 @@ class WorkoutEntity {
   final String heartrate;
   final bool complete;
 
-  factory WorkoutEntity.fromJson(Map<String, dynamic> json) {
+  static WorkoutEntity fromJson(Map<String, dynamic> json) {
     if (json == null) return null;
 
     return WorkoutEntity(
-      order: json['order'] as int,
+      id: json['id'] as String,
       workout: json['workout'] as String,
       week: json['week'] as String,
       weekday: json['weekday'] as String,
@@ -38,5 +38,9 @@ class WorkoutEntity {
       heartrate: json['heartrate'] as String,
       complete: json['complete'] as bool,
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {};
   }
 }

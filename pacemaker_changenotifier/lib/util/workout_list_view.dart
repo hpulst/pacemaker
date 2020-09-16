@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:provider/provider.dart';
-
+import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'activity_tiles.dart';
 
 class WorkoutListView extends StatelessWidget {

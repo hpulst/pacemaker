@@ -2,7 +2,7 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
 
-import 'workout_repository.dart';
+import 'workouts_repository.dart';
 
 enum VisibilityFilter { all, active, completed }
 

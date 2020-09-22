@@ -12,40 +12,6 @@ class JsonImport implements WorkoutsRepository {
         .cast<Map<String, dynamic>>()
         .map<WorkoutEntity>(WorkoutEntity.fromJson)
         .toList(growable: false);
-//     return Future(
-//       () => [
-//         WorkoutEntity(
-//             id: "0",
-//             workout: "marathon315",
-//             week: "Woche 1",
-//             weekday: "Montag",
-//             km: "Ruhetag",
-//             complete: false),
-//         WorkoutEntity(
-//             id: "1",
-//             workout: "marathon315",
-//             week: "Woche 1",
-//             weekday: "Dienstag",
-//             km: "15 km",
-//             time: "1:23 Std",
-//             pace: "05:30 min/km",
-//             intensity: "LD",
-//             heartrate: "70%-75%",
-//             complete: false),
-//         WorkoutEntity(
-//             id: "2",
-//             workout: "marathon315",
-//             week: "Woche 1",
-//             weekday: "Mittwoch",
-//             km: "15 km",
-//             time: "1:23 Std",
-//             pace: "05:30 min/km",
-//             intensity: "SD",
-//             heartrate: "80%-85%",
-//             complete: false),
-//       ],
-//     );
-//   }
   }
 
   @override

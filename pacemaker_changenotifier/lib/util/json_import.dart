@@ -7,7 +7,7 @@ import 'package:pacemaker_changenotifier/models/workouts_repository.dart';
 class JsonImport implements WorkoutsRepository {
   @override
   Future<List<WorkoutEntity>> loadWorkouts() async {
-    List<dynamic> parsedJson = await jsonDecode(JsonMarathon.marathon330);
+    List<dynamic> parsedJson = await jsonDecode(JsonMarathon.marathons);
     return parsedJson
         .cast<Map<String, dynamic>>()
         .map<WorkoutEntity>(WorkoutEntity.fromJson)

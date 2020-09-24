@@ -78,7 +78,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ),
           ];
         },
-        body: WorkoutListView(),
+        body: WorkoutListView(workoutName: widget.workout),
       ),
     );
   }

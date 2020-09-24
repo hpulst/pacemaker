@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pacemaker_changenotifier/data/json_strings_10km.dart';
-import 'package:pacemaker_changenotifier/data/json_strings_halfmarathon.dart';
-import 'package:pacemaker_changenotifier/data/json_strings_marathon.dart';
+import '../data/json_strings_10km.dart';
+import '../data/json_strings_halfmarathon.dart';
+import '../data/json_strings_marathon.dart';
 import 'package:pacemaker_changenotifier/tabs/explore_tabs.dart';
 
 class ExploreScreen extends StatelessWidget {

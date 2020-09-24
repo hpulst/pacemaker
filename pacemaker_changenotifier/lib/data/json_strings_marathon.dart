@@ -52,7 +52,7 @@ abstract class JsonMarathon {
   ] 
   ''';
 
-  static final String marathon315 = '''
+  static final String marathons = '''
 [
   {
     "id": "0",
@@ -87,10 +87,10 @@ abstract class JsonMarathon {
     "complete": false
     }, 
     {
-    "id": "84",
-    "workout": "marathon330",
-    "week": "Woche 12",
-    "weekday": "Sonntag",
+    "id": "3",
+    "workout": "marathon315",
+    "week": "Woche 1",
+    "weekday": "Donnerstag",
     "km": "20 x 1 km, Trabpause 2 min",
     "pace": "05:00 min/km",
     "intensity": "SD",
@@ -98,29 +98,25 @@ abstract class JsonMarathon {
     "complete": false
     },
     {
-    "id": "138",
-    "workout": "marathon330",
-    "week": "Woche 20",
+    "id": "4",
+    "workout": "marathon315",
+    "week": "Woche 1",
     "weekday": "Freitag",
     "km": "Ruhetag",
     "complete": false
     },
     {
-    "workout": "marathon330",
-    "week": "Woche 4",
-    "weekday": "Mittwoch",
+    "id": "5",
+    "workout": "marathon315",
+    "week": "Woche 1",
+    "weekday": "Sonntag",
     "km": "14:15 min",
     "time": "59:00 min",
     "pace": "04:45 min/km",
     "intensity": "TD",
     "heartrate": "85%-90%",
     "complete": false
-  }
-  ] 
-  ''';
-// "km": "3 x 3 km in 14:15 min, Trabpause 5 min",
-  static final String marathon330 = '''
-[
+  },
   {
     "id": "1",
     "workout": "marathon330",

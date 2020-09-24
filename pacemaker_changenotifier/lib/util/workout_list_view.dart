@@ -5,6 +5,9 @@ import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'activity_tiles.dart';
 
 class WorkoutListView extends StatelessWidget {
+  final String workoutName;
+  const WorkoutListView({this.workoutName});
+
   @override
   Widget build(BuildContext context) {
     return Selector<WorkoutListModel, List<Workout>>(
@@ -17,7 +20,7 @@ class WorkoutListView extends StatelessWidget {
             final workout = workouts[index];
             return Column(
               children: [
-                ComplexObjectView(workout),
+                if (workout.workout == workoutName) ComplexObjectView(workout),
               ],
             );
           },

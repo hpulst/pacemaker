@@ -2,6 +2,7 @@ import 'dart:convert';
 // import 'dart:html';
 
 import 'package:pacemaker_changenotifier/models/workout_entity_model.dart';
+import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:pacemaker_changenotifier/models/workouts_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -11,16 +12,16 @@ class KeyValueStorage implements WorkoutsRepository {
 
   const KeyValueStorage(this.preferences, [this.codec = json]);
   @override
-  Future<List<WorkoutEntity>> loadWorkouts() async {
+  Future<List<Workout>> loadWorkouts() async {
     return codec
         .decode(preferences.getString('change_notifier_provider_workouts'))[
             'workouts']
-        .map<WorkoutEntity>(WorkoutEntity.fromJson)
+        .map<Workout>(Workout.fromJson)
         .toList(growable: false);
   }
 
   @override
-  Future<bool> saveWorkouts(List<WorkoutEntity> workouts) {
+  Future<bool> saveWorkouts(List<Workout> workouts) {
     return preferences.setString(
       'change_notifier_provider_workouts',
       codec.encode({

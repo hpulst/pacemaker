@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:pacemaker_changenotifier/models/workout_entity_model.dart';
+import 'package:pacemaker_changenotifier/models/workout_model.dart';
 
 class ComplexObjectView extends StatelessWidget {
   ComplexObjectView(dynamic obj) : complexObject = obj;
 
-  final dynamic complexObject;
+  final Workout complexObject;
 
   @override
   Widget build(BuildContext context) {
     final localTheme = Theme.of(context).textTheme;
     if (complexObject == null)
       return Text('Choose your workout', style: localTheme.bodyText2);
-
+    print(complexObject.id);
     return Container(
       decoration: new BoxDecoration(
         // border: new Border(
@@ -226,7 +228,11 @@ class _ArticleDescription extends StatelessWidget {
                 style: TextStyle(fontSize: 11),
               ),
               Text(
-                pace != null ? time != null ? time + ' in ' + pace : pace : '',
+                pace != null
+                    ? time != null
+                        ? time + ' in ' + pace
+                        : pace
+                    : '',
                 style: TextStyle(fontSize: 11),
               ),
             ],

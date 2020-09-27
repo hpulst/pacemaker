@@ -46,14 +46,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         ],
       ),
       actions: [
-        FlatButton(
-          child: Text('Start'),
-          onPressed: () {
-            Navigator.pop(context);
-            // Navigator.popAndPushNamed(context, '/schedule');
-// https://stackoverflow.com/questions/55716230/how-to-do-nested-navigation-in-flutter
-          },
-        ),
+        _AddWorkouts(),
         FlatButton(
           onPressed: () {},
           child: Text(
@@ -80,6 +73,24 @@ class _DetailsScreenState extends State<DetailsScreen> {
         },
         body: WorkoutListView(workoutName: widget.workout),
       ),
+    );
+  }
+}
+
+class _AddWorkouts extends StatelessWidget {
+  const _AddWorkouts({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      child: Text('Start'),
+      onPressed: () {
+        Navigator.pop(context);
+        // Navigator.popAndPushNamed(context, '/schedule');
+// https://stackoverflow.com/questions/55716230/how-to-do-nested-navigation-in-flutter
+      },
     );
   }
 }

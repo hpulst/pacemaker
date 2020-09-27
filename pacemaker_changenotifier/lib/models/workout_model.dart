@@ -14,8 +14,8 @@ class Workout {
   final String heartrate;
   final bool complete;
 
-  Workout(
-    this.workout, {
+  Workout({
+    this.workout,
     this.week,
     this.weekday,
     this.km,
@@ -30,9 +30,9 @@ class Workout {
   @override
   int get hashCode => id.hashCode;
 
-  static Workout fromEntity(WorkoutEntity entity) {
+  static Workout fromEntity(Workout entity) {
     return Workout(
-      entity.workout,
+      workout: entity.workout,
       week: entity.week,
       weekday: entity.weekday,
       km: entity.km,
@@ -41,30 +41,26 @@ class Workout {
       intensity: entity.intensity,
       heartrate: entity.heartrate,
       complete: entity.complete ?? false,
-      id: entity.id,
     );
   }
+
+  static Workout fromJson(Map<String, dynamic> json) {
+    if (json == null) return null;
+
+    return Workout(
+      workout: json['workout'] as String,
+      week: json['week'] as String,
+      weekday: json['weekday'] as String,
+      km: json['km'] as String,
+      time: json['time'] as String,
+      pace: json['pace'] as String,
+      intensity: json['intensity'] as String,
+      heartrate: json['heartrate'] as String,
+      complete: json['complete'] as bool,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 }
-
-// class WorkoutCatalog {
-//   List<WorkoutItem> _workout;
-//   bool _isLoading = false;
-//   bool get isLoading => _isLoading;
-
-//   Future fetchJSONWorkoutItems() async {
-//     var parsedJson = jsonDecode(JsonMarathon.marathon330);
-//     var deserializedObjects =
-//         await parsedJson.map((o) => WorkoutItem.fromJson(o));
-//     var listOfObjects = deserializedObjects.toList();
-
-//     return listOfObjects;
-//   }
-
-//   Future loadWorkoutItems() {
-//     return fetchJSONWorkoutItems().then((loadedWorkouts) {
-//       _workout.addAll(loadedWorkouts.map(WorkoutItem()));
-//       _isLoading = false;
-//     }).catchError((err) {
-//       _isLoading = false;
-//     });
-//   }

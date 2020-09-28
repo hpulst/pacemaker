@@ -1,7 +1,5 @@
 import 'package:uuid/uuid.dart';
 
-import 'workout_entity_model.dart';
-
 class Workout {
   final String workout;
   final String id;
@@ -62,5 +60,46 @@ class Workout {
 
   Map<String, dynamic> toJson() {
     return {};
+  }
+
+  Workout copy({
+    String workout,
+    String id,
+    String week,
+    String weekday,
+    String km,
+    String time,
+    String pace,
+    String intensity,
+    String heartrate,
+    bool complete,
+  }) {
+    return Workout(
+      workout: this.workout,
+      id: this.id,
+      week: this.week,
+      weekday: this.weekday,
+      km: this.km,
+      time: this.time,
+      pace: this.pace,
+      intensity: this.intensity,
+      heartrate: this.heartrate,
+      complete: this.complete ?? complete,
+    );
+  }
+
+  Workout toEntity() {
+    return Workout(
+      workout: workout,
+      id: id,
+      week: week,
+      weekday: weekday,
+      km: km,
+      time: time,
+      pace: pace,
+      intensity: intensity,
+      heartrate: heartrate,
+      complete: complete ?? complete,
+    );
   }
 }

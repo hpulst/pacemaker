@@ -1,7 +1,6 @@
 import 'dart:convert';
 // import 'dart:html';
 
-import 'package:pacemaker_changenotifier/models/workout_entity_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:pacemaker_changenotifier/models/workouts_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';

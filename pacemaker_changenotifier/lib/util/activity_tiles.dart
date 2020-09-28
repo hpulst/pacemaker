@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pacemaker_changenotifier/models/workout_entity_model.dart';
+import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
+import 'package:provider/provider.dart';
 
 class ComplexObjectView extends StatelessWidget {
   ComplexObjectView(dynamic obj) : complexObject = obj;
@@ -27,6 +28,7 @@ class ComplexObjectView extends StatelessWidget {
             color: buildColor(complexObject.intensity),
           ),
         ),
+        id: complexObject.id,
         week: complexObject.week,
         weekday: complexObject.weekday,
         km: complexObject.km,
@@ -72,6 +74,7 @@ class CustomListTile extends StatefulWidget {
   CustomListTile({
     Key key,
     this.thumbnail,
+    this.id,
     this.week,
     this.weekday,
     this.km,
@@ -83,6 +86,7 @@ class CustomListTile extends StatefulWidget {
   });
 
   final Widget thumbnail;
+  final String id;
   final String week;
   final String weekday;
   final String km;
@@ -135,17 +139,22 @@ class _CustomListTileState extends State<CustomListTile> {
               ),
             ),
             Container(
-              child: _LabeledCheckbox(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 10.0, vertical: 10.0),
-                value: widget.complete,
-                onChanged: (bool newValue) {
-                  setState(
-                    () {
-                      widget.complete = newValue;
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+              child: Row(
+                children: <Widget>[
+                  Checkbox(
+                    key: Key('TodoItem__${widget.id}__Checkbox'),
+                    value: widget.complete,
+                    onChanged: (complete) {
+                      final model =
+                          Provider.of<WorkoutListModel>(context, listen: false);
+                      final workout = model.workoutById(widget.id);
+
+                      model.updateWorkout(workout.copy(complete: complete));
                     },
-                  );
-                },
+                  ),
+                ],
               ),
             ),
           ],
@@ -155,34 +164,34 @@ class _CustomListTileState extends State<CustomListTile> {
   }
 }
 
-class _LabeledCheckbox extends StatelessWidget {
-  const _LabeledCheckbox({
-    this.padding,
-    this.value,
-    this.onChanged,
-  });
+// class _LabeledCheckbox extends StatelessWidget {
+//   const _LabeledCheckbox({
+//     this.padding,
+//     this.value,
+//     this.onChanged,
+//   });
 
-  final EdgeInsets padding;
-  final bool value;
-  final Function onChanged;
+//   final EdgeInsets padding;
+//   final bool value;
+//   final Function onChanged;
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: padding,
-      child: Row(
-        children: <Widget>[
-          Checkbox(
-            value: value,
-            onChanged: (bool newValue) {
-              onChanged(newValue);
-            },
-          ),
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+//       child: Row(
+//         children: <Widget>[
+//           Checkbox(
+//             value: widget.complete,
+//             onChanged: (bool newValue) {
+//               onChanged(newValue);
+//             },
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
 class _ArticleDescription extends StatelessWidget {
   _ArticleDescription({

@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:pacemaker_changenotifier/data/json_strings_marathon.dart';
-import 'package:pacemaker_changenotifier/models/workout_entity_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:pacemaker_changenotifier/models/workouts_repository.dart';
 

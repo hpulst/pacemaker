@@ -56,4 +56,25 @@ class WorkoutListModel extends ChangeNotifier {
       }
     }).toList();
   }
+
+  void updateWorkout(Workout workout) {
+    assert(workout != null);
+    assert(workout.id != null);
+    var oldWorkout = _workouts.firstWhere((e) => e.id == workout.id);
+    print('oldWorkout $oldWorkout');
+    var replaceIndex = _workouts.indexOf(oldWorkout);
+    print('replaceIndex $replaceIndex');
+
+    _workouts.replaceRange(replaceIndex, replaceIndex + 1, [workout]);
+    notifyListeners();
+    _uploadItems();
+  }
+
+  Workout workoutById(String id) {
+    return _workouts.firstWhere((e) => e.id == id, orElse: () => null);
+  }
+
+  void _uploadItems() {
+    repository.saveWorkouts(_workouts.map((e) => e.toEntity()).toList());
+  }
 }

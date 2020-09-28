@@ -21,6 +21,7 @@ class KeyValueStorage implements WorkoutsRepository {
 
   @override
   Future<bool> saveWorkouts(List<Workout> workouts) {
+    print('saveWorkouts');
     return preferences.setString(
       'change_notifier_provider_workouts',
       codec.encode({

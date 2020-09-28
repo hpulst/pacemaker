@@ -13,7 +13,6 @@ class ComplexObjectView extends StatelessWidget {
     final localTheme = Theme.of(context).textTheme;
     if (complexObject == null)
       return Text('Choose your workout', style: localTheme.bodyText2);
-    print(complexObject.id);
     return Container(
       decoration: new BoxDecoration(
         // border: new Border(
@@ -150,7 +149,7 @@ class _CustomListTileState extends State<CustomListTile> {
                       final model =
                           Provider.of<WorkoutListModel>(context, listen: false);
                       final workout = model.workoutById(widget.id);
-
+                      print('Check this Checkbox: $complete');
                       model.updateWorkout(workout.copy(complete: complete));
                     },
                   ),

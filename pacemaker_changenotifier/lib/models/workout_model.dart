@@ -10,7 +10,7 @@ class Workout {
   final String pace;
   final String intensity;
   final String heartrate;
-  final bool complete;
+  bool complete;
 
   Workout({
     this.workout,
@@ -84,7 +84,7 @@ class Workout {
       pace: this.pace,
       intensity: this.intensity,
       heartrate: this.heartrate,
-      complete: this.complete ?? complete,
+      complete: complete ?? this.complete,
     );
   }
 

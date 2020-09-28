@@ -22,7 +22,7 @@ class WorkoutListModel extends ChangeNotifier {
 
   VisibilityFilter get filter => _filter;
 
-  UnmodifiableListView<Workout> get todos => UnmodifiableListView(_workouts);
+  UnmodifiableListView<Workout> get workouts => UnmodifiableListView(_workouts);
 
   bool get isLoading => _isLoading;
 
@@ -61,11 +61,14 @@ class WorkoutListModel extends ChangeNotifier {
     assert(workout != null);
     assert(workout.id != null);
     var oldWorkout = _workouts.firstWhere((e) => e.id == workout.id);
-    print('oldWorkout $oldWorkout');
+    print('oldWorkout ${oldWorkout.id}');
     var replaceIndex = _workouts.indexOf(oldWorkout);
     print('replaceIndex $replaceIndex');
 
     _workouts.replaceRange(replaceIndex, replaceIndex + 1, [workout]);
+
+    print('What am I?: ${workout.complete}');
+
     notifyListeners();
     _uploadItems();
   }

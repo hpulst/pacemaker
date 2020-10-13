@@ -39,6 +39,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               fontSize: 14.0,
             ),
           ),
+          Text(widget.workout != null ? widget.workout : ''),
           Text(widget.premarathon != null
               ? widget.premarathon + '\n' + widget.pre10km
               : widget.pre10km),

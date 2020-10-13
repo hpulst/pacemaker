@@ -16,7 +16,10 @@ class SimpleObjectView extends StatelessWidget {
           return Container(
             child: ListTile(
               contentPadding: EdgeInsets.all(6.0),
-              leading: Icon(Icons.brightness_1),
+              leading: CircularProgressIndicator(
+                strokeWidth: 3,
+                value: 0.8,
+              ),
               title: Text(
                 simpleObjects[index].name,
                 style: TextStyle(fontSize: 15.0),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pacemaker_changenotifier/tabs/activity_history.dart';
-import 'package:pacemaker_changenotifier/tabs/activity_schedule.dart';
+import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:pacemaker_changenotifier/util/appbar_nested.dart';
+import 'package:pacemaker_changenotifier/util/workout_list_view.dart';
 
 class ActivityScreen extends StatelessWidget {
   // final int selectedTab;
@@ -26,8 +26,8 @@ class ActivityScreen extends StatelessWidget {
           ],
           body: TabBarView(
             children: [
-              ActivityScheduleTab(workout: 'marathon330'),
-              ActivityHistoryTab(),
+              WorkoutListView(workoutName: 'marathon315', complete: false),
+              WorkoutListView(workoutName: 'marathon315', complete: true),
             ],
           ),
         ),

@@ -1,7 +1,6 @@
 import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
-
 import 'workouts_repository.dart';
 
 enum VisibilityFilter { all, active, completed }
@@ -13,8 +12,8 @@ class WorkoutListModel extends ChangeNotifier {
     @required this.repository,
     VisibilityFilter filter,
     List<Workout> workouts,
-  })  : _workouts = workouts ?? [],
-        _filter = filter ?? VisibilityFilter.all;
+  }) : _workouts = workouts ?? [];
+  // _filter = filter ?? VisibilityFilter.all;
 
   VisibilityFilter _filter;
   bool _isLoading = false;
@@ -61,13 +60,10 @@ class WorkoutListModel extends ChangeNotifier {
     assert(workout != null);
     assert(workout.id != null);
     var oldWorkout = _workouts.firstWhere((e) => e.id == workout.id);
-    print('oldWorkout ${oldWorkout.id}');
     var replaceIndex = _workouts.indexOf(oldWorkout);
-    print('replaceIndex $replaceIndex');
 
     _workouts.replaceRange(replaceIndex, replaceIndex + 1, [workout]);
-
-    print('What am I?: ${workout.complete}');
+    // _workouts.removeWhere((it) => it.id == workout.id);
 
     notifyListeners();
     _uploadItems();
@@ -78,6 +74,12 @@ class WorkoutListModel extends ChangeNotifier {
   }
 
   void _uploadItems() {
-    repository.saveWorkouts(_workouts.map((e) => e.toEntity()).toList());
+    print('_uploadItems');
+    // print(_workouts.map((e) => e.toEntity()).toList());
+    // print(_workouts.map((e) => e.toEntity()));
+    // print(repository
+    //     .saveWorkouts(_workouts.map<Workout>((e) => e.toEntity()).toList()));
+    repository
+        .saveWorkouts(_workouts.map<Workout>((e) => e.toEntity()).toList());
   }
 }

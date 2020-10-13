@@ -10,6 +10,8 @@ class ComplexObjectView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print('${complexObject.weekday}' ' + ${complexObject.complete}');
+
     final localTheme = Theme.of(context).textTheme;
     if (complexObject == null)
       return Text('Choose your workout', style: localTheme.bodyText2);
@@ -143,13 +145,12 @@ class _CustomListTileState extends State<CustomListTile> {
               child: Row(
                 children: <Widget>[
                   Checkbox(
-                    key: Key('TodoItem__${widget.id}__Checkbox'),
+                    key: Key('WorkoutItem__${widget.id}__Checkbox'),
                     value: widget.complete,
                     onChanged: (complete) {
                       final model =
                           Provider.of<WorkoutListModel>(context, listen: false);
                       final workout = model.workoutById(widget.id);
-                      print('Check this Checkbox: $complete');
                       model.updateWorkout(workout.copy(complete: complete));
                     },
                   ),

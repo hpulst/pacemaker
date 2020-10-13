@@ -1,8 +1,8 @@
 import 'package:uuid/uuid.dart';
 
 class Workout {
-  final String workout;
   final String id;
+  final String workout;
   final String week;
   final String weekday;
   final String km;
@@ -10,9 +10,10 @@ class Workout {
   final String pace;
   final String intensity;
   final String heartrate;
-  bool complete;
+  final bool complete;
 
   Workout({
+    String id,
     this.workout,
     this.week,
     this.weekday,
@@ -21,15 +22,42 @@ class Workout {
     this.pace,
     this.intensity,
     this.heartrate,
-    this.complete = false,
-    String id,
+    this.complete,
   }) : id = id ?? Uuid().v4();
 
-  @override
-  int get hashCode => id.hashCode;
+  // @override
+  // int get hashCode =>
+  //     complete.hashCode ^
+  //     workout.hashCode ^
+  //     week.hashCode ^
+  //     weekday.hashCode ^
+  //     km.hashCode ^
+  //     time.hashCode ^
+  //     pace.hashCode ^
+  //     intensity.hashCode ^
+  //     heartrate.hashCode ^
+  //     id.hashCode;
+
+  // // @override
+  // // bool operator ==(Object other) {
+  // //   identical(this, other) ||
+  // //       other is Workout &&
+  // //           runtimeType == other.runtimeType &&
+  // //           workout == other.workout &&
+  // //           week == other.week &&
+  // //           weekday == other.weekday &&
+  // //           km == other.km &&
+  // //           time == other.time &&
+  // //           pace == other.pace &&
+  // //           intensity == other.intensity &&
+  // //           heartrate == other.heartrate &&
+  // //           complete == other.complete &&
+  // //           id == other.id;
+  // // }
 
   static Workout fromEntity(Workout entity) {
     return Workout(
+      id: entity.id,
       workout: entity.workout,
       week: entity.week,
       weekday: entity.weekday,
@@ -42,10 +70,10 @@ class Workout {
     );
   }
 
-  static Workout fromJson(Map<String, dynamic> json) {
-    if (json == null) return null;
-
+  static Workout fromJson(Map<String, Object> json) {
+    // if (json == null) return null;
     return Workout(
+      id: Uuid().v4(),
       workout: json['workout'] as String,
       week: json['week'] as String,
       weekday: json['weekday'] as String,
@@ -58,13 +86,24 @@ class Workout {
     );
   }
 
-  Map<String, dynamic> toJson() {
-    return {};
+  Map<String, Object> toJson() {
+    return {
+      'id': id,
+      'workout': workout,
+      'week': week,
+      'weekday': weekday,
+      'km': km,
+      'time': time,
+      'pace': pace,
+      'intensity': intensity,
+      'heartrate': heartrate,
+      'complete': complete,
+    };
   }
 
   Workout copy({
-    String workout,
     String id,
+    String workout,
     String week,
     String weekday,
     String km,
@@ -75,8 +114,8 @@ class Workout {
     bool complete,
   }) {
     return Workout(
-      workout: this.workout,
       id: this.id,
+      workout: this.workout,
       week: this.week,
       weekday: this.weekday,
       km: this.km,
@@ -88,10 +127,15 @@ class Workout {
     );
   }
 
+  @override
+  String toString() {
+    return 'Workout{id: $id, workout: $workout, week: $week, weekday: $weekday, km: $km, time: $time, pace: $pace, intensity: $intensity, heartrate: $heartrate, complete: $complete}';
+  }
+
   Workout toEntity() {
     return Workout(
-      workout: workout,
       id: id,
+      workout: workout,
       week: week,
       weekday: weekday,
       km: km,
@@ -99,7 +143,7 @@ class Workout {
       pace: pace,
       intensity: intensity,
       heartrate: heartrate,
-      complete: complete ?? complete,
+      complete: complete,
     );
   }
 }

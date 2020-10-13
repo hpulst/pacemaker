@@ -55,6 +55,38 @@ abstract class JsonMarathon {
   static final String marathons = '''
 [
   {
+    "id": "1",
+    "workout": "halbmarathon130",
+    "week": "Woche 1",
+    "weekday": "Montag",
+    "km": "Ruhetag",
+    "complete": false
+  },
+  {
+    "id": "2",
+    "workout": "halbmarathon130",
+    "week": "Woche 1",
+    "weekday": "Dienstag",
+    "km": "18 km",
+    "time": "1:33 Std",
+    "pace": "5:10 min/km",
+    "intensity": "MD",
+    "heartrate": "75-80%",
+    "complete": false
+  },
+  {
+    "id": "3",
+    "workout": "halbmarathon130",
+    "week": "Woche 1",
+    "weekday": "Mittwoch",
+    "km": "10 km",
+    "time": "45:00 min",
+    "pace": "4:30 min/km",
+    "intensity": "TD",
+    "heartrate": "85-90%",
+    "complete": false
+    },
+  {
     "id": "0",
     "workout": "marathon315",
     "week": "Woche 1",

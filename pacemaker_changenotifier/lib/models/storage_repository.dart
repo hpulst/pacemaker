@@ -14,6 +14,7 @@ class LocalStorageRepository implements WorkoutsRepository {
   @override
   Future<List<Workout>> loadWorkouts() async {
     try {
+      print('localStorage.loadWorkouts');
       return await localStorage.loadWorkouts();
     } catch (e) {
       final workouts = await jsonClient.loadWorkouts();

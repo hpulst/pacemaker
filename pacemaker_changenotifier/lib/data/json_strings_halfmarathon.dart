@@ -54,10 +54,6 @@ abstract class JsonHalbmarathon {
     "week": "Woche 1",
     "weekday": "Montag",
     "km": "Ruhetag",
-    "time": "",
-    "pace": "",
-    "intensity": "",
-    "heartrate": "",
     "complete": false
   },
   {

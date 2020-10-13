@@ -6,7 +6,8 @@ import 'activity_tiles.dart';
 
 class WorkoutListView extends StatelessWidget {
   final String workoutName;
-  const WorkoutListView({this.workoutName});
+  final bool complete;
+  const WorkoutListView({this.workoutName, this.complete});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +19,22 @@ class WorkoutListView extends StatelessWidget {
           itemCount: workouts.length,
           itemBuilder: (context, index) {
             final workout = workouts[index];
-            return Column(
-              children: [
-                if (workout.workout == workoutName) ComplexObjectView(workout),
-              ],
-            );
+            if (complete == null) {
+              return Column(
+                children: [
+                  if (workout.workout == workoutName)
+                    ComplexObjectView(workout),
+                ],
+              );
+            } else {
+              return Column(
+                children: [
+                  if (workout.workout == workoutName &&
+                      workout.complete == complete)
+                    ComplexObjectView(workout),
+                ],
+              );
+            }
           },
         );
       },

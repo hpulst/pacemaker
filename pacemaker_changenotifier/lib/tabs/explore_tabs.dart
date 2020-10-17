@@ -1,21 +1,24 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/models/explore_model.dart';
 import 'package:pacemaker_changenotifier/util/explore_tiles.dart';
+import 'package:pacemaker_changenotifier/util/json_services.dart';
 
 class ExploreTab extends StatelessWidget {
-  ExploreTab(dynamic obj) : jsonStrings = obj;
+  final String filename;
 
-  final dynamic jsonStrings;
+  ExploreTab(this.filename);
 
   @override
   Widget build(BuildContext context) {
-    final dynamic parsedJson = jsonDecode(jsonStrings);
-
-    final dynamic deserializedObjects =
-        parsedJson.map((o) => WorkoutObjectSimple.fromJson(o));
-
-    final dynamic listOfObjects = deserializedObjects.toList();
-    return SimpleObjectView(simpleObjects: listOfObjects);
+    return FutureBuilder<WorkoutTableList>(
+        future: loadWorkouts(filename),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return SimpleObjectView(simpleObjects: snapshot.data.workouttables);
+          } else if (snapshot.hasError) {
+            return Text("${snapshot.error}");
+          }
+          return CircularProgressIndicator();
+        });
   }
 }

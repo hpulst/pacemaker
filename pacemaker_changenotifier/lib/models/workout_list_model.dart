@@ -7,6 +7,9 @@ enum VisibilityFilter { all, active, completed }
 
 class WorkoutListModel extends ChangeNotifier {
   final WorkoutsRepository repository;
+  VisibilityFilter _filter;
+  bool _isLoading = false;
+  List<Workout> _workouts;
 
   WorkoutListModel({
     @required this.repository,
@@ -14,10 +17,6 @@ class WorkoutListModel extends ChangeNotifier {
     List<Workout> workouts,
   }) : _workouts = workouts ?? [];
   // _filter = filter ?? VisibilityFilter.all;
-
-  VisibilityFilter _filter;
-  bool _isLoading = false;
-  List<Workout> _workouts;
 
   VisibilityFilter get filter => _filter;
 

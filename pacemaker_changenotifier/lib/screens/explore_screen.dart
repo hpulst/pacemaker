@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import '../data/json_strings_10km.dart';
-import '../data/json_strings_halfmarathon.dart';
-import '../data/json_strings_marathon.dart';
 import 'package:pacemaker_changenotifier/tabs/explore_tabs.dart';
 
 class ExploreScreen extends StatelessWidget {
@@ -28,9 +25,9 @@ class ExploreScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            ExploreTab(JsonMarathon.listeMarathon),
-            ExploreTab(JsonHalbmarathon.listeHalbmarathon),
-            ExploreTab(Json10km.listeZehnKilometer),
+            ExploreTab('explore_marathon'),
+            ExploreTab('explore_halfmarathon'),
+            ExploreTab('explore_10km'),
           ],
         ),
       ),

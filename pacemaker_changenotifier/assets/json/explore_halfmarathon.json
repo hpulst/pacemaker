@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Halbmarathon in 1:15 Std",
+    "workout": "halbmarathon115",
+    "pre10km": "10 km in 34 min",
+    "frequency": "130 km pro Woche in 6 Trainingseinheiten"
+  },
+  {
+    "name": "Halbmarathon in 1:20 Std",
+    "workout": "halbmarathon120",
+    "pre10km": "10 km in 36 min",
+    "frequency": "100 km pro Woche in 6 Trainingseinheiten"
+  },
+  {
+    "name": "Halbmarathon in 1:25 Std",
+    "workout": "halbmarathon125",
+    "pre10km": "10 km in 39 min",
+    "frequency": "95 km pro Woche in 6 Trainingseinheiten"
+  },
+  {
+    "name": "Halbmarathon in 1:30 Std",
+    "workout": "halbmarathon130",
+    "pre10km": "10 km in 41 min",
+    "frequency": "75 bis 90 km pro Woche in 5 Trainingseinheiten"
+  },
+  {
+    "name": "Halbmarathon in 1:35 Std",
+    "workout": "halbmarathon135",
+    "pre10km": "10 km in 45 min",
+    "frequency": "65 bis 80 km pro Woche in 5 Trainingseinheiten"
+  },
+  {
+    "name": "Halbmarathon in 1:40 Std",
+    "workout": "halbmarathon140",
+    "pre10km": "10 km in 45:30 min",
+    "frequency": "50 bis 70 km pro Woche in 5 Trainingseinheiten"
+  },
+  {
+    "name": "Halbmarathon in 1:45 Std",
+    "workout": "halbmarathon145",
+    "pre10km": "10 km in 48 min",
+    "frequency": "50 bis 60 km pro Woche in 4 Trainingseinheiten"
+  }
+]

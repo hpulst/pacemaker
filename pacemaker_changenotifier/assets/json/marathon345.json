@@ -1,0 +1,22 @@
+[
+    {
+        "id": "0",
+        "workout": "marathon345",
+        "week": "Woche 1",
+        "weekday": "Montag",
+        "km": "Ruhetag",
+        "complete": false
+    },
+    {
+        "id": "1",
+        "workout": "marathon345",
+        "week": "Woche 1",
+        "weekday": "Dienstag",
+        "km": "15 km",
+        "time": "1:23 Std",
+        "pace": "05:30 min/km",
+        "intensity": "LD",
+        "heartrate": "70%-75%",
+        "complete": false
+    }
+]

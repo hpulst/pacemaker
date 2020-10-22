@@ -7,7 +7,7 @@ import 'models/storage_repository.dart';
 import 'models/workouts_repository.dart';
 import 'screens/activity_screen.dart';
 import 'screens/explore_screen.dart';
-import 'screens/home_screen.dart';
+import 'home.dart';
 import 'util/key_value_storage.dart';
 
 void main() async {

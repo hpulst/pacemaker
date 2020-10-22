@@ -10,6 +10,7 @@ class WorkoutListModel extends ChangeNotifier {
   VisibilityFilter _filter;
   bool _isLoading = false;
   List<Workout> _workouts;
+  String filename;
 
   WorkoutListModel({
     @required this.repository,
@@ -19,17 +20,13 @@ class WorkoutListModel extends ChangeNotifier {
   // _filter = filter ?? VisibilityFilter.all;
 
   VisibilityFilter get filter => _filter;
-
   UnmodifiableListView<Workout> get workouts => UnmodifiableListView(_workouts);
-
   bool get isLoading => _isLoading;
 
   Future loadWorkouts() {
     _isLoading = true;
-    // This call tells the widgets that are listening to this model to rebuild.
     notifyListeners();
-
-    return repository.loadWorkouts().then((loadedWorkouts) {
+    return repository.loadWorkouts(filename).then((loadedWorkouts) {
       _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
       _isLoading = false;
       notifyListeners();
@@ -78,7 +75,8 @@ class WorkoutListModel extends ChangeNotifier {
     // print(_workouts.map((e) => e.toEntity()));
     // print(repository
     //     .saveWorkouts(_workouts.map<Workout>((e) => e.toEntity()).toList()));
-    repository
-        .saveWorkouts(_workouts.map<Workout>((e) => e.toEntity()).toList());
+    repository.saveWorkouts(
+        _workouts.map<Workout>((e) => e.toEntity()).toList(),
+        _workouts[0].workout);
   }
 }

@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle;
+
 class WorkoutTable {
   const WorkoutTable({
     this.name,
@@ -26,16 +29,31 @@ class WorkoutTable {
   }
 }
 
-class WorkoutTableList {
-  final List<WorkoutTable> workouttables;
+Future<List<WorkoutTable>> loadWorkouts(String filename) async {
+  String jsonWorkouts = await _loadAsset(filename);
+  List<dynamic> parsedJson = jsonDecode(jsonWorkouts);
 
-  WorkoutTableList({this.workouttables});
+  List<WorkoutTable> workouttables =
+      parsedJson.map((o) => WorkoutTable.fromJson(o)).toList();
 
-  factory WorkoutTableList.fromJson(List<dynamic> parsedJson) {
-    List<WorkoutTable> workouttables = List<WorkoutTable>();
-
-    workouttables = parsedJson.map((o) => WorkoutTable.fromJson(o)).toList();
-
-    return WorkoutTableList(workouttables: workouttables);
-  }
+  return workouttables;
 }
+
+Future<String> _loadAsset(String filename) async {
+  String filePath = "assets/json/" + filename + ".json";
+  return await rootBundle.loadString(filePath);
+}
+
+// class WorkoutTableList {
+//   final List<WorkoutTable> workouttables;
+
+//   WorkoutTableList({this.workouttables});
+
+//   factory WorkoutTableList.fromJson(List<dynamic> parsedJson) {
+//     List<WorkoutTable> workouttables = List<WorkoutTable>();
+
+//     workouttables = parsedJson.map((o) => WorkoutTable.fromJson(o)).toList();
+
+//     return WorkoutTableList(workouttables: workouttables);
+//   }
+// }

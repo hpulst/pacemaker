@@ -72,7 +72,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ),
           ];
         },
-        body: WorkoutListView(workoutName: widget.workout),
+        body: WorkoutListView(filename: widget.workout),
       ),
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pacemaker_changenotifier/tabs/explore_tabs.dart';
+import '../models/explore_model.dart'
+    show WorkoutTable, WorkoutTableList, loadWorkouts;
+import '../util/explore_tiles.dart' show SimpleObjectView;
 
 class ExploreScreen extends StatelessWidget {
   @override
@@ -32,5 +34,25 @@ class ExploreScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class ExploreTab extends StatelessWidget {
+  final String filename;
+
+  ExploreTab(this.filename);
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<List<WorkoutTable>>(
+        future: loadWorkouts(filename),
+        builder: (context, AsyncSnapshot<List<WorkoutTable>> snapshot) {
+          if (snapshot.hasData) {
+            return SimpleObjectView(simpleObjects: snapshot.data);
+          } else if (snapshot.hasError) {
+            return Text("${snapshot.error}");
+          }
+          return CircularProgressIndicator();
+        });
   }
 }

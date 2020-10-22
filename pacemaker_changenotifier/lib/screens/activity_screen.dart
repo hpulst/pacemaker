@@ -26,8 +26,8 @@ class ActivityScreen extends StatelessWidget {
           ],
           body: TabBarView(
             children: [
-              WorkoutListView(workoutName: 'marathon315', complete: false),
-              WorkoutListView(workoutName: 'marathon315', complete: true),
+              WorkoutListView(filename: 'marathon315', complete: false),
+              WorkoutListView(filename: 'marathon315', complete: true),
             ],
           ),
         ),

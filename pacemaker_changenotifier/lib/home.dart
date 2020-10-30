@@ -9,26 +9,32 @@ class HomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
+  final List<Widget> pages = <Widget>[
+    ActivityScreen(),
+    ExploreScreen(),
+  ];
+  int currentTab = 0;
+  final PageStorageBucket _bucket = PageStorageBucket();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: <Widget>[
-          for (final tabItem in TabNavigationItem.items) tabItem.page,
-        ],
+      body: PageStorage(
+        child: pages[currentTab],
+        bucket: _bucket,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: (int index) => setState(() => _selectedIndex = index),
-        items: <BottomNavigationBarItem>[
-          for (final tabItem in TabNavigationItem.items)
-            BottomNavigationBarItem(
-              icon: tabItem.icon,
-              title: tabItem.title,
-            ),
+        currentIndex: currentTab,
+        onTap: (int index) => setState(() => currentTab = index),
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dehaze),
+            label: 'Activity',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Explore',
+          ),
         ],
         selectedItemColor: Colors.blueAccent,
         showUnselectedLabels: false,
@@ -37,29 +43,4 @@ class _MyHomePageState extends State<HomePage> {
       ),
     );
   }
-}
-
-class TabNavigationItem {
-  final Widget page;
-  final Widget title;
-  final Icon icon;
-
-  TabNavigationItem({
-    @required this.page,
-    @required this.title,
-    @required this.icon,
-  });
-
-  static List<TabNavigationItem> get items => [
-        TabNavigationItem(
-          page: ActivityScreen(),
-          title: Text('Activity'),
-          icon: Icon(Icons.dehaze),
-        ),
-        TabNavigationItem(
-          page: ExploreScreen(),
-          title: Text('Explore'),
-          icon: Icon(Icons.search),
-        ),
-      ];
 }

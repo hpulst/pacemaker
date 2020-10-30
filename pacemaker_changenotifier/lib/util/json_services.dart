@@ -9,20 +9,24 @@ class JsonImport implements WorkoutsRepository {
 
   @override
   Future<List<Workout>> loadWorkouts(String filename) async {
-    print('workoutPath $filename');
-    filename = 'marathon315';
-    String jsonWorkouts = await _loadAsset(filename);
-    List<dynamic> parsedJson = jsonDecode(jsonWorkouts);
+    String jsonWorkouts;
+    try {
+      jsonWorkouts = await _loadAsset(filename);
+      print('workoutPath $filename');
+    } catch (e) {
+      jsonWorkouts = await _loadAsset('marathon315');
+    }
 
+    List<dynamic> parsedJson = await jsonDecode(jsonWorkouts);
     List<Workout> workoutTable =
         parsedJson.map((o) => Workout.fromJson(o)).toList();
-
+    // print('JsonImport: $workoutTable');
     return workoutTable;
   }
 
   Future<String> _loadAsset(String filename) async {
     String filePath = "assets/json/" + filename + ".json";
-    print('_loadAsset workoutPath: $filePath');
+    // print('_loadAsset workoutPath: $filePath');
     return await rootBundle.loadString(filePath);
   }
 

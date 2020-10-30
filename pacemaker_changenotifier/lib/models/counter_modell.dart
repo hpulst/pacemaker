@@ -6,7 +6,7 @@ class Counter with ChangeNotifier {
 
   void setWorkout(String workout) {
     _workout = workout;
-    print('workout  $workout');
+    // print('workout  $workout');
     notifyListeners();
   }
 }

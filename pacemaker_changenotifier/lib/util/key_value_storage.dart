@@ -16,7 +16,14 @@ class KeyValueStorage implements WorkoutsRepository {
     if (key == '') {
       key = 'provider_workouts';
     }
-    key = 'provider_workouts';
+    // key = 'provider_workouts';
+    print('KeyValueStorage: Key: $key');
+    print(codec
+        .decode(preferences.getString(key))['workouts']
+        .cast<Map<String, Object>>()
+        .map<Workout>(Workout.fromJson)
+        .toList(growable: false));
+
     return codec
         .decode(preferences.getString(key))['workouts']
         .cast<Map<String, Object>>()

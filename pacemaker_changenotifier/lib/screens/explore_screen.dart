@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../models/explore_model.dart'
-    show WorkoutTable, WorkoutTableList, loadWorkouts;
-import '../util/explore_tiles.dart' show SimpleObjectView;
+import '../models/explore_model.dart';
+import '../util/explore_tiles.dart';
 
 class ExploreScreen extends StatelessWidget {
   @override
@@ -46,7 +45,7 @@ class ExploreTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder<List<WorkoutTable>>(
         future: loadWorkouts(filename),
-        builder: (context, AsyncSnapshot<List<WorkoutTable>> snapshot) {
+        builder: (context, snapshot) {
           if (snapshot.hasData) {
             return SimpleObjectView(simpleObjects: snapshot.data);
           } else if (snapshot.hasError) {

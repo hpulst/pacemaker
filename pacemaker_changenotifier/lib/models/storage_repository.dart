@@ -16,12 +16,14 @@ class LocalStorageRepository implements WorkoutsRepository {
   @override
   Future<List<Workout>> loadWorkouts(String key) async {
     try {
-      print('Load SharedPreferences');
+      print('Load SharedPreferences, Key: $key');
       return await localStorage.loadWorkouts(key);
     } catch (e) {
       print('Load JSON');
       final workouts = await jsonClient.loadWorkouts(key);
+      print('saveTodos');
       await localStorage.saveWorkouts(workouts, key);
+
       return workouts;
     }
   }

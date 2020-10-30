@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:pacemaker_changenotifier/models/storage_repository.dart';
+import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
+import 'package:pacemaker_changenotifier/models/workout_model.dart';
+import 'package:pacemaker_changenotifier/models/workouts_repository.dart';
 import 'package:pacemaker_changenotifier/util/activity_tiles.dart';
+import 'package:pacemaker_changenotifier/util/key_value_storage.dart';
 import 'package:pacemaker_changenotifier/util/workout_list_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DetailsScreen extends StatefulWidget {
   DetailsScreen(
@@ -22,8 +28,24 @@ class DetailsScreen extends StatefulWidget {
   _DetailsScreenState createState() => _DetailsScreenState();
 }
 
+// repository:
+
 class _DetailsScreenState extends State<DetailsScreen> {
-  var _displayBanner = true;
+  // var _displayBanner = true;
+
+  Future loadWorkouts() async {
+    // WorkoutListModel(
+    //     repository: LocalStorageRepository(
+    //         localStorage:
+    //             KeyValueStorage(await SharedPreferences.getInstance())))..loadWorkouts();
+
+    LocalStorageRepository repository = LocalStorageRepository(
+        localStorage: KeyValueStorage(await SharedPreferences.getInstance()),
+        filename: widget.workout);
+    WorkoutListModel(repository: repository, filename: widget.workout)
+      ..loadWorkouts();
+    return repository;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +94,25 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ),
           ];
         },
-        body: WorkoutListView(filename: widget.workout),
+        body: FutureBuilder(
+            future: loadWorkouts(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return WorkoutListView(filename: widget.workout);
+                // return ListView.builder(
+                //     itemCount: snapshot.data.length,
+                //     itemBuilder: (context, index) {
+                //       return Column(
+                //         children: [
+                //           ComplexObjectView(snapshot.data[index]),
+                //         ],
+                //       );
+                //     });
+              } else if (snapshot.hasError) {
+                return Text("${snapshot.error}");
+              }
+              return CircularProgressIndicator();
+            }),
       ),
     );
   }

@@ -15,6 +15,7 @@ class WorkoutListModel extends ChangeNotifier {
   WorkoutListModel({
     @required this.repository,
     VisibilityFilter filter,
+    this.filename,
     List<Workout> workouts,
   }) : _workouts = workouts ?? [];
   // _filter = filter ?? VisibilityFilter.all;
@@ -23,12 +24,13 @@ class WorkoutListModel extends ChangeNotifier {
   UnmodifiableListView<Workout> get workouts => UnmodifiableListView(_workouts);
   bool get isLoading => _isLoading;
 
-  Future loadWorkouts() {
+  Future loadWorkouts() async {
     _isLoading = true;
     notifyListeners();
-    return repository.loadWorkouts(filename).then((loadedWorkouts) {
+    return await repository.loadWorkouts(filename).then((loadedWorkouts) {
       _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
       _isLoading = false;
+      // print('WorkoutListModel: _workouts $_workouts');
       notifyListeners();
     }).catchError((err) {
       _isLoading = false;
@@ -71,12 +73,14 @@ class WorkoutListModel extends ChangeNotifier {
 
   void _uploadItems() {
     print('_uploadItems');
-    // print(_workouts.map((e) => e.toEntity()).toList());
-    // print(_workouts.map((e) => e.toEntity()));
-    // print(repository
-    //     .saveWorkouts(_workouts.map<Workout>((e) => e.toEntity()).toList()));
     repository.saveWorkouts(
         _workouts.map<Workout>((e) => e.toEntity()).toList(),
         _workouts[0].workout);
+  }
+
+  void addTodo(Workout workout) {
+    _workouts.add(workout);
+    notifyListeners();
+    _uploadItems();
   }
 }

@@ -78,7 +78,7 @@ class WorkoutListModel extends ChangeNotifier {
         _workouts[0].workout);
   }
 
-  void addTodo(Workout workout) {
+  void addWorkout(Workout workout) {
     _workouts.add(workout);
     notifyListeners();
     _uploadItems();

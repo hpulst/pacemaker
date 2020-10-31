@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/models/storage_repository.dart';
 import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
-import 'package:pacemaker_changenotifier/models/workout_model.dart';
-import 'package:pacemaker_changenotifier/models/workouts_repository.dart';
-import 'package:pacemaker_changenotifier/util/activity_tiles.dart';
 import 'package:pacemaker_changenotifier/util/key_value_storage.dart';
 import 'package:pacemaker_changenotifier/util/workout_list_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';

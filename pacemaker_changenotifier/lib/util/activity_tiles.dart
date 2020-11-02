@@ -10,8 +10,6 @@ class ComplexObjectView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print('${complexObject.weekday}' ' + ${complexObject.complete}');
-
     final localTheme = Theme.of(context).textTheme;
     if (complexObject == null)
       return Text('Choose your workout', style: localTheme.bodyText2);
@@ -163,35 +161,6 @@ class _CustomListTileState extends State<CustomListTile> {
     );
   }
 }
-
-// class _LabeledCheckbox extends StatelessWidget {
-//   const _LabeledCheckbox({
-//     this.padding,
-//     this.value,
-//     this.onChanged,
-//   });
-
-//   final EdgeInsets padding;
-//   final bool value;
-//   final Function onChanged;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-//       child: Row(
-//         children: <Widget>[
-//           Checkbox(
-//             value: widget.complete,
-//             onChanged: (bool newValue) {
-//               onChanged(newValue);
-//             },
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
 
 class _ArticleDescription extends StatelessWidget {
   _ArticleDescription({

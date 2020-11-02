@@ -25,36 +25,6 @@ class Workout {
     this.complete,
   }) : id = id ?? Uuid().v4();
 
-  // @override
-  // int get hashCode =>
-  //     complete.hashCode ^
-  //     workout.hashCode ^
-  //     week.hashCode ^
-  //     weekday.hashCode ^
-  //     km.hashCode ^
-  //     time.hashCode ^
-  //     pace.hashCode ^
-  //     intensity.hashCode ^
-  //     heartrate.hashCode ^
-  //     id.hashCode;
-
-  // // @override
-  // // bool operator ==(Object other) {
-  // //   identical(this, other) ||
-  // //       other is Workout &&
-  // //           runtimeType == other.runtimeType &&
-  // //           workout == other.workout &&
-  // //           week == other.week &&
-  // //           weekday == other.weekday &&
-  // //           km == other.km &&
-  // //           time == other.time &&
-  // //           pace == other.pace &&
-  // //           intensity == other.intensity &&
-  // //           heartrate == other.heartrate &&
-  // //           complete == other.complete &&
-  // //           id == other.id;
-  // // }
-
   static Workout fromEntity(Workout entity) {
     return Workout(
       id: entity.id,

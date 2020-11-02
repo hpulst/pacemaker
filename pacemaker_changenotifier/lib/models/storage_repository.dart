@@ -21,7 +21,7 @@ class LocalStorageRepository implements WorkoutsRepository {
     } catch (e) {
       print('Load JSON');
       final workouts = await jsonClient.loadWorkouts(key);
-      print('saveTodos');
+      print('saveWorkouts');
       await localStorage.saveWorkouts(workouts, key);
 
       return workouts;
@@ -37,3 +37,5 @@ class LocalStorageRepository implements WorkoutsRepository {
     );
   }
 }
+
+//TODO: How to check vor SharedPref getString instead of getInstance?

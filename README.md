@@ -6,6 +6,6 @@ different architectural concepts and tools.
 
 ### Current Samples
 
-- [Change Notifier + Provider Example](pacemaker_provider) - Uses the [ChangeNotifier](https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html) class from Flutter with [provider](https://pub.dev/packages/provider) package now recommended by the Flutter team.
+- [Change Notifier + Provider](pacemaker_changenotifier) - Uses the [ChangeNotifier](https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html) class from Flutter with [provider](https://pub.dev/packages/provider) package now recommended by the Flutter team.
 - [Firebase](pacemaker_firebase) - Using Firestore as a backend.
 - [SQLite](pacemaker_sqlite) - Using SQLite as a backend.

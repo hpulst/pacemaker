@@ -9,8 +9,11 @@ class WorkoutListModel extends ChangeNotifier {
   final WorkoutsRepository repository;
   VisibilityFilter _filter;
   bool _isLoading = false;
-  List<Workout> _workouts;
+  final List<Workout> _workouts;
   String filename;
+  String _pressed;
+  String _title;
+  String get title => _title;
 
   WorkoutListModel({
     @required this.repository,
@@ -23,14 +26,21 @@ class WorkoutListModel extends ChangeNotifier {
   VisibilityFilter get filter => _filter;
   UnmodifiableListView<Workout> get workouts => UnmodifiableListView(_workouts);
   bool get isLoading => _isLoading;
+  String get pressed => _pressed;
 
-  Future loadWorkouts() async {
+  void setWorkout(String pressed) {
+    _pressed = pressed;
+    debugPrint('pressed  $pressed');
+    notifyListeners();
+  }
+
+  Future loadWorkouts() {
     _isLoading = true;
     notifyListeners();
-    return await repository.loadWorkouts(filename).then((loadedWorkouts) {
+    return repository.loadWorkouts(filename).then((loadedWorkouts) {
       _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
       _isLoading = false;
-      // print('WorkoutListModel: _workouts $_workouts');
+      getTitle();
       notifyListeners();
     }).catchError((err) {
       _isLoading = false;
@@ -72,7 +82,7 @@ class WorkoutListModel extends ChangeNotifier {
   }
 
   void _uploadItems() {
-    print('_uploadItems');
+    debugPrint('_uploadItems');
     repository.saveWorkouts(
         _workouts.map<Workout>((e) => e.toEntity()).toList(),
         _workouts[0].workout);
@@ -82,5 +92,12 @@ class WorkoutListModel extends ChangeNotifier {
     _workouts.add(workout);
     notifyListeners();
     _uploadItems();
+  }
+
+  void getTitle() {
+    _title = _workouts[0].workout;
+    print('Title hi!');
+    debugPrint(_title);
+    notifyListeners();
   }
 }

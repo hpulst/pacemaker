@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pacemaker_changenotifier/models/storage_repository.dart';
 import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
-import 'package:pacemaker_changenotifier/util/key_value_storage.dart';
 import 'package:pacemaker_changenotifier/util/workout_list_view.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
 
 class DetailsScreen extends StatefulWidget {
   DetailsScreen(
@@ -25,29 +23,25 @@ class DetailsScreen extends StatefulWidget {
   _DetailsScreenState createState() => _DetailsScreenState();
 }
 
-// repository:
+// Future loadWorkouts() async {
+//   // WorkoutListModel(
+//   //     repository: LocalStorageRepository(
+//   //         localStorage:
+//   //             KeyValueStorage(await SharedPreferences.getInstance())))..loadWorkouts();
+
+//   LocalStorageRepository repository = LocalStorageRepository(
+//       localStorage: KeyValueStorage(await SharedPreferences.getInstance()),
+//       filename: widget.workout);
+//   WorkoutListModel(repository: repository, filename: widget.workout)
+//     ..loadWorkouts();
+//   return repository;
+// }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-  // var _displayBanner = true;
-
-  Future loadWorkouts() async {
-    // WorkoutListModel(
-    //     repository: LocalStorageRepository(
-    //         localStorage:
-    //             KeyValueStorage(await SharedPreferences.getInstance())))..loadWorkouts();
-
-    LocalStorageRepository repository = LocalStorageRepository(
-        localStorage: KeyValueStorage(await SharedPreferences.getInstance()),
-        filename: widget.workout);
-    WorkoutListModel(repository: repository, filename: widget.workout)
-      ..loadWorkouts();
-    return repository;
-  }
-
   @override
   Widget build(BuildContext context) {
     final banner = MaterialBanner(
-      backgroundColor: new Color(0xFFFAFAFA),
+      backgroundColor: Color(0xFFFAFAFA),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -58,15 +52,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
               fontSize: 14.0,
             ),
           ),
-          Text(widget.workout != null ? widget.workout : ''),
+          Text(widget.workout ?? ''),
           Text(widget.premarathon != null
               ? widget.premarathon + '\n' + widget.pre10km
               : widget.pre10km),
-          Text(widget.frequency != null ? widget.frequency : ''),
+          Text(widget.frequency ?? ''),
         ],
       ),
       actions: [
-        _AddWorkouts(),
+        _AddWorkouts(workout: widget.workout),
         FlatButton(
           onPressed: () {},
           child: Text(
@@ -83,6 +77,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
       ),
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool boxIsScrolled) {
+          debugPrint(widget.workout);
           return <Widget>[
             SliverToBoxAdapter(
               child: Container(
@@ -91,32 +86,35 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ),
           ];
         },
-        body: FutureBuilder(
-            future: loadWorkouts(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return WorkoutListView(filename: widget.workout);
-                // return ListView.builder(
-                //     itemCount: snapshot.data.length,
-                //     itemBuilder: (context, index) {
-                //       return Column(
-                //         children: [
-                //           ComplexObjectView(snapshot.data[index]),
-                //         ],
-                //       );
-                //     });
-              } else if (snapshot.hasError) {
-                return Text("${snapshot.error}");
-              }
-              return CircularProgressIndicator();
-            }),
+        body: WorkoutListView(filename: widget.workout),
+        // body: FutureBuilder(
+        //     future: loadWorkouts(),
+        //     builder: (context, snapshot) {
+        //       if (snapshot.hasData) {
+        //         return WorkoutListView(filename: widget.workout);
+        //         // return ListView.builder(
+        //         //     itemCount: snapshot.data.length,
+        //         //     itemBuilder: (context, index) {
+        //         //       return Column(
+        //         //         children: [
+        //         //           ComplexObjectView(snapshot.data[index]),
+        //         //         ],
+        //         //       );
+        //         //     });
+        //       } else if (snapshot.hasError) {
+        //         return Text("${snapshot.error}");
+        //       }
+        //       return CircularProgressIndicator();
+        //     }),
       ),
     );
   }
 }
 
 class _AddWorkouts extends StatelessWidget {
+  final String workout;
   const _AddWorkouts({
+    this.workout,
     Key key,
   }) : super(key: key);
 
@@ -126,7 +124,6 @@ class _AddWorkouts extends StatelessWidget {
       child: Text('Start'),
       onPressed: () {
         Navigator.pop(context);
-        // Navigator.popAndPushNamed(context, '/schedule');
 // https://stackoverflow.com/questions/55716230/how-to-do-nested-navigation-in-flutter
       },
     );

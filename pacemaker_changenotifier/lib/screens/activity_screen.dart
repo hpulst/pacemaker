@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:pacemaker_changenotifier/util/appbar_nested.dart';
 import 'package:pacemaker_changenotifier/util/workout_list_view.dart';
+import 'package:provider/provider.dart';
 
 class ActivityScreen extends StatelessWidget {
   // final int selectedTab;
@@ -9,8 +10,8 @@ class ActivityScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String title = 'Marathon in 3:30';
-    final List<Tab> myTabs = [
+    var title = '${context.watch<WorkoutListModel>().title}';
+    final myTabs = <Tab>[
       Tab(text: 'Schedule'),
       Tab(text: 'History'),
     ];

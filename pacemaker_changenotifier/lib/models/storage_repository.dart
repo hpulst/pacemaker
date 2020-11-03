@@ -16,12 +16,12 @@ class LocalStorageRepository implements WorkoutsRepository {
   @override
   Future<List<Workout>> loadWorkouts(String key) async {
     try {
-      print('Load SharedPreferences, Key: $key');
+      debugPrint('Load SharedPreferences, Key: $key');
       return await localStorage.loadWorkouts(key);
     } catch (e) {
-      print('Load JSON');
+      debugPrint('Load JSON');
       final workouts = await jsonClient.loadWorkouts(key);
-      print('saveWorkouts');
+      debugPrint('saveWorkouts');
       await localStorage.saveWorkouts(workouts, key);
 
       return workouts;
@@ -37,5 +37,3 @@ class LocalStorageRepository implements WorkoutsRepository {
     );
   }
 }
-
-//TODO: How to check vor SharedPref getString instead of getInstance?

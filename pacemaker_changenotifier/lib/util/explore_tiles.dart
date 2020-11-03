@@ -39,12 +39,12 @@ class SimpleObjectView extends StatelessWidget {
                 );
               },
             ),
-            decoration: new BoxDecoration(
-              border: new Border(
-                bottom: new BorderSide(
-                    style: BorderStyle.solid, color: Colors.black26),
+            decoration: BoxDecoration(
+              border: Border(
+                bottom:
+                    BorderSide(style: BorderStyle.solid, color: Colors.black26),
               ),
-              color: new Color(0xFFFAFAFA),
+              color: Color(0xFFFAFAFA),
             ),
           );
         },

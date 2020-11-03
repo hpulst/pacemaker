@@ -5,8 +5,8 @@ import '../util/explore_tiles.dart';
 class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    String title = 'Trainingspläne';
-    final List<Tab> myTabs = [
+    var title = 'Trainingspläne';
+    final myTabs = <Tab>[
       Tab(text: 'Marathon'),
       Tab(text: 'Halbmarathon'),
       Tab(text: '10 km'),
@@ -49,7 +49,7 @@ class ExploreTab extends StatelessWidget {
           if (snapshot.hasData) {
             return SimpleObjectView(simpleObjects: snapshot.data);
           } else if (snapshot.hasError) {
-            return Text("${snapshot.error}");
+            return Text('${snapshot.error}');
           }
           return CircularProgressIndicator();
         });

@@ -4,7 +4,7 @@ import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:provider/provider.dart';
 
 class ComplexObjectView extends StatelessWidget {
-  ComplexObjectView(dynamic obj) : complexObject = obj;
+  ComplexObjectView(Workout obj) : complexObject = obj;
 
   final Workout complexObject;
 
@@ -42,25 +42,25 @@ class ComplexObjectView extends StatelessWidget {
 
   Color buildColor(String intensity) {
     switch (intensity) {
-      case "":
+      case '':
         return Colors.primaries[12];
         break;
-      case "SL":
+      case 'SL':
         return Colors.primaries[11];
         break;
-      case "LD":
+      case 'LD':
         return Colors.primaries[10];
         break;
-      case "MD":
+      case 'MD':
         return Colors.primaries[9];
         break;
-      case "SD":
+      case 'SD':
         return Colors.primaries[1];
         break;
-      case "TD":
+      case 'TD':
         return Colors.primaries[0];
         break;
-      case "SWL":
+      case 'SWL':
         return Colors.primaries[3];
         break;
       default:
@@ -105,7 +105,7 @@ class _CustomListTileState extends State<CustomListTile> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.0),
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: SizedBox(
         height: 60,
         child: Row(

@@ -8,6 +8,7 @@ import 'models/workouts_repository.dart';
 import 'screens/activity_screen.dart';
 import 'screens/explore_screen.dart';
 import 'home.dart';
+import 'screens/explore_workouts_screen.dart';
 import 'util/key_value_storage.dart';
 
 void main() async {
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => HomePage(),
           '/schedule': (context) => ActivityScreen(),
           '/explore': (context) => ExploreScreen(),
+          '/workouts': (context) => ExploreWorkouts(),
         },
       ),
     );

@@ -6,22 +6,20 @@ import 'workout_model.dart';
 
 class LocalStorageRepository implements WorkoutsRepository {
   final WorkoutsRepository localStorage;
-  final String _filename;
+  final String key;
 
   LocalStorageRepository({@required this.localStorage, String filename})
-      : _filename = filename ?? '';
+      : key = filename ?? '';
 
   WorkoutsRepository jsonClient = JsonImport();
 
   @override
   Future<List<Workout>> loadWorkouts(String key) async {
     try {
-      debugPrint('Load SharedPreferences, Key: $key');
       return await localStorage.loadWorkouts(key);
     } catch (e) {
       debugPrint('Load JSON');
       final workouts = await jsonClient.loadWorkouts(key);
-      debugPrint('saveWorkouts');
       await localStorage.saveWorkouts(workouts, key);
 
       return workouts;

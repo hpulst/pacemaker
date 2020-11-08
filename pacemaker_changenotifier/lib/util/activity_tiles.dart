@@ -11,10 +11,11 @@ class ComplexObjectView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localTheme = Theme.of(context).textTheme;
-    if (complexObject == null)
+    if (complexObject == null) {
       return Text('Choose your workout', style: localTheme.bodyText2);
+    }
     return Container(
-      decoration: new BoxDecoration(
+      decoration: BoxDecoration(
         // border: new Border(
         //   top: new BorderSide(style: BorderStyle.solid, color: Colors.black26),
         // ),
@@ -101,7 +102,6 @@ class CustomListTile extends StatefulWidget {
 
 class _CustomListTileState extends State<CustomListTile> {
   // bool _isSelected = false;
-
   @override
   Widget build(BuildContext context) {
     return Padding(

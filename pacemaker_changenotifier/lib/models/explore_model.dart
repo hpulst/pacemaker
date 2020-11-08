@@ -30,16 +30,15 @@ class WorkoutTable {
 }
 
 Future<List<WorkoutTable>> loadWorkouts(String filename) async {
-  String jsonWorkouts = await _loadAsset(filename);
+  var jsonWorkouts = await _loadAsset(filename);
   List<dynamic> parsedJson = jsonDecode(jsonWorkouts);
 
-  List<WorkoutTable> workouttables =
-      parsedJson.map((o) => WorkoutTable.fromJson(o)).toList();
+  var workouttables = parsedJson.map((o) => WorkoutTable.fromJson(o)).toList();
 
   return workouttables;
 }
 
 Future<String> _loadAsset(String filename) async {
-  String filePath = "assets/json/" + filename + ".json";
+  var filePath = 'assets/json/' + filename + '.json';
   return await rootBundle.loadString(filePath);
 }

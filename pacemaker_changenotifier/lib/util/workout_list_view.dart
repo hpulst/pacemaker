@@ -9,10 +9,6 @@ class WorkoutListView extends StatelessWidget {
   final bool complete;
   WorkoutListView({this.filename, this.complete});
 
-//If workoutName =! Null load Json or already saved Workout
-
-//If workoutName == Null, load Workout provided/set by Provider
-
   @override
   Widget build(BuildContext context) {
     return Selector<WorkoutListModel, List<Workout>>(

@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:pacemaker_changenotifier/models/workouts_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -12,14 +11,9 @@ class KeyValueStorage implements WorkoutsRepository {
 
   @override
   Future<List<Workout>> loadWorkouts(String key) async {
-    key = 'provider_workouts';
-
-    debugPrint('KeyValueStorage: Key: $key');
-    debugPrint(codec
-        .decode(preferences.getString(key))['workouts']
-        .cast<Map<String, Object>>()
-        .map<Workout>(Workout.fromJson)
-        .toList(growable: false));
+    if (key == '') {
+      key = 'provider_workouts';
+    }
 
     return codec
         .decode(preferences.getString(key))['workouts']
@@ -30,7 +24,9 @@ class KeyValueStorage implements WorkoutsRepository {
 
   @override
   Future<bool> saveWorkouts(List<Workout> workouts, String key) {
-    key = 'provider_workouts';
+    if (key == '') {
+      key = 'provider_workouts';
+    }
     return preferences.setString(
       key,
       codec.encode({

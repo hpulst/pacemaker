@@ -11,6 +11,8 @@
 
 - TODO: Implement [nested navigation with a bottom navigation bar](https://medium.com/@Mr_Pepe/nested-navigation-with-a-bottom-navigation-bar-using-flutter-d3c5086fbcdc)
 - TODO: On 'Start' pressed navigate to activity view
+- TODO: Add dates
+- TODO: Add Calendar overview
 
 &nbsp;
 

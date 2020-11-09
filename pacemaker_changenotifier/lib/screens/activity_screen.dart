@@ -10,11 +10,25 @@ class ActivityScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var title = '${context.watch<WorkoutListModel>().title}';
+    var title = context.watch<WorkoutListModel>().title ?? 'Workout';
+    print(title);
     final myTabs = <Tab>[
       Tab(text: 'Schedule'),
       Tab(text: 'History'),
     ];
+
+    if (title == 'Workout') {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(title),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Text('Choose workout first'),
+        ),
+      );
+    }
+
     return DefaultTabController(
       // initialIndex: selectedTab,
       length: myTabs.length,

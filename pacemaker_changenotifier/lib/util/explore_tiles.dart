@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pacemaker_changenotifier/screens/details_screen.dart';
 
 class SimpleObjectView extends StatelessWidget {
   final List<dynamic> simpleObjects;
@@ -25,16 +24,15 @@ class SimpleObjectView extends StatelessWidget {
                 style: TextStyle(fontSize: 15.0),
               ),
               onTap: () {
-                Navigator.push(
+                Navigator.pushNamed(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailsScreen(
-                      name: simpleObjects[index].name,
-                      workout: simpleObjects[index].workout,
-                      premarathon: simpleObjects[index].premarathon,
-                      pre10km: simpleObjects[index].pre10km,
-                      frequency: simpleObjects[index].frequency,
-                    ),
+                  '/workouts',
+                  arguments: ScreenArguments(
+                    name: simpleObjects[index].name,
+                    workout: simpleObjects[index].workout,
+                    premarathon: simpleObjects[index].premarathon,
+                    pre10km: simpleObjects[index].pre10km,
+                    frequency: simpleObjects[index].frequency,
                   ),
                 );
               },
@@ -51,4 +49,20 @@ class SimpleObjectView extends StatelessWidget {
       ),
     );
   }
+}
+
+class ScreenArguments {
+  final String name;
+  final String workout;
+  final String premarathon;
+  final String pre10km;
+  final String frequency;
+
+  ScreenArguments(
+      {Key key,
+      this.name,
+      this.workout,
+      this.premarathon,
+      this.pre10km,
+      this.frequency});
 }

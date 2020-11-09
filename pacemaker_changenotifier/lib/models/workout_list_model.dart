@@ -1,19 +1,21 @@
 import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
+import 'package:pacemaker_changenotifier/util/key_value_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'storage_repository.dart';
 import 'workouts_repository.dart';
 
 enum VisibilityFilter { all, active, completed }
 
 class WorkoutListModel extends ChangeNotifier {
   final WorkoutsRepository repository;
+  final List<Workout> _workouts;
+
   VisibilityFilter _filter;
   bool _isLoading = false;
-  final List<Workout> _workouts;
   String filename;
-  String _pressed;
   String _title;
-  String get title => _title;
 
   WorkoutListModel({
     @required this.repository,
@@ -23,16 +25,10 @@ class WorkoutListModel extends ChangeNotifier {
   }) : _workouts = workouts ?? [];
   // _filter = filter ?? VisibilityFilter.all;
 
+  String get title => _title;
   VisibilityFilter get filter => _filter;
   UnmodifiableListView<Workout> get workouts => UnmodifiableListView(_workouts);
   bool get isLoading => _isLoading;
-  String get pressed => _pressed;
-
-  void setWorkout(String pressed) {
-    _pressed = pressed;
-    debugPrint('pressed  $pressed');
-    notifyListeners();
-  }
 
   Future loadWorkouts() {
     _isLoading = true;
@@ -40,7 +36,7 @@ class WorkoutListModel extends ChangeNotifier {
     return repository.loadWorkouts(filename).then((loadedWorkouts) {
       _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
       _isLoading = false;
-      getTitle();
+      setTitle();
       notifyListeners();
     }).catchError((err) {
       _isLoading = false;
@@ -82,22 +78,38 @@ class WorkoutListModel extends ChangeNotifier {
   }
 
   void _uploadItems() {
-    debugPrint('_uploadItems');
     repository.saveWorkouts(
         _workouts.map<Workout>((e) => e.toEntity()).toList(),
         _workouts[0].workout);
   }
 
-  void addWorkout(Workout workout) {
-    _workouts.add(workout);
-    notifyListeners();
-    _uploadItems();
+  Future<List<Workout>> addWorkouts(filename) async {
+    var list = <Workout>[];
+    list = _workouts.where((workout) => workout.workout == filename).toList();
+
+    if (list.isEmpty) {
+      var repo = LocalStorageRepository(
+          localStorage: KeyValueStorage(await SharedPreferences.getInstance()),
+          filename: filename);
+
+      await repo.loadWorkouts(filename).then(
+        (loadedWorkouts) {
+          _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
+        },
+      );
+
+      list = _workouts.where((workout) => workout.workout == filename).toList();
+    }
+    return list;
   }
 
-  void getTitle() {
+  void setTitle() {
     _title = _workouts[0].workout;
-    print('Title hi!');
     debugPrint(_title);
     notifyListeners();
+  }
+
+  void setWorkout(List workout) {
+    repository.saveWorkouts(workout, 'user');
   }
 }

@@ -1,6 +1,5 @@
 [
     {
-        "id": "1",
         "workout": "10Kilometer34",
         "week": "Woche 1",
         "weekday": "Montag",
@@ -8,7 +7,6 @@
         "complete": false
     },
     {
-        "id": "2",
         "workout": "10Kilometer34",
         "week": "Woche 1",
         "weekday": "Dienstag",
@@ -20,7 +18,6 @@
         "complete": false
     },
     {
-        "id": "3",
         "workout": "10Kilometer34",
         "week": "Woche 1",
         "weekday": "Mittwoch",
@@ -32,7 +29,6 @@
         "complete": false
     },
     {
-        "id": "4",
         "workout": "10Kilometer34",
         "week": "Woche 1",
         "weekday": "Donnerstag",
@@ -44,7 +40,6 @@
         "complete": false
     },
     {
-        "id": "5",
         "workout": "10Kilometer34",
         "week": "Woche 1",
         "weekday": "Freitag",

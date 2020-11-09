@@ -13,6 +13,7 @@
 - TODO: On 'Start' pressed navigate to activity view
 - TODO: Add dates
 - TODO: Add Calendar overview
+- TODO: Use 'expand / collapse' list entry with ExpansionTile class or use details screen to reveal more workout information
 
 &nbsp;
 

@@ -10,8 +10,10 @@ class ActivityScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var title = context.watch<WorkoutListModel>().title ?? 'Workout';
-    print(title);
+    var title = context.watch<WorkoutListModel>().selected ?? 'Workout';
+    var workoutName = context.watch<WorkoutListModel>().selected;
+    print(workoutName);
+
     final myTabs = <Tab>[
       Tab(text: 'Schedule'),
       Tab(text: 'History'),
@@ -41,8 +43,8 @@ class ActivityScreen extends StatelessWidget {
           ],
           body: TabBarView(
             children: [
-              WorkoutListView(filename: 'marathon315', complete: false),
-              WorkoutListView(filename: 'marathon315', complete: true),
+              WorkoutListView(filename: workoutName, complete: false),
+              WorkoutListView(filename: workoutName, complete: true),
             ],
           ),
         ),

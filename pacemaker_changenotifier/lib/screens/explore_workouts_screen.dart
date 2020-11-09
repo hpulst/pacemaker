@@ -13,17 +13,14 @@ class ExploreWorkouts extends StatefulWidget {
 }
 
 class _ExploreWorkoutsState extends State<ExploreWorkouts> {
-  WorkoutListModel model;
-
   Future<List<Workout>> addWorkouts(String workout) async {
-    model = Provider.of<WorkoutListModel>(context, listen: false);
+    var model = Provider.of<WorkoutListModel>(context, listen: false);
     return await model.addWorkouts(workout);
   }
 
   @override
   Widget build(BuildContext context) {
     final ScreenArguments args = ModalRoute.of(context).settings.arguments;
-
     final banner = MaterialBanner(
       backgroundColor: Color(0xFFFAFAFA),
       content: Column(
@@ -44,7 +41,7 @@ class _ExploreWorkoutsState extends State<ExploreWorkouts> {
         ],
       ),
       actions: [
-        _AddWorkouts(workout: args.workout, model: model),
+        _AddWorkouts(name: args.workout),
         FlatButton(
           onPressed: () {},
           child: Text(
@@ -92,26 +89,22 @@ class _ExploreWorkoutsState extends State<ExploreWorkouts> {
 }
 
 class _AddWorkouts extends StatelessWidget {
-  final String workout;
-  final WorkoutListModel model;
+  final String name;
+
   _AddWorkouts({
-    this.workout,
-    this.model,
+    this.name,
     Key key,
   }) : super(key: key);
-
-  List<Workout> list = [];
-
-  // list.add[];
-
   @override
   Widget build(BuildContext context) {
+    print(name);
     return FlatButton(
       child: Text('Start'),
       onPressed: () {
         // Navigator.popAndPushNamed(context, '/schedule');
         Navigator.pop(context);
-        model.setWorkout(list);
+        Provider.of<WorkoutListModel>(context, listen: false)
+            .setWorkout(Workout(workout: name));
       },
     );
   }

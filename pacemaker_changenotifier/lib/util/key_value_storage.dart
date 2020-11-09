@@ -11,10 +11,9 @@ class KeyValueStorage implements WorkoutsRepository {
 
   @override
   Future<List<Workout>> loadWorkouts(String key) async {
-    if (key == '') {
-      key = 'provider_workouts';
-    }
-
+    // if (key == '') {
+    //   key = 'provider_workouts';
+    // }
     return codec
         .decode(preferences.getString(key))['workouts']
         .cast<Map<String, Object>>()
@@ -24,14 +23,16 @@ class KeyValueStorage implements WorkoutsRepository {
 
   @override
   Future<bool> saveWorkouts(List<Workout> workouts, String key) {
-    if (key == '') {
-      key = 'provider_workouts';
-    }
+    // if (key == '') {
+    //   key = 'provider_workouts';
+    // }
     return preferences.setString(
       key,
-      codec.encode({
-        'workouts': workouts.map((workout) => workout.toJson()).toList(),
-      }),
+      codec.encode(
+        {
+          'workouts': workouts.map((workout) => workout.toJson()).toList(),
+        },
+      ),
     );
   }
 }

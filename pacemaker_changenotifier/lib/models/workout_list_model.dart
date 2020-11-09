@@ -16,6 +16,7 @@ class WorkoutListModel extends ChangeNotifier {
   bool _isLoading = false;
   String filename;
   String _title;
+  String _selected;
 
   WorkoutListModel({
     @required this.repository,
@@ -26,6 +27,7 @@ class WorkoutListModel extends ChangeNotifier {
   // _filter = filter ?? VisibilityFilter.all;
 
   String get title => _title;
+  String get selected => _selected;
   VisibilityFilter get filter => _filter;
   UnmodifiableListView<Workout> get workouts => UnmodifiableListView(_workouts);
   bool get isLoading => _isLoading;
@@ -88,9 +90,7 @@ class WorkoutListModel extends ChangeNotifier {
     list = _workouts.where((workout) => workout.workout == filename).toList();
 
     if (list.isEmpty) {
-      var repo = LocalStorageRepository(
-          localStorage: KeyValueStorage(await SharedPreferences.getInstance()),
-          filename: filename);
+      var repo = await createRepo(filename);
 
       await repo.loadWorkouts(filename).then(
         (loadedWorkouts) {
@@ -103,13 +103,41 @@ class WorkoutListModel extends ChangeNotifier {
     return list;
   }
 
+  Future<LocalStorageRepository> createRepo(filename) async {
+    var repo = LocalStorageRepository(
+        localStorage: KeyValueStorage(await SharedPreferences.getInstance()),
+        filename: filename);
+    return repo;
+  }
+
   void setTitle() {
     _title = _workouts[0].workout;
     debugPrint(_title);
     notifyListeners();
   }
 
-  void setWorkout(List workout) {
-    repository.saveWorkouts(workout, 'user');
+  void setWorkout(Workout workout) async {
+    var prefName = 'user';
+    var prefs = await SharedPreferences.getInstance();
+
+    _selected = prefs.getString(prefName) ?? workout.workout;
+    await prefs.setString(prefName, workout.workout);
+
+    // var repo = await createRepo(filename);
+
+    // await repo.loadWorkouts(prefName).then(
+    //   (loadedWorkouts) {
+    //     _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
+    //   },
+    // );
+
+    // var list = <Workout>[];
+    // list.add(workout);
+
+    // repository.saveWorkouts(
+    //     list.map<Workout>((e) => e.toEntity()).toList(), prefName);
+
+    // print(repository.saveWorkouts(
+    //     list.map<Workout>((e) => e.toEntity()).toList(), prefName));
   }
 }

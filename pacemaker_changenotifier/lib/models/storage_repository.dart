@@ -8,7 +8,7 @@ class LocalStorageRepository implements WorkoutsRepository {
   final WorkoutsRepository localStorage;
   final String key;
 
-  LocalStorageRepository({@required this.localStorage, String filename})
+  LocalStorageRepository({this.localStorage, String filename})
       : key = filename ?? '';
 
   WorkoutsRepository jsonClient = JsonImport();
@@ -16,7 +16,7 @@ class LocalStorageRepository implements WorkoutsRepository {
   @override
   Future<List<Workout>> loadWorkouts(String key) async {
     try {
-      return await localStorage.loadWorkouts(key);
+      return await localStorage?.loadWorkouts(key);
     } catch (e) {
       debugPrint('Load JSON');
       final workouts = await jsonClient.loadWorkouts(key);

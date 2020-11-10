@@ -1,19 +1,16 @@
 import 'dart:convert';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
-import 'package:pacemaker_changenotifier/models/workouts_repository.dart';
+import 'package:pacemaker_changenotifier/repository/workouts_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class KeyValueStorage implements WorkoutsRepository {
+  const KeyValueStorage(this.preferences, [this.codec = json]);
+
   final SharedPreferences preferences;
   final JsonCodec codec;
 
-  const KeyValueStorage(this.preferences, [this.codec = json]);
-
   @override
   Future<List<Workout>> loadWorkouts(String key) async {
-    // if (key == '') {
-    //   key = 'provider_workouts';
-    // }
     return codec
         .decode(preferences.getString(key))['workouts']
         .cast<Map<String, Object>>()

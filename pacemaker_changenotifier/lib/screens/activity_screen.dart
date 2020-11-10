@@ -10,13 +10,13 @@ class ActivityScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var title = context.watch<WorkoutListModel>().selected ?? 'Workout';
-    var workoutName = context.watch<WorkoutListModel>().selected;
+    final title = context.watch<WorkoutListModel>().selected ?? 'Workout';
+    final workoutName = context.watch<WorkoutListModel>().selected;
     print(workoutName);
 
     final myTabs = <Tab>[
-      Tab(text: 'Schedule'),
-      Tab(text: 'History'),
+      const Tab(text: 'Schedule'),
+      const Tab(text: 'History'),
     ];
 
     if (title == 'Workout') {
@@ -25,7 +25,7 @@ class ActivityScreen extends StatelessWidget {
           title: Text(title),
           centerTitle: true,
         ),
-        body: Center(
+        body: const Center(
           child: Text('Choose workout first'),
         ),
       );

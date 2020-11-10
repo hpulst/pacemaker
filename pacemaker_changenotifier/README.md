@@ -14,6 +14,7 @@
 - TODO: Add dates
 - TODO: Add Calendar overview
 - TODO: Use 'expand / collapse' list entry with ExpansionTile class or use details screen to reveal more workout information
+- TODO: Implement device_preview
 
 &nbsp;
 

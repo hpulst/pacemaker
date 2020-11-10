@@ -1,17 +1,6 @@
 import 'package:uuid/uuid.dart';
 
 class Workout {
-  final String id;
-  final String workout;
-  final String week;
-  final String weekday;
-  final String km;
-  final String time;
-  final String pace;
-  final String intensity;
-  final String heartrate;
-  final bool complete;
-
   Workout({
     String id,
     this.workout,
@@ -24,6 +13,17 @@ class Workout {
     this.heartrate,
     this.complete,
   }) : id = id ?? Uuid().v4();
+
+  final String id;
+  final String workout;
+  final String week;
+  final String weekday;
+  final String km;
+  final String time;
+  final String pace;
+  final String intensity;
+  final String heartrate;
+  final bool complete;
 
   static Workout fromEntity(Workout entity) {
     return Workout(

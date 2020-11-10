@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:core';
 
-import 'workout_model.dart';
+import '../models/workout_model.dart';
 
 abstract class WorkoutsRepository {
   // Loads workouts first from File storage.

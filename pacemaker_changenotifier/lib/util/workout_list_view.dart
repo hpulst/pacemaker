@@ -5,9 +5,10 @@ import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'activity_tiles.dart';
 
 class WorkoutListView extends StatelessWidget {
+  const WorkoutListView({this.filename, this.complete});
+
   final String filename;
   final bool complete;
-  WorkoutListView({this.filename, this.complete});
 
   @override
   Widget build(BuildContext context) {

@@ -3,13 +3,13 @@ import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'models/storage_repository.dart';
-import 'models/workouts_repository.dart';
+import 'home.dart';
+import 'repository/key_value_storage.dart';
+import 'repository/storage_repository.dart';
+import 'repository/workouts_repository.dart';
 import 'screens/activity_screen.dart';
 import 'screens/explore_screen.dart';
-import 'home.dart';
 import 'screens/explore_workouts_screen.dart';
-import 'util/key_value_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,15 +24,16 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final WorkoutsRepository repository;
-
   const MyApp({@required this.repository});
+
+  final WorkoutsRepository repository;
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => WorkoutListModel(repository: repository)..loadWorkouts(),
       child: MaterialApp(
+        // locale: DevicePreview.of(context).locale,
         debugShowCheckedModeBanner: false,
         title: 'Pacemaker',
         theme: ThemeData(

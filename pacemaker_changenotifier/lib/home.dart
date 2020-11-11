@@ -4,6 +4,10 @@ import 'screens/activity_screen.dart';
 import 'screens/explore_screen.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({this.firstTab, Key key}) : super(key: key);
+
+  final int firstTab;
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -13,11 +17,22 @@ class _MyHomePageState extends State<HomePage> {
     ActivityScreen(),
     ExploreScreen(),
   ];
-  int currentTab = 0;
+  int currentTab;
+
   final PageStorageBucket _bucket = PageStorageBucket();
 
   @override
   Widget build(BuildContext context) {
+    // final TabArguments args = ModalRoute.of(context).settings.arguments;
+
+    // print(args.newTap);
+
+    // if (args.newTap != null) {
+    //   currentTab = args.newTap;
+    // }
+
+    currentTab ??= widget.firstTab;
+
     return Scaffold(
       body: PageStorage(
         child: pages[currentTab],

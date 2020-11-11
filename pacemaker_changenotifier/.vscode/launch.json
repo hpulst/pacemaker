@@ -5,6 +5,15 @@
             "type": "dart",
             "request": "launch",
             "program": "lib/main.dart"
+        },
+        {
+            "name": "flutter",
+            "cwd": "flutter",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=device_preview=false"
+            ]
         }
     ]
 }

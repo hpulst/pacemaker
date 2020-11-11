@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pacemaker_changenotifier/models/explore_model.dart';
 
 class SimpleObjectView extends StatelessWidget {
   const SimpleObjectView({Key key, @required this.simpleObjects})
@@ -29,6 +30,7 @@ class SimpleObjectView extends StatelessWidget {
                   context,
                   '/workouts',
                   arguments: ScreenArguments(
+                    workoutTable: simpleObjects[index],
                     name: simpleObjects[index].name,
                     workout: simpleObjects[index].workout,
                     premarathon: simpleObjects[index].premarathon,
@@ -54,14 +56,14 @@ class SimpleObjectView extends StatelessWidget {
 
 class ScreenArguments {
   ScreenArguments(
-      {
-      // Key key,
+      {this.workoutTable,
       this.name,
       this.workout,
       this.premarathon,
       this.pre10km,
       this.frequency});
 
+  final WorkoutTable workoutTable;
   final String name;
   final String workout;
   final String premarathon;

@@ -1,5 +1,6 @@
 import 'dart:collection';
 import 'package:flutter/material.dart';
+import 'package:pacemaker_changenotifier/models/explore_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:pacemaker_changenotifier/repository/key_value_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -21,13 +22,13 @@ class WorkoutListModel extends ChangeNotifier {
   final List<Workout> _workouts;
 
   VisibilityFilter _filter;
-  bool _isLoading = false;
   String filename;
-  String _title;
-  String _selected;
+  String _selectedWorkout;
+  String _selectedTitle;
+  bool _isLoading = false;
 
-  String get title => _title;
-  String get selected => _selected;
+  String get selectedWorkout => _selectedWorkout;
+  String get selectedTitle => _selectedTitle;
   VisibilityFilter get filter => _filter;
   UnmodifiableListView<Workout> get workouts => UnmodifiableListView(_workouts);
   bool get isLoading => _isLoading;
@@ -35,10 +36,10 @@ class WorkoutListModel extends ChangeNotifier {
   Future loadWorkouts() {
     _isLoading = true;
     notifyListeners();
+
     return repository.loadWorkouts(filename).then((loadedWorkouts) {
       _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
       _isLoading = false;
-      setTitle();
       notifyListeners();
     }).catchError((dynamic err) {
       _isLoading = false;
@@ -69,8 +70,6 @@ class WorkoutListModel extends ChangeNotifier {
     final replaceIndex = _workouts.indexOf(oldWorkout);
 
     _workouts.replaceRange(replaceIndex, replaceIndex + 1, [workout]);
-    // _workouts.removeWhere((it) => it.id == workout.id);
-
     notifyListeners();
     _uploadItems();
   }
@@ -88,9 +87,8 @@ class WorkoutListModel extends ChangeNotifier {
   Future<List<Workout>> addWorkouts(String filename) async {
     var list = <Workout>[];
     list = _workouts.where((workout) => workout.workout == filename).toList();
-
     if (list.isEmpty) {
-      final repo = await createRepo(filename);
+      final repo = await createRepository(filename);
 
       await repo.loadWorkouts(filename).then(
         (loadedWorkouts) {
@@ -103,41 +101,21 @@ class WorkoutListModel extends ChangeNotifier {
     return list;
   }
 
-  Future<LocalStorageRepository> createRepo(String filename) async {
+  Future<LocalStorageRepository> createRepository(String filename) async {
     final repo = LocalStorageRepository(
         localStorage: KeyValueStorage(await SharedPreferences.getInstance()),
         filename: filename);
     return repo;
   }
 
-  void setTitle() {
-    _title = _workouts[0].workout;
-    debugPrint(_title);
-    notifyListeners();
-  }
-
-  Future setWorkout(Workout workout) async {
-    const prefName = 'user';
+  Future setWorkout(WorkoutTable workoutTable) async {
     final prefs = await SharedPreferences.getInstance();
 
-    _selected = prefs.getString(prefName) ?? workout.workout;
-    await prefs.setString(prefName, workout.workout);
+    await prefs.setString('user', workoutTable.workout);
+    await prefs.setString('title', workoutTable.name);
 
-    // var repo = await createRepo(filename);
-
-    // await repo.loadWorkouts(prefName).then(
-    //   (loadedWorkouts) {
-    //     _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
-    //   },
-    // );
-
-    // var list = <Workout>[];
-    // list.add(workout);
-
-    // repository.saveWorkouts(
-    //     list.map<Workout>((e) => e.toEntity()).toList(), prefName);
-
-    // print(repository.saveWorkouts(
-    //     list.map<Workout>((e) => e.toEntity()).toList(), prefName));
+    _selectedWorkout = prefs.getString('user');
+    _selectedTitle = prefs.getString('title');
+    notifyListeners();
   }
 }

@@ -10,19 +10,20 @@ class ActivityScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final title = context.watch<WorkoutListModel>().selected ?? 'Workout';
-    final workoutName = context.watch<WorkoutListModel>().selected;
-    print(workoutName);
+    final selectedWorkout = context.watch<WorkoutListModel>().selectedWorkout;
+
+    final selectedTitle =
+        context.watch<WorkoutListModel>().selectedTitle ?? 'Workout';
 
     final myTabs = <Tab>[
       const Tab(text: 'Schedule'),
       const Tab(text: 'History'),
     ];
 
-    if (title == 'Workout') {
+    if (selectedTitle == 'Workout') {
       return Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: Text(selectedTitle),
           centerTitle: true,
         ),
         body: const Center(
@@ -39,12 +40,12 @@ class ActivityScreen extends StatelessWidget {
           floatHeaderSlivers: true,
           headerSliverBuilder:
               (BuildContext context, bool innerBoxIsScrolled) => [
-            CustomSliverAppBar(myTabs: myTabs, title: title),
+            CustomSliverAppBar(myTabs: myTabs, title: selectedTitle),
           ],
           body: TabBarView(
             children: [
-              WorkoutListView(filename: workoutName, complete: false),
-              WorkoutListView(filename: workoutName, complete: true),
+              WorkoutListView(filename: selectedWorkout, complete: false),
+              WorkoutListView(filename: selectedWorkout, complete: true),
             ],
           ),
         ),

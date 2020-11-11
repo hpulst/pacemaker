@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:pacemaker_changenotifier/models/explore_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:pacemaker_changenotifier/util/explore_tiles.dart';
@@ -29,7 +31,7 @@ class ExploreWorkouts extends StatelessWidget {
         ],
       ),
       actions: [
-        _AddWorkouts(name: args.workout),
+        _AddWorkouts(workoutTable: args.workoutTable),
         FlatButton(
           onPressed: () {},
           child: const Text(
@@ -66,12 +68,13 @@ class FutureWorkouts extends StatefulWidget {
   }) : super(key: key);
 
   final ScreenArguments args;
-
   @override
   _FutureWorkoutsState createState() => _FutureWorkoutsState();
 }
 
 class _FutureWorkoutsState extends State<FutureWorkouts> {
+  // WorkoutListModel model = WorkoutListModel(repository: null);
+
   @override
   Widget build(BuildContext context) {
     Future<List<Workout>> addWorkouts(String workout) async {
@@ -102,23 +105,30 @@ class _FutureWorkoutsState extends State<FutureWorkouts> {
 
 class _AddWorkouts extends StatelessWidget {
   const _AddWorkouts({
-    this.name,
+    this.workoutTable,
     Key key,
   }) : super(key: key);
 
-  final String name;
+  final WorkoutTable workoutTable;
 
   @override
   Widget build(BuildContext context) {
-    print(name);
     return FlatButton(
       child: const Text('Start'),
       onPressed: () {
-        // Navigator.popAndPushNamed(context, '/schedule');
+        context.read<WorkoutListModel>().setWorkout(workoutTable);
         Navigator.pop(context);
-        Provider.of<WorkoutListModel>(context, listen: false)
-            .setWorkout(Workout(workout: name));
+        // Navigator.pushNamed(context, '/home'
+        //     // , arguments: TabArguments(0)
+        //     );
+        // Provider.of<WorkoutListModel>(context, listen: false)
+        //     .setWorkout(Workout(workout: name));
       },
     );
   }
 }
+
+// class TabArguments {
+//   TabArguments(this.newTap);
+//   final int newTap;
+// }

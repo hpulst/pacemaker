@@ -1,9 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 
 class Workout {
   Workout({
     String id,
-    this.workout,
+    @required this.workout,
     this.week,
     this.weekday,
     this.km,

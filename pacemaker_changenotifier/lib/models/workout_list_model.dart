@@ -41,7 +41,8 @@ class WorkoutListModel extends ChangeNotifier {
       _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
       _isLoading = false;
       notifyListeners();
-    }).catchError((dynamic err) {
+    }).catchError((Error error) {
+      debugPrint('Error caught: $error');
       _isLoading = false;
       notifyListeners();
     });

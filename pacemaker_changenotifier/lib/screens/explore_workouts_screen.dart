@@ -23,7 +23,6 @@ class ExploreWorkouts extends StatelessWidget {
               fontSize: 14.0,
             ),
           ),
-          Text(args.workout ?? ''),
           Text(args.premarathon != null
               ? args.premarathon + '\n' + args.pre10km
               : args.pre10km),
@@ -73,7 +72,16 @@ class FutureWorkouts extends StatefulWidget {
 }
 
 class _FutureWorkoutsState extends State<FutureWorkouts> {
-  // WorkoutListModel model = WorkoutListModel(repository: null);
+  // Future<List>>WorkoutListModel model = WorkoutListModel(repository: null);
+  // Future<List<Workout>> workoutinstance;
+  //     final model = Provider.of<WorkoutListModel>(context, listen: false);
+
+  // @override
+  // void initState() {
+  //    workoutinstance = model.addWorkouts
+  //   // TODO: implement initState
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {

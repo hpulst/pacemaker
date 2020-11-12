@@ -56,9 +56,9 @@ class SimpleObjectView extends StatelessWidget {
 
 class ScreenArguments {
   ScreenArguments(
-      {this.workoutTable,
-      this.name,
-      this.workout,
+      {@required this.workoutTable,
+      @required this.name,
+      @required this.workout,
       this.premarathon,
       this.pre10km,
       this.frequency});

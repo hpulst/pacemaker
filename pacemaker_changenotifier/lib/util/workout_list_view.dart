@@ -6,7 +6,6 @@ import 'activity_tiles.dart';
 
 class WorkoutListView extends StatelessWidget {
   const WorkoutListView({this.filename, this.complete});
-
   final String filename;
   final bool complete;
 

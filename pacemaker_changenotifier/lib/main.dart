@@ -8,8 +8,6 @@ import 'home.dart';
 import 'repository/key_value_storage.dart';
 import 'repository/storage_repository.dart';
 import 'repository/workouts_repository.dart';
-import 'screens/activity_screen.dart';
-import 'screens/explore_screen.dart';
 import 'screens/explore_workouts_screen.dart';
 
 Future<void> main() async {
@@ -38,12 +36,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => WorkoutListModel(repository: repository)..loadWorkouts(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<WorkoutListModel>(
+          create: (_) =>
+              WorkoutListModel(repository: repository)..loadWorkouts(),
+        ),
+        ChangeNotifierProvider<NavigatorModel>(
+          create: (_) =>
+              NavigatorModel()..currentIndex = (token == null ? 1 : 0),
+        ),
+      ],
       child: MaterialApp(
         locale: DevicePreview.of(context).locale,
         builder: DevicePreview.appBuilder,
-        debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: true,
         title: 'Pacemaker',
         theme: ThemeData(
           primaryTextTheme: TextTheme(
@@ -55,16 +62,22 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
           // scaffoldBackgroundColor: Colors.red,
         ),
-        home: token == null
-            ? const HomePage(firstTab: 1)
-            : const HomePage(firstTab: 0),
+        home: HomePage(),
         routes: {
-          '/home': (context) => const HomePage(),
-          '/schedule': (context) => ActivityScreen(),
-          '/explore': (context) => ExploreScreen(),
           '/workouts': (context) => ExploreWorkouts(),
         },
       ),
     );
+  }
+}
+
+class NavigatorModel extends ChangeNotifier {
+  int _currentIndex = 0;
+
+  int get currentIndex => _currentIndex;
+
+  set currentIndex(int index) {
+    _currentIndex = index;
+    notifyListeners();
   }
 }

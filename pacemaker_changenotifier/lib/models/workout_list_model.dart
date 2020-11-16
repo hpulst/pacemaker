@@ -23,8 +23,8 @@ class WorkoutListModel extends ChangeNotifier {
 
   VisibilityFilter _filter;
   String filename;
-  String _selectedWorkout;
-  String _selectedTitle;
+  String _selectedWorkout = '';
+  String _selectedTitle = 'Workout';
   bool _isLoading = false;
 
   String get selectedWorkout => _selectedWorkout;
@@ -41,10 +41,10 @@ class WorkoutListModel extends ChangeNotifier {
       _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
       _isLoading = false;
       notifyListeners();
-    }).catchError((Error error) {
-      debugPrint('Error caught: $error');
+    }).catchError((dynamic error) {
       _isLoading = false;
       notifyListeners();
+      debugPrint('Error caught: $error');
     });
   }
 
@@ -62,6 +62,10 @@ class WorkoutListModel extends ChangeNotifier {
           return true;
       }
     }).toList();
+  }
+
+  List<Workout> filterWorkouts(String filename) {
+    return _workouts.where((workout) => workout.workout == filename).toList();
   }
 
   void updateWorkout(Workout workout) {
@@ -86,20 +90,18 @@ class WorkoutListModel extends ChangeNotifier {
   }
 
   Future<List<Workout>> addWorkouts(String filename) async {
-    var list = <Workout>[];
-    list = _workouts.where((workout) => workout.workout == filename).toList();
-    if (list.isEmpty) {
+    var _list = <Workout>[];
+    _list = _workouts.where((workout) => workout.workout == filename).toList();
+    if (_list.isEmpty) {
       final repo = await createRepository(filename);
-
       await repo.loadWorkouts(filename).then(
         (loadedWorkouts) {
-          _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
+          _list.addAll(loadedWorkouts.map(Workout.fromEntity));
         },
       );
-
-      list = _workouts.where((workout) => workout.workout == filename).toList();
+      _workouts.addAll(_list);
     }
-    return list;
+    return _list;
   }
 
   Future<LocalStorageRepository> createRepository(String filename) async {

@@ -7,6 +7,8 @@ import 'package:pacemaker_changenotifier/util/explore_tiles.dart';
 import 'package:pacemaker_changenotifier/util/workout_list_view.dart';
 import 'package:provider/provider.dart';
 
+import '../main.dart';
+
 class ExploreWorkouts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -72,26 +74,19 @@ class FutureWorkouts extends StatefulWidget {
 }
 
 class _FutureWorkoutsState extends State<FutureWorkouts> {
-  // Future<List>>WorkoutListModel model = WorkoutListModel(repository: null);
-  // Future<List<Workout>> workoutinstance;
-  //     final model = Provider.of<WorkoutListModel>(context, listen: false);
+  Future<List<Workout>> _workoutList;
 
-  // @override
-  // void initState() {
-  //    workoutinstance = model.addWorkouts
-  //   // TODO: implement initState
-  //   super.initState();
-  // }
+  @override
+  void initState() {
+    super.initState();
+    _workoutList = Provider.of<WorkoutListModel>(context, listen: false)
+        .addWorkouts(widget.args.workout);
+  }
 
   @override
   Widget build(BuildContext context) {
-    Future<List<Workout>> addWorkouts(String workout) async {
-      final model = Provider.of<WorkoutListModel>(context, listen: false);
-      return await model.addWorkouts(workout);
-    }
-
     return FutureBuilder(
-      future: addWorkouts(widget.args.workout),
+      future: _workoutList,
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return Column(
@@ -125,18 +120,9 @@ class _AddWorkouts extends StatelessWidget {
       child: const Text('Start'),
       onPressed: () {
         context.read<WorkoutListModel>().setWorkout(workoutTable);
+        context.read<NavigatorModel>().currentIndex = 0;
         Navigator.pop(context);
-        // Navigator.pushNamed(context, '/home'
-        //     // , arguments: TabArguments(0)
-        //     );
-        // Provider.of<WorkoutListModel>(context, listen: false)
-        //     .setWorkout(Workout(workout: name));
       },
     );
   }
 }
-
-// class TabArguments {
-//   TabArguments(this.newTap);
-//   final int newTap;
-// }

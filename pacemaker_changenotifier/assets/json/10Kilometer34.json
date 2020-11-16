@@ -80,10 +80,6 @@
         "week": "Woche 2",
         "weekday": "Montag",
         "km": "Ruhetag",
-        "time": "",
-        "pace": "",
-        "intensity": "",
-        "heartrate": "",
         "complete": false
     },
     {
@@ -92,10 +88,6 @@
         "week": "Woche 2",
         "weekday": "Dienstag",
         "km": "1:10 Std Fahrtspiel",
-        "time": "",
-        "pace": "",
-        "intensity": "",
-        "heartrate": "",
         "complete": false
     },
     {
@@ -176,10 +168,6 @@
         "week": "Woche 3",
         "weekday": "Dienstag",
         "km": "Ruhetag",
-        "time": "",
-        "pace": "",
-        "intensity": "",
-        "heartrate": "",
         "complete": false
     },
     {

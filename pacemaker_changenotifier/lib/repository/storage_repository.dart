@@ -18,9 +18,9 @@ class LocalStorageRepository implements WorkoutsRepository {
     try {
       return await localStorage?.loadWorkouts(key);
     } catch (e) {
-      debugPrint('Load JSON');
       final workouts = await jsonClient.loadWorkouts(key);
       await localStorage.saveWorkouts(workouts, key);
+      debugPrint('Load JSON');
 
       return workouts;
     }

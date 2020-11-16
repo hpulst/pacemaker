@@ -11,8 +11,9 @@ class WorkoutListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('Called WoroutListView');
     return Selector<WorkoutListModel, List<Workout>>(
-      selector: (_, model) => model.filteredWorkouts,
+      selector: (_, model) => model.filterWorkouts(filename),
       builder: (context, workouts, _) {
         return ListView.builder(
           itemCount: workouts.length,
@@ -21,15 +22,13 @@ class WorkoutListView extends StatelessWidget {
             if (complete == null) {
               return Column(
                 children: [
-                  if (workout.workout == filename) ComplexObjectView(workout),
+                  ComplexObjectView(workout),
                 ],
               );
             } else {
               return Column(
                 children: [
-                  if (workout.workout == filename &&
-                      workout.complete == complete)
-                    ComplexObjectView(workout),
+                  if (workout.complete == complete) ComplexObjectView(workout),
                 ],
               );
             }

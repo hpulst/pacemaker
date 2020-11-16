@@ -146,8 +146,7 @@ class _CustomListTileState extends State<CustomListTile> {
                     key: Key('WorkoutItem__${widget.id}__Checkbox'),
                     value: widget.complete,
                     onChanged: (complete) {
-                      final model =
-                          Provider.of<WorkoutListModel>(context, listen: false);
+                      final model = context.read<WorkoutListModel>();
                       final workout = model.workoutById(widget.id);
                       model.updateWorkout(workout.copy(complete: complete));
                     },
@@ -204,6 +203,7 @@ class _ArticleDescription extends StatelessWidget {
               Text(
                 km,
                 style: const TextStyle(fontSize: 11),
+                overflow: TextOverflow.clip,
               ),
               Text(
                 pace != null
@@ -222,10 +222,10 @@ class _ArticleDescription extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text(
-                intensity != null ? intensity + ' with ' + heartrate : '',
-                style: const TextStyle(fontSize: 8.0),
-              ),
+              // Text(
+              //   intensity != null ? intensity + ' with ' + heartrate : '',
+              //   style: const TextStyle(fontSize: 8.0),
+              // ),
             ],
           ),
         ),

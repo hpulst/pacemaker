@@ -5,15 +5,11 @@ import 'package:pacemaker_changenotifier/util/workout_list_view.dart';
 import 'package:provider/provider.dart';
 
 class ActivityScreen extends StatelessWidget {
-  // final int selectedTab;
-  // ActivityScreen(this.selectedTab);
-
   @override
   Widget build(BuildContext context) {
-    final selectedWorkout = context.watch<WorkoutListModel>().selectedWorkout;
-
-    final selectedTitle =
-        context.watch<WorkoutListModel>().selectedTitle ?? 'Workout';
+    final model = context.watch<WorkoutListModel>();
+    final selectedWorkout = model.selectedWorkout;
+    final selectedTitle = model.selectedTitle;
 
     final myTabs = <Tab>[
       const Tab(text: 'Schedule'),
@@ -33,7 +29,6 @@ class ActivityScreen extends StatelessWidget {
     }
 
     return DefaultTabController(
-      // initialIndex: selectedTab,
       length: myTabs.length,
       child: Scaffold(
         body: NestedScrollView(

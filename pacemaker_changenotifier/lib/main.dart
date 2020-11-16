@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home.dart';
+import 'models/navigator_model.dart';
 import 'repository/key_value_storage.dart';
 import 'repository/storage_repository.dart';
 import 'repository/workouts_repository.dart';
@@ -68,16 +69,5 @@ class MyApp extends StatelessWidget {
         },
       ),
     );
-  }
-}
-
-class NavigatorModel extends ChangeNotifier {
-  int _currentIndex = 0;
-
-  int get currentIndex => _currentIndex;
-
-  set currentIndex(int index) {
-    _currentIndex = index;
-    notifyListeners();
   }
 }

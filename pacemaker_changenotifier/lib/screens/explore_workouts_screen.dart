@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:pacemaker_changenotifier/models/explore_model.dart';
+import 'package:pacemaker_changenotifier/models/navigator_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:pacemaker_changenotifier/util/explore_tiles.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pacemaker_changenotifier/main.dart';
 import 'package:provider/provider.dart';
 
+import 'models/navigator_model.dart';
 import 'screens/activity_screen.dart';
 import 'screens/explore_screen.dart';
 

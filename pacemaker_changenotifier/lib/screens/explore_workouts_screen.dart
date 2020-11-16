@@ -1,39 +1,28 @@
 import 'package:flutter/material.dart';
+
+import 'package:pacemaker_changenotifier/models/explore_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:pacemaker_changenotifier/util/explore_tiles.dart';
 import 'package:pacemaker_changenotifier/util/workout_list_view.dart';
 import 'package:provider/provider.dart';
 
-class ExploreWorkouts extends StatefulWidget {
-  ExploreWorkouts({Key key}) : super(key: key);
-
-  @override
-  _ExploreWorkoutsState createState() => _ExploreWorkoutsState();
-}
-
-class _ExploreWorkoutsState extends State<ExploreWorkouts> {
-  Future<List<Workout>> addWorkouts(String workout) async {
-    var model = Provider.of<WorkoutListModel>(context, listen: false);
-    return await model.addWorkouts(workout);
-  }
-
+class ExploreWorkouts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ScreenArguments args = ModalRoute.of(context).settings.arguments;
     final banner = MaterialBanner(
-      backgroundColor: Color(0xFFFAFAFA),
+      backgroundColor: const Color(0xFFFAFAFA),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Voraussetzung:\n',
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 14.0,
             ),
           ),
-          Text(args.workout ?? ''),
           Text(args.premarathon != null
               ? args.premarathon + '\n' + args.pre10km
               : args.pre10km),
@@ -41,10 +30,10 @@ class _ExploreWorkoutsState extends State<ExploreWorkouts> {
         ],
       ),
       actions: [
-        _AddWorkouts(name: args.workout),
+        _AddWorkouts(workoutTable: args.workoutTable),
         FlatButton(
           onPressed: () {},
-          child: Text(
+          child: const Text(
             'Reset',
           ),
         ),
@@ -65,47 +54,89 @@ class _ExploreWorkoutsState extends State<ExploreWorkouts> {
             ),
           ];
         },
-        body: FutureBuilder(
-          future: addWorkouts(args.workout),
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    child: CircularProgressIndicator(),
-                    height: 30.0,
-                    width: 30.0,
-                  ),
-                ],
-              );
-            }
-            return WorkoutListView(filename: args.workout);
-          },
-        ),
+        body: FutureWorkouts(args: args),
       ),
     );
   }
 }
 
-class _AddWorkouts extends StatelessWidget {
-  final String name;
-
-  _AddWorkouts({
-    this.name,
+class FutureWorkouts extends StatefulWidget {
+  const FutureWorkouts({
     Key key,
+    @required this.args,
   }) : super(key: key);
+
+  final ScreenArguments args;
+  @override
+  _FutureWorkoutsState createState() => _FutureWorkoutsState();
+}
+
+class _FutureWorkoutsState extends State<FutureWorkouts> {
+  // Future<List>>WorkoutListModel model = WorkoutListModel(repository: null);
+  // Future<List<Workout>> workoutinstance;
+  //     final model = Provider.of<WorkoutListModel>(context, listen: false);
+
+  // @override
+  // void initState() {
+  //    workoutinstance = model.addWorkouts
+  //   // TODO: implement initState
+  //   super.initState();
+  // }
+
   @override
   Widget build(BuildContext context) {
-    print(name);
-    return FlatButton(
-      child: Text('Start'),
-      onPressed: () {
-        // Navigator.popAndPushNamed(context, '/schedule');
-        Navigator.pop(context);
-        Provider.of<WorkoutListModel>(context, listen: false)
-            .setWorkout(Workout(workout: name));
+    Future<List<Workout>> addWorkouts(String workout) async {
+      final model = Provider.of<WorkoutListModel>(context, listen: false);
+      return await model.addWorkouts(workout);
+    }
+
+    return FutureBuilder(
+      future: addWorkouts(widget.args.workout),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(
+                child: CircularProgressIndicator(),
+                height: 30.0,
+                width: 30.0,
+              ),
+            ],
+          );
+        }
+        return WorkoutListView(filename: widget.args.workout);
       },
     );
   }
 }
+
+class _AddWorkouts extends StatelessWidget {
+  const _AddWorkouts({
+    this.workoutTable,
+    Key key,
+  }) : super(key: key);
+
+  final WorkoutTable workoutTable;
+
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      child: const Text('Start'),
+      onPressed: () {
+        context.read<WorkoutListModel>().setWorkout(workoutTable);
+        Navigator.pop(context);
+        // Navigator.pushNamed(context, '/home'
+        //     // , arguments: TabArguments(0)
+        //     );
+        // Provider.of<WorkoutListModel>(context, listen: false)
+        //     .setWorkout(Workout(workout: name));
+      },
+    );
+  }
+}
+
+// class TabArguments {
+//   TabArguments(this.newTap);
+//   final int newTap;
+// }

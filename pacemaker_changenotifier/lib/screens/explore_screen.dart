@@ -5,8 +5,8 @@ import '../util/explore_tiles.dart';
 class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var title = 'Trainingspläne';
-    final myTabs = <Tab>[
+    const title = 'Trainingspläne';
+    const myTabs = <Tab>[
       Tab(text: 'Marathon'),
       Tab(text: 'Halbmarathon'),
       Tab(text: '10 km'),
@@ -15,16 +15,16 @@ class ExploreScreen extends StatelessWidget {
       length: myTabs.length,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: const Text(title),
           centerTitle: true,
-          bottom: TabBar(
+          bottom: const TabBar(
             tabs: myTabs,
             indicatorColor: Colors.blueAccent,
             labelColor: Colors.blueAccent,
             unselectedLabelColor: Colors.grey,
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             ExploreTab('explore_marathon'),
             ExploreTab('explore_halfmarathon'),
@@ -37,9 +37,9 @@ class ExploreScreen extends StatelessWidget {
 }
 
 class ExploreTab extends StatelessWidget {
-  final String filename;
+  const ExploreTab(this.filename);
 
-  ExploreTab(this.filename);
+  final String filename;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class ExploreTab extends StatelessWidget {
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           }
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         });
   }
 }

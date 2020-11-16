@@ -10,7 +10,7 @@ class CustomSliverAppBar extends StatelessWidget with PreferredSizeWidget {
   final List<Tab> myTabs;
   final String title;
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +28,9 @@ class CustomSliverAppBar extends StatelessWidget with PreferredSizeWidget {
               value: 1,
               child: Row(
                 children: [
-                  Icon(Icons.clear_all),
-                  SizedBox(width: 5.0),
-                  Text('Mark all as done'),
+                  const Icon(Icons.clear_all),
+                  const SizedBox(width: 5.0),
+                  const Text('Mark all as done'),
                 ],
               ),
             ),
@@ -38,13 +38,13 @@ class CustomSliverAppBar extends StatelessWidget with PreferredSizeWidget {
                 value: 2,
                 child: Row(
                   children: [
-                    Icon(Icons.restore),
-                    SizedBox(width: 5.0),
-                    Text('Restart'),
+                    const Icon(Icons.restore),
+                    const SizedBox(width: 5.0),
+                    const Text('Restart'),
                   ],
                 )),
           ],
-          offset: Offset(0, 100),
+          offset: const Offset(0, 100),
         ),
       ],
       bottom: TabBar(

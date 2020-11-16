@@ -1,6 +1,20 @@
+import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 
 class Workout {
+  Workout({
+    String id,
+    @required this.workout,
+    this.week,
+    this.weekday,
+    this.km,
+    this.time,
+    this.pace,
+    this.intensity,
+    this.heartrate,
+    this.complete,
+  }) : id = id ?? Uuid().v4();
+
   final String id;
   final String workout;
   final String week;
@@ -11,19 +25,6 @@ class Workout {
   final String intensity;
   final String heartrate;
   final bool complete;
-
-  Workout({
-    String id,
-    this.workout,
-    this.week,
-    this.weekday,
-    this.km,
-    this.time,
-    this.pace,
-    this.intensity,
-    this.heartrate,
-    this.complete,
-  }) : id = id ?? Uuid().v4();
 
   static Workout fromEntity(Workout entity) {
     return Workout(

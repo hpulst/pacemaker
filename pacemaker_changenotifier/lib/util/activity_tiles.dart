@@ -4,7 +4,7 @@ import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:provider/provider.dart';
 
 class ComplexObjectView extends StatelessWidget {
-  ComplexObjectView(Workout obj) : complexObject = obj;
+  const ComplexObjectView(this.complexObject);
 
   final Workout complexObject;
 
@@ -15,7 +15,7 @@ class ComplexObjectView extends StatelessWidget {
       return Text('Choose your workout', style: localTheme.bodyText2);
     }
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         // border: new Border(
         //   top: new BorderSide(style: BorderStyle.solid, color: Colors.black26),
         // ),
@@ -71,8 +71,8 @@ class ComplexObjectView extends StatelessWidget {
 }
 
 class CustomListTile extends StatefulWidget {
-  CustomListTile({
-    Key key,
+  const CustomListTile({
+    // Key key,
     this.thumbnail,
     this.id,
     this.week,
@@ -94,7 +94,7 @@ class CustomListTile extends StatefulWidget {
   final String pace;
   final String intensity;
   final String heartrate;
-  bool complete;
+  final bool complete;
 
   @override
   _CustomListTileState createState() => _CustomListTileState();
@@ -121,7 +121,7 @@ class _CustomListTileState extends State<CustomListTile> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.fromLTRB(10.0, 0.0, 2.0, 0.0),
+                      padding: const EdgeInsets.fromLTRB(10.0, 0.0, 2.0, 0.0),
                       child: _ArticleDescription(
                         week: widget.week,
                         weekday: widget.weekday,
@@ -163,7 +163,7 @@ class _CustomListTileState extends State<CustomListTile> {
 }
 
 class _ArticleDescription extends StatelessWidget {
-  _ArticleDescription({
+  const _ArticleDescription({
     Key key,
     this.week,
     this.weekday,
@@ -203,7 +203,7 @@ class _ArticleDescription extends StatelessWidget {
               ),
               Text(
                 km,
-                style: TextStyle(fontSize: 11),
+                style: const TextStyle(fontSize: 11),
               ),
               Text(
                 pace != null
@@ -211,7 +211,7 @@ class _ArticleDescription extends StatelessWidget {
                         ? time + ' in ' + pace
                         : pace
                     : '',
-                style: TextStyle(fontSize: 11),
+                style: const TextStyle(fontSize: 11),
               ),
             ],
           ),
@@ -224,7 +224,7 @@ class _ArticleDescription extends StatelessWidget {
             children: [
               Text(
                 intensity != null ? intensity + ' with ' + heartrate : '',
-                style: TextStyle(fontSize: 8.0),
+                style: const TextStyle(fontSize: 8.0),
               ),
             ],
           ),

@@ -10,35 +10,36 @@ class WorkoutTable {
     this.frequency,
   });
 
+  factory WorkoutTable.fromJson(Map<String, dynamic> json) {
+    if (json == null) {
+      return null;
+    }
+    return WorkoutTable(
+      name: json['name'],
+      workout: json['workout'],
+      premarathon: json['premarathon'],
+      pre10km: json['pre10km'],
+      frequency: json['frequency'],
+    );
+  }
   final String name;
   final String workout;
   final String premarathon;
   final String pre10km;
   final String frequency;
-
-  factory WorkoutTable.fromJson(Map<String, dynamic> json) {
-    if (json == null) return null;
-
-    return WorkoutTable(
-      name: json['name'] as String,
-      workout: json['workout'] as String,
-      premarathon: json['premarathon'] as String,
-      pre10km: json['pre10km'] as String,
-      frequency: json['frequency'] as String,
-    );
-  }
 }
 
 Future<List<WorkoutTable>> loadWorkouts(String filename) async {
-  var jsonWorkouts = await _loadAsset(filename);
-  List<dynamic> parsedJson = jsonDecode(jsonWorkouts);
+  final jsonWorkouts = await _loadAsset(filename);
+  final List<dynamic> parsedJson = jsonDecode(jsonWorkouts);
 
-  var workouttables = parsedJson.map((o) => WorkoutTable.fromJson(o)).toList();
+  final workouttables =
+      parsedJson.map((dynamic o) => WorkoutTable.fromJson(o)).toList();
 
   return workouttables;
 }
 
 Future<String> _loadAsset(String filename) async {
-  var filePath = 'assets/json/' + filename + '.json';
+  final filePath = 'assets/json/' + filename + '.json';
   return await rootBundle.loadString(filePath);
 }

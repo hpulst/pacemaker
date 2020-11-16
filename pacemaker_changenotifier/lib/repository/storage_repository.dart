@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:pacemaker_changenotifier/models/workouts_repository.dart';
+import 'package:pacemaker_changenotifier/repository/workouts_repository.dart';
 import 'package:pacemaker_changenotifier/util/json_services.dart';
 
-import 'workout_model.dart';
+import '../models/workout_model.dart';
 
 class LocalStorageRepository implements WorkoutsRepository {
-  final WorkoutsRepository localStorage;
-  final String key;
-
   LocalStorageRepository({this.localStorage, String filename})
       : key = filename ?? '';
+
+  final WorkoutsRepository localStorage;
+  final String key;
 
   WorkoutsRepository jsonClient = JsonImport();
 

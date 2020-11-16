@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pacemaker_changenotifier/models/explore_model.dart';
 
 class SimpleObjectView extends StatelessWidget {
-  final List<dynamic> simpleObjects;
+  const SimpleObjectView({Key key, @required this.simpleObjects})
+      : super(key: key);
 
-  SimpleObjectView({Key key, @required this.simpleObjects}) : super(key: key);
+  final List<dynamic> simpleObjects;
 
   @override
   Widget build(BuildContext context) {
@@ -14,20 +16,21 @@ class SimpleObjectView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Container(
             child: ListTile(
-              contentPadding: EdgeInsets.all(6.0),
-              leading: CircularProgressIndicator(
+              contentPadding: const EdgeInsets.all(6.0),
+              leading: const CircularProgressIndicator(
                 strokeWidth: 3,
                 value: 0.8,
               ),
               title: Text(
                 simpleObjects[index].name,
-                style: TextStyle(fontSize: 15.0),
+                style: const TextStyle(fontSize: 15.0),
               ),
               onTap: () {
                 Navigator.pushNamed(
                   context,
                   '/workouts',
                   arguments: ScreenArguments(
+                    workoutTable: simpleObjects[index],
                     name: simpleObjects[index].name,
                     workout: simpleObjects[index].workout,
                     premarathon: simpleObjects[index].premarathon,
@@ -37,7 +40,7 @@ class SimpleObjectView extends StatelessWidget {
                 );
               },
             ),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               border: Border(
                 bottom:
                     BorderSide(style: BorderStyle.solid, color: Colors.black26),
@@ -52,17 +55,18 @@ class SimpleObjectView extends StatelessWidget {
 }
 
 class ScreenArguments {
+  ScreenArguments(
+      {@required this.workoutTable,
+      @required this.name,
+      @required this.workout,
+      this.premarathon,
+      this.pre10km,
+      this.frequency});
+
+  final WorkoutTable workoutTable;
   final String name;
   final String workout;
   final String premarathon;
   final String pre10km;
   final String frequency;
-
-  ScreenArguments(
-      {Key key,
-      this.name,
-      this.workout,
-      this.premarathon,
-      this.pre10km,
-      this.frequency});
 }

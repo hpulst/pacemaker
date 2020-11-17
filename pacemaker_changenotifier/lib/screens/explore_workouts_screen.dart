@@ -8,8 +8,6 @@ import 'package:pacemaker_changenotifier/util/explore_tiles.dart';
 import 'package:pacemaker_changenotifier/util/workout_list_view.dart';
 import 'package:provider/provider.dart';
 
-import '../main.dart';
-
 class ExploreWorkouts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -101,7 +99,7 @@ class _FutureWorkoutsState extends State<FutureWorkouts> {
             ],
           );
         }
-        return WorkoutListView(filename: widget.args.workout);
+        return WorkoutListView(filename: widget.args.workout, isExplore: true);
       },
     );
   }

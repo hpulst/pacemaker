@@ -3,7 +3,7 @@ import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:pacemaker_changenotifier/util/workout_list_view.dart';
 import 'package:provider/provider.dart';
 
-class ActivityScreen extends StatelessWidget {
+class StatsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final model = context.watch<WorkoutListModel>();
@@ -29,10 +29,12 @@ class ActivityScreen extends StatelessWidget {
           title: Text(selectedTitle),
           centerTitle: true,
           forceElevated: true,
+          // elevation: 200.0,
+          // expandedHeight: 100.0,
         )
       ],
       body: WorkoutListView(
-          filename: selectedWorkout, complete: false, isExplore: false),
+          filename: selectedWorkout, complete: true, isExplore: false),
     );
   }
 }

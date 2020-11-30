@@ -20,9 +20,6 @@ class KeyValueStorage implements WorkoutsRepository {
 
   @override
   Future<bool> saveWorkouts(List<Workout> workouts, String key) {
-    // if (key == '') {
-    //   key = 'provider_workouts';
-    // }
     return preferences.setString(
       key,
       codec.encode(

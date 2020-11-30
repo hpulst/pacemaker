@@ -5,42 +5,78 @@ import 'package:pacemaker_changenotifier/util/thumbnail.dart';
 import 'package:provider/provider.dart';
 
 class ActivityTile extends StatelessWidget {
-  const ActivityTile({this.complexObject, this.isExplore});
+  const ActivityTile(
+      {this.complexObject, this.isExplore, this.animation, this.onComplete});
 
+  @required
   final Workout complexObject;
+  @required
   final bool isExplore;
+  final Animation animation;
+  // @required
+  final void Function() onComplete;
 
   @override
   Widget build(BuildContext context) {
-    final localTheme = Theme.of(context).textTheme;
-    if (complexObject == null) {
-      return Text('Choose your workout', style: localTheme.bodyText2);
-    }
     return Container(
       decoration: const BoxDecoration(
-        // border: Border(
-        //   top: BorderSide(style: BorderStyle.solid, color: Colors.black12),
-        // ),
         color: Color(0xFFFAFAFA),
       ),
-      child: CustomListTile(
-        thumbnail: Container(
-          decoration: BoxDecoration(
-            color: buildColor(complexObject.intensity),
-            borderRadius: BorderRadius.circular(10.0),
+      child: SizeTransition(
+        axis: Axis.vertical,
+        sizeFactor: animation,
+        child: CustomListTile(
+          thumbnail: Container(
+            decoration: BoxDecoration(
+              color: buildColor(complexObject.intensity),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
           ),
+          isExplore: isExplore,
+          id: complexObject.id,
+          week: complexObject.week,
+          weekday: complexObject.weekday,
+          km: complexObject.km,
+          time: complexObject.time,
+          pace: complexObject.pace,
+          intensity: complexObject.intensity,
+          heartrate: complexObject.heartrate,
+          complete: complexObject.complete,
+          checkbox: RoundedCheckbox(
+              complexObject: complexObject, onComplete: onComplete),
         ),
-        id: complexObject.id,
-        isExplore: isExplore,
-        week: complexObject.week,
-        weekday: complexObject.weekday,
-        km: complexObject.km,
-        time: complexObject.time,
-        pace: complexObject.pace,
-        intensity: complexObject.intensity,
-        heartrate: complexObject.heartrate,
-        complete: complexObject.complete,
       ),
+    );
+  }
+}
+
+class RoundedCheckbox extends StatelessWidget {
+  const RoundedCheckbox({
+    Key key,
+    @required this.complexObject,
+    // @required
+    this.onComplete,
+  }) : super(key: key);
+
+  final Workout complexObject;
+  final void Function() onComplete;
+
+  @override
+  Widget build(BuildContext context) {
+    return Checkbox(
+      key: Key('WorkoutItem__${complexObject.id}__Checkbox'),
+      value: complexObject.complete,
+      onChanged: (complete) {
+        final model = context.read<WorkoutListModel>();
+        final workout =
+            model.workoutById(complexObject.id).copy(complete: complete);
+        model.updateWorkout(
+          workout,
+        );
+        if (onComplete != null) {
+          onComplete();
+        }
+      },
     );
   }
 }
@@ -49,6 +85,7 @@ class CustomListTile extends StatefulWidget {
   const CustomListTile({
     this.thumbnail,
     this.isExplore,
+    this.index,
     this.id,
     this.week,
     this.weekday,
@@ -58,10 +95,12 @@ class CustomListTile extends StatefulWidget {
     this.intensity,
     this.heartrate,
     this.complete,
+    this.checkbox,
   });
 
   final Widget thumbnail;
   final bool isExplore;
+  final int index;
   final String id;
   final String week;
   final String weekday;
@@ -71,13 +110,13 @@ class CustomListTile extends StatefulWidget {
   final String intensity;
   final String heartrate;
   final bool complete;
+  final Widget checkbox;
 
   @override
   _CustomListTileState createState() => _CustomListTileState();
 }
 
 class _CustomListTileState extends State<CustomListTile> {
-  // bool _isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -122,17 +161,7 @@ class _CustomListTileState extends State<CustomListTile> {
                   const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
               child: Row(
                 children: <Widget>[
-                  Checkbox(
-                    key: Key('WorkoutItem__${widget.id}__Checkbox'),
-                    value: widget.complete,
-                    onChanged: (complete) {
-                      final model = context.read<WorkoutListModel>();
-                      final workout = model.workoutById(widget.id);
-                      model.updateWorkout(
-                        workout.copy(complete: complete),
-                      );
-                    },
-                  ),
+                  widget.checkbox,
                 ],
               ),
             ),
@@ -142,6 +171,8 @@ class _CustomListTileState extends State<CustomListTile> {
     );
   }
 }
+
+// removeObject(workout) {}
 
 class _Description extends StatelessWidget {
   const _Description({

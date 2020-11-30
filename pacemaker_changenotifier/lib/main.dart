@@ -1,4 +1,4 @@
-import 'package:device_preview/device_preview.dart';
+// import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:provider/provider.dart';
@@ -18,14 +18,15 @@ Future<void> main() async {
   final token = prefs.getString('user');
 
   runApp(
-    DevicePreview(
-      enabled: false,
-      builder: (context) => MyApp(
-        repository:
-            LocalStorageRepository(localStorage: KeyValueStorage(prefs)),
-        token: token,
-      ),
+    // DevicePreview(
+    //   enabled: false,1
+    //   builder: (context) =>
+
+    MyApp(
+      repository: LocalStorageRepository(localStorage: KeyValueStorage(prefs)),
+      token: token,
     ),
+    // ),
   );
 }
 
@@ -45,12 +46,12 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<NavigatorModel>(
           create: (_) =>
-              NavigatorModel()..currentIndex = (token == null ? 1 : 0),
+              NavigatorModel()..currentIndex = (token == null ? 2 : 0),
         ),
       ],
       child: MaterialApp(
-        locale: DevicePreview.of(context).locale,
-        builder: DevicePreview.appBuilder,
+        // locale: DevicePreview.locale(context),
+        // builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: true,
         title: 'Pacemaker',
         theme: ThemeData(

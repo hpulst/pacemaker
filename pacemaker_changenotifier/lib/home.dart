@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'models/navigator_model.dart';
 import 'screens/activity_screen.dart';
 import 'screens/explore_screen.dart';
+import 'screens/stats_screen.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class HomePage extends StatefulWidget {
 class _MyHomePageState extends State<HomePage> {
   final List<Widget> pages = <Widget>[
     ActivityScreen(),
+    StatsScreen(),
     ExploreScreen(),
   ];
   int currentTab;
@@ -32,17 +34,21 @@ class _MyHomePageState extends State<HomePage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.dehaze),
-            label: 'Activity',
+            label: 'Workout',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.show_chart),
+            label: 'Stats',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Explore',
+            label: 'Entdecken',
           ),
         ],
         selectedItemColor: Colors.blueAccent,
-        showUnselectedLabels: false,
-        showSelectedLabels: false,
-        elevation: 1,
+        showUnselectedLabels: true,
+        showSelectedLabels: true,
+        elevation: 4,
       ),
     );
   }

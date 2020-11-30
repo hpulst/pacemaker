@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../repository/storage_repository.dart';
 import '../repository/workouts_repository.dart';
 
-enum VisibilityFilter { all, active, completed }
+// enum VisibilityFilter { all, active, completed }
 
 class WorkoutListModel extends ChangeNotifier {
   WorkoutListModel({
@@ -21,7 +21,7 @@ class WorkoutListModel extends ChangeNotifier {
   final WorkoutsRepository repository;
   final List<Workout> _workouts;
 
-  VisibilityFilter _filter;
+  // VisibilityFilter _filter;
   String filename;
   String _selectedWorkout = '';
   String _selectedTitle = 'Workout';
@@ -29,7 +29,7 @@ class WorkoutListModel extends ChangeNotifier {
 
   String get selectedWorkout => _selectedWorkout;
   String get selectedTitle => _selectedTitle;
-  VisibilityFilter get filter => _filter;
+  // VisibilityFilter get filter => _filter;
   UnmodifiableListView<Workout> get workouts => UnmodifiableListView(_workouts);
   bool get isLoading => _isLoading;
 
@@ -48,21 +48,21 @@ class WorkoutListModel extends ChangeNotifier {
     });
   }
 
-  List<Workout> get filteredWorkouts {
-    return _workouts.where((workout) {
-      switch (filter) {
-        case VisibilityFilter.active:
-          return !workout.complete;
-          break;
-        case VisibilityFilter.completed:
-          return workout.complete;
-          break;
-        case VisibilityFilter.all:
-        default:
-          return true;
-      }
-    }).toList();
-  }
+  // List<Workout> get filteredWorkouts {
+  //   return _workouts.where((workout) {
+  //     switch (filter) {
+  //       case VisibilityFilter.active:
+  //         return !workout.complete;
+  //         break;
+  //       case VisibilityFilter.completed:
+  //         return workout.complete;
+  //         break;
+  //       case VisibilityFilter.all:
+  //       default:
+  //         return true;
+  //     }
+  //   }).toList();
+  // }
 
   List<Workout> filterWorkouts(String filename) {
     return _workouts.where((workout) => workout.workout == filename).toList();
@@ -112,6 +112,7 @@ class WorkoutListModel extends ChangeNotifier {
   }
 
   Future setWorkout(WorkoutTable workoutTable) async {
+    // final name = workoutTable?.name?.substring(0, workoutTable.name.length - 4);
     final prefs = await SharedPreferences.getInstance();
 
     await prefs.setString('user', workoutTable.workout);

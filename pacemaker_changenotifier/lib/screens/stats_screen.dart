@@ -29,8 +29,6 @@ class StatsScreen extends StatelessWidget {
           title: Text(selectedTitle),
           centerTitle: true,
           forceElevated: true,
-          // elevation: 200.0,
-          // expandedHeight: 100.0,
         )
       ],
       body: WorkoutListView(

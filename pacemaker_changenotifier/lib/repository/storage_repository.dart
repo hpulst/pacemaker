@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/repository/workouts_repository.dart';
 import 'package:pacemaker_changenotifier/util/json_services.dart';
 
@@ -18,9 +17,17 @@ class LocalStorageRepository implements WorkoutsRepository {
     try {
       return await localStorage?.loadWorkouts(key);
     } catch (e) {
-      final workouts = await jsonClient.loadWorkouts(key);
+      return await loadJSON(key);
+    }
+  }
+
+  Future<List<Workout>> loadJSON(String key) async {
+    var workouts = <Workout>[];
+    try {
+      workouts = await jsonClient.loadWorkouts(key);
       await localStorage.saveWorkouts(workouts, key);
-      // debugPrint('Load JSON');
+      return workouts;
+    } on Exception catch (e) {
       return workouts;
     }
   }

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:pacemaker_changenotifier/repository/workouts_repository.dart';
@@ -7,15 +8,18 @@ class JsonImport implements WorkoutsRepository {
   @override
   Future<List<Workout>> loadWorkouts(String filename) async {
     String jsonWorkouts;
+    var workoutTable = <Workout>[];
+
     try {
       jsonWorkouts = await _loadAsset(filename);
-    } catch (e) {
-      jsonWorkouts = await _loadAsset('marathon315');
+      final List<dynamic> parsedJson = await jsonDecode(jsonWorkouts);
+      workoutTable =
+          parsedJson.map((dynamic o) => Workout.fromJson(o)).toList();
+    } catch (e, s) {
+      debugPrint('Exception details:\n $e');
+      debugPrint('Stack trace:\n $s');
     }
 
-    final List<dynamic> parsedJson = await jsonDecode(jsonWorkouts);
-    final workoutTable =
-        parsedJson.map((dynamic o) => Workout.fromJson(o)).toList();
     return workoutTable;
   }
 

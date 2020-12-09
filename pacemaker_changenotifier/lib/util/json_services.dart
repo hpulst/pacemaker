@@ -16,8 +16,8 @@ class JsonImport implements WorkoutsRepository {
       workoutTable =
           parsedJson.map((dynamic o) => Workout.fromJson(o)).toList();
     } catch (e, s) {
-      debugPrint('Exception details:\n $e');
-      debugPrint('Stack trace:\n $s');
+      // debugPrint('Exception details:\n $e');
+      // debugPrint('Stack trace:\n $s');
     }
 
     return workoutTable;

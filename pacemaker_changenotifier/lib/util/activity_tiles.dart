@@ -13,7 +13,6 @@ class ActivityTile extends StatelessWidget {
   @required
   final bool isExplore;
   final Animation animation;
-  // @required
   final void Function() onComplete;
 
   @override
@@ -228,8 +227,8 @@ class _Description extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 10),
                 ),
                 Text(
-                  pace != null
-                      ? time != null
+                  pace != '' && pace != null
+                      ? time != '' && time != null
                           ? time + ' in ' + pace
                           : pace
                       : '',
@@ -239,7 +238,7 @@ class _Description extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 2.0),
                 ),
                 Text(
-                  intensity != null
+                  intensity != '' && intensity != null
                       ? intensity + ' mit max Herzfrequenz ' + heartrate
                       : '',
                   style: const TextStyle(fontSize: 11.0),
@@ -258,10 +257,12 @@ class _Description extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(weekday + ' - ' + week,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    )),
+                Text(
+                  weekday + ' - ' + week,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 const Padding(
                   padding: EdgeInsets.only(bottom: 3.0),
                 ),
@@ -271,8 +272,8 @@ class _Description extends StatelessWidget {
                   overflow: TextOverflow.clip,
                 ),
                 Text(
-                  pace != null
-                      ? time != null
+                  pace != '' && pace != null
+                      ? time != '' && time != null
                           ? time + ' in ' + pace
                           : pace
                       : '',

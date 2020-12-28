@@ -74,7 +74,6 @@ class FutureWorkouts extends StatefulWidget {
 
 class _FutureWorkoutsState extends State<FutureWorkouts> {
   Future<List<Workout>> _workoutList;
-  final listKey = GlobalKey<AnimatedListState>();
 
   @override
   void initState() {
@@ -104,7 +103,6 @@ class _FutureWorkoutsState extends State<FutureWorkouts> {
         return WorkoutListView(
           filename: widget.args.workout,
           isExplore: true,
-          listKey: listKey,
         );
       },
     );

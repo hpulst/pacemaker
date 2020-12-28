@@ -12,21 +12,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<HomePage> {
-  final List<Widget> pages = <Widget>[
-    ActivityScreen(),
-    StatsScreen(),
-    ExploreScreen(),
-  ];
   int currentTab;
 
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<NavigatorModel>();
-
+    if (provider.currentIndex == 0) {
+      print('Acitivity');
+    }
     return Scaffold(
       body: IndexedStack(
         index: provider.currentIndex,
-        children: pages,
+        children: [
+          ActivityScreen(),
+          StatsScreen(),
+          ExploreScreen(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: provider.currentIndex,

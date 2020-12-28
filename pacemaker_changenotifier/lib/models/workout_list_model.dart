@@ -112,14 +112,19 @@ class WorkoutListModel extends ChangeNotifier {
   }
 
   Future setWorkout(WorkoutTable workoutTable) async {
-    // final name = workoutTable?.name?.substring(0, workoutTable.name.length - 4);
     final prefs = await SharedPreferences.getInstance();
 
     await prefs.setString('user', workoutTable.workout);
     await prefs.setString('title', workoutTable.name);
 
-    _selectedWorkout = prefs.getString('user');
-    _selectedTitle = prefs.getString('title');
+    setTitleUser(prefs.getString('user'), prefs.getString('title'));
+  }
+
+  void setTitleUser(String token, String title) {
+    if (title != null) {
+      _selectedTitle = title;
+    }
+    _selectedWorkout = token;
     notifyListeners();
   }
 }

@@ -117,14 +117,29 @@ class WorkoutListModel extends ChangeNotifier {
     await prefs.setString('user', workoutTable.workout);
     await prefs.setString('title', workoutTable.name);
 
-    setTitleUser(prefs.getString('user'), prefs.getString('title'));
+    setTitle(prefs.getString('user'), prefs.getString('title'));
   }
 
-  void setTitleUser(String token, String title) {
+  void setTitle(String token, String title) {
     if (title != null) {
       _selectedTitle = title;
     }
     _selectedWorkout = token;
     notifyListeners();
+  }
+
+  int get numCompleted {
+    return _workouts
+        .where((Workout workout) =>
+            workout.complete && workout.workout == _selectedWorkout)
+        .toList()
+        .length;
+  }
+
+  int get numLength {
+    return _workouts
+        .where((Workout workout) => workout.workout == _selectedWorkout)
+        .toList()
+        .length;
   }
 }

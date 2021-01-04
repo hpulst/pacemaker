@@ -17,9 +17,7 @@ class _MyHomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<NavigatorModel>();
-    if (provider.currentIndex == 0) {
-      print('Acitivity');
-    }
+    if (provider.currentIndex == 0) {}
     return Scaffold(
       body: IndexedStack(
         index: provider.currentIndex,

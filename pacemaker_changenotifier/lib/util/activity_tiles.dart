@@ -21,30 +21,30 @@ class ActivityTile extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Color(0xFFFAFAFA),
       ),
-      child: SizeTransition(
-        axis: Axis.vertical,
-        sizeFactor: animation,
-        child: CustomListTile(
-          thumbnail: Container(
-            decoration: BoxDecoration(
-              color: buildColor(complexObject.intensity),
-              borderRadius: BorderRadius.circular(10.0),
-            ),
+      // child: SizeTransition(
+      //   axis: Axis.vertical,
+      //   sizeFactor: animation,
+      child: CustomListTile(
+        thumbnail: Container(
+          decoration: BoxDecoration(
+            color: buildColor(complexObject.intensity),
+            borderRadius: BorderRadius.circular(10.0),
           ),
-          isExplore: isExplore,
-          id: complexObject.id,
-          week: complexObject.week,
-          weekday: complexObject.weekday,
-          km: complexObject.km,
-          time: complexObject.time,
-          pace: complexObject.pace,
-          intensity: complexObject.intensity,
-          heartrate: complexObject.heartrate,
-          complete: complexObject.complete,
-          checkbox: RoundedCheckbox(
-              complexObject: complexObject, onComplete: onComplete),
         ),
+        isExplore: isExplore,
+        id: complexObject.id,
+        week: complexObject.week,
+        weekday: complexObject.weekday,
+        km: complexObject.km,
+        time: complexObject.time,
+        pace: complexObject.pace,
+        intensity: complexObject.intensity,
+        heartrate: complexObject.heartrate,
+        complete: complexObject.complete,
+        checkbox: RoundedCheckbox(
+            complexObject: complexObject, onComplete: onComplete),
       ),
+      // ),
     );
   }
 }
@@ -72,9 +72,9 @@ class RoundedCheckbox extends StatelessWidget {
         model.updateWorkout(
           workout,
         );
-        if (onComplete != null) {
-          onComplete();
-        }
+        // if (onComplete != null) {
+        //   onComplete();
+        // }
       },
     );
   }
@@ -219,6 +219,7 @@ class _Description extends StatelessWidget {
                 Expanded(
                   child: Text(
                     km,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 16),
                   ),
@@ -232,6 +233,7 @@ class _Description extends StatelessWidget {
                           ? time + ' in ' + pace
                           : pace
                       : '',
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontSize: 11),
                 ),
                 const Padding(
@@ -241,6 +243,7 @@ class _Description extends StatelessWidget {
                   intensity != '' && intensity != null
                       ? intensity + ' mit max Herzfrequenz ' + heartrate
                       : '',
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontSize: 11.0),
                 ),
               ],
@@ -259,6 +262,7 @@ class _Description extends StatelessWidget {
               children: [
                 Text(
                   weekday + ' - ' + week,
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -268,8 +272,8 @@ class _Description extends StatelessWidget {
                 ),
                 Text(
                   km,
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontSize: 11),
-                  overflow: TextOverflow.clip,
                 ),
                 Text(
                   pace != '' && pace != null
@@ -277,6 +281,7 @@ class _Description extends StatelessWidget {
                           ? time + ' in ' + pace
                           : pace
                       : '',
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontSize: 11),
                 ),
               ],

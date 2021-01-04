@@ -302,7 +302,7 @@
         "weekday": "Sonntag",
         "km": "13 km",
         "time": "1:31 Std",
-        "pace": "6:45\nmin/km",
+        "pace": "6:45 min/km",
         "intensity": "SL",
         "heartrate": "65%",
         "complete": false
@@ -478,7 +478,7 @@
         "weekday": "Dienstag",
         "km": "13 km",
         "time": "1:31 Std",
-        "pace": "6:45\nmin/km",
+        "pace": "6:45 min/km",
         "intensity": "SL",
         "heartrate": "65%",
         "complete": false
@@ -610,7 +610,7 @@
         "weekday": "Sonntag",
         "km": "13 km",
         "time": "1:31 Std",
-        "pace": "6:45\nmin/km",
+        "pace": "6:45 min/km",
         "intensity": "SL",
         "heartrate": "65%",
         "complete": false
@@ -786,7 +786,7 @@
         "weekday": "Dienstag",
         "km": "11 km",
         "time": "1:31 Std",
-        "pace": "6:45\nmin/km",
+        "pace": "6:45 min/km",
         "intensity": "SL",
         "heartrate": "65%",
         "complete": false
@@ -918,7 +918,7 @@
         "weekday": "Sonntag",
         "km": "13 km",
         "time": "1:31 Std",
-        "pace": "6:45\nmin/km",
+        "pace": "6:45 min/km",
         "intensity": "SL",
         "heartrate": "65%",
         "complete": false
@@ -1094,7 +1094,7 @@
         "weekday": "Dienstag",
         "km": "13 km",
         "time": "1:31 Std",
-        "pace": "6:45\nmin/km",
+        "pace": "6:45 min/km",
         "intensity": "SL",
         "heartrate": "65%",
         "complete": false
@@ -1270,7 +1270,7 @@
         "weekday": "Donnerstag",
         "km": "15 km",
         "time": "1:45 Std",
-        "pace": "6:45\nmin/km",
+        "pace": "6:45 min/km",
         "intensity": "SL",
         "heartrate": "65%",
         "complete": false

@@ -13,6 +13,7 @@
 - [ ]  Reduce code
 - [ ]  Increase speed
 - [ ]  Add tests
+- [ ]  Add MaterialLocalizations
 
 - [x]  Add a Provider for Navigation
 - [x]  Save selected workout in SharedPreferences

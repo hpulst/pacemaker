@@ -18,7 +18,7 @@ class SimpleObjectView extends StatelessWidget {
             child: ListTile(
               contentPadding: const EdgeInsets.all(6.0),
               leading: const CircularProgressIndicator(
-                strokeWidth: 3,
+                strokeWidth: 4,
                 value: 0.8,
               ),
               title: Text(

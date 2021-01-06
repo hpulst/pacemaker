@@ -1,0 +1,59 @@
+[
+    {
+        "workout": "marathon240",
+        "week": "Woche 1",
+        "weekday": "Montag",
+        "km": "Ruhetag",
+        "complete": false
+    },
+    {
+        "workout": "marathon240",
+        "week": "Woche 1",
+        "weekday": "Dienstag",
+        "km": "15 km",
+        "time": "1:23 Std",
+        "pace": "05:30 min/km",
+        "intensity": "LD",
+        "heartrate": "70%-75%",
+        "complete": false
+    },
+    {
+        "workout": "marathon240",
+        "week": "Woche 1",
+        "weekday": "Mittwoch",
+        "km": "12 km",
+        "time": "59:00 min",
+        "pace": "04:55 min/km",
+        "intensity": "SD",
+        "heartrate": "80%-85%",
+        "complete": false
+    },
+    {
+        "workout": "marathon240",
+        "week": "Woche 1",
+        "weekday": "Donnerstag",
+        "km": "20 x 1 km, Trabpause 2 min",
+        "pace": "05:00 min/km",
+        "intensity": "SD",
+        "heartrate": "80%-85%",
+        "complete": false
+    },
+    {
+        "workout": "marathon240",
+        "week": "Woche 1",
+        "weekday": "Freitag",
+        "km": "Ruhetag",
+        "complete": false
+    },
+    {
+        "workout": "marathon240",
+        "week": "Woche 1",
+        "weekday": "Sonntag",
+        "km": "14:15 min",
+        "time": "59:00 min",
+        "pace": "04:45 min/km",
+        "intensity": "TD",
+        "heartrate": "85%-90%",
+        "complete": false
+    }
+]

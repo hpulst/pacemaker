@@ -25,10 +25,12 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   device_preview: ^0.5.5
+  package_info: ^0.4.3+2
   pedantic: ^1.9.2
   percent_indicator: ^2.1.9
   provider: ^4.3.2+3
   shared_preferences: ^0.5.12+4
+  url_launcher: ^5.7.10
   uuid: ^2.2.2
 
 dev_dependencies:

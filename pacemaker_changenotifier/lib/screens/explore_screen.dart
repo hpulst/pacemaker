@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pacemaker_changenotifier/screens/about_screen.dart' as about;
+
 import '../models/explore_model.dart';
 import '../util/explore_tiles.dart';
 
@@ -23,6 +25,14 @@ class ExploreScreen extends StatelessWidget {
             labelColor: Colors.blueAccent,
             unselectedLabelColor: Colors.grey,
           ),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.more_vert),
+              onPressed: () {
+                about.showAboutDialog(context: context);
+              },
+            )
+          ],
         ),
         body: const TabBarView(
           children: [

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pacemaker_changenotifier/screens/about_screen.dart' as about;
+
 import '../models/explore_model.dart';
 import '../util/explore_tiles.dart';
 
@@ -24,42 +26,12 @@ class ExploreScreen extends StatelessWidget {
             unselectedLabelColor: Colors.grey,
           ),
           actions: [
-            PopupMenuButton(
-              // onSelected: (result) { setState(() { _selection = result; }); },
-              itemBuilder: (context) => [
-                // PopupMenuItem(
-                //   value: 1,
-                //   child: Row(
-                //     children: [
-                //       const Icon(Icons.clear_all),
-                //       const SizedBox(width: 5.0),
-                //       const Text('Mark all as done'),
-                //     ],
-                //   ),
-                // ),
-                // PopupMenuItem(
-                //   value: 2,
-                //   child: Row(
-                //     children: [
-                //       const Icon(Icons.restore),
-                //       const SizedBox(width: 5.0),
-                //       const Text('Restart'),
-                //     ],
-                //   ),
-                // ),
-                PopupMenuItem(
-                  value: 1,
-                  child: Row(
-                    children: [
-                      const Icon(Icons.settings),
-                      const SizedBox(width: 5.0),
-                      const Text('About'),
-                    ],
-                  ),
-                ),
-              ],
-              offset: const Offset(0, 20),
-            ),
+            IconButton(
+              icon: const Icon(Icons.more_vert),
+              onPressed: () {
+                about.showAboutDialog(context: context);
+              },
+            )
           ],
         ),
         body: const TabBarView(
@@ -76,20 +48,20 @@ class ExploreScreen extends StatelessWidget {
 
 class ExploreTab extends StatelessWidget {
   const ExploreTab(this.filename);
+
   final String filename;
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<WorkoutTable>>(
-      future: loadWorkouts(filename),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return SimpleObjectView(simpleObjects: snapshot.data);
-        } else if (snapshot.hasError) {
-          return Text('${snapshot.error}');
-        }
-        return const CircularProgressIndicator();
-      },
-    );
+        future: loadWorkouts(filename),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return SimpleObjectView(simpleObjects: snapshot.data);
+          } else if (snapshot.hasError) {
+            return Text('${snapshot.error}');
+          }
+          return const CircularProgressIndicator();
+        });
   }
 }

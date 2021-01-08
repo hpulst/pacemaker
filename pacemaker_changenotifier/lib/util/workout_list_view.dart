@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:provider/provider.dart';
-import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'activity_tiles.dart';
 
 class WorkoutListView extends StatelessWidget {
@@ -13,40 +12,36 @@ class WorkoutListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Selector<WorkoutListModel, List<Workout>>(
-      selector: (_, model) => model.filterWorkouts(filename),
-      builder: (context, workouts, _) {
-        return MediaQuery.removePadding(
-          context: context,
-          removeTop: true,
-          child: ListView.builder(
-            itemCount: workouts.length,
-            itemBuilder: (context, int index) {
-              final workout = workouts[index];
-
-              if (isExplore) {
-                return Column(
-                  children: [
-                    ActivityTile(
-                      complexObject: workout,
-                      isExplore: isExplore,
-                    ),
-                  ],
-                );
-              }
-              return Column(
-                children: [
-                  if (workout.complete == complete)
-                    ActivityTile(
-                      complexObject: workout,
-                      isExplore: isExplore,
-                    ),
-                ],
-              );
-            },
-          ),
-        );
-      },
+    final workouts = context
+        .select((WorkoutListModel model) => model.filterWorkouts(filename));
+    return MediaQuery.removePadding(
+      context: context,
+      removeTop: true,
+      child: ListView.builder(
+        itemCount: workouts.length,
+        itemBuilder: (context, int index) {
+          final workout = workouts[index];
+          if (isExplore) {
+            return Column(
+              children: [
+                ActivityTile(
+                  complexObject: workout,
+                  isExplore: isExplore,
+                ),
+              ],
+            );
+          }
+          return Column(
+            children: [
+              if (workout.complete == complete)
+                ActivityTile(
+                  complexObject: workout,
+                  isExplore: isExplore,
+                ),
+            ],
+          );
+        },
+      ),
     );
   }
 }
@@ -99,7 +94,6 @@ class WorkoutListView extends StatelessWidget {
 //   Widget build(BuildContext context) {
 //     setState(() {
 //       // debugPrint('too many rebuilds');
-//       print(widget.list.length);
 //     });
 //     return AnimatedList(
 //       initialItemCount: widget.list.length,

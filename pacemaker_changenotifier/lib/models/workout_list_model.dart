@@ -13,7 +13,6 @@ class WorkoutListModel extends ChangeNotifier {
   WorkoutListModel({
     @required this.repository,
     // VisibilityFilter filter,
-    this.filename,
     List<Workout> workouts,
   }) : _workouts = workouts ?? [];
   // _filter = filter ?? VisibilityFilter.all;
@@ -22,7 +21,6 @@ class WorkoutListModel extends ChangeNotifier {
   final List<Workout> _workouts;
 
   // VisibilityFilter _filter;
-  String filename;
   String _selectedWorkout = '';
   String _selectedTitle = 'Workout';
   bool _isLoading = false;
@@ -33,12 +31,14 @@ class WorkoutListModel extends ChangeNotifier {
   UnmodifiableListView<Workout> get workouts => UnmodifiableListView(_workouts);
   bool get isLoading => _isLoading;
 
-  Future loadWorkouts() {
+  Future loadWorkouts(String selectedWorkout) {
     _isLoading = true;
     notifyListeners();
 
-    return repository.loadWorkouts(filename).then((loadedWorkouts) {
-      _workouts.addAll(loadedWorkouts.map(Workout.fromEntity));
+    return repository.loadWorkouts(selectedWorkout).then((loadedWorkouts) {
+      _workouts.addAll(
+        loadedWorkouts.map(Workout.fromEntity),
+      );
       _isLoading = false;
       notifyListeners();
     }).catchError((dynamic error) {
@@ -64,8 +64,10 @@ class WorkoutListModel extends ChangeNotifier {
   //   }).toList();
   // }
 
-  List<Workout> filterWorkouts(String filename) {
-    return _workouts.where((workout) => workout.workout == filename).toList();
+  List<Workout> filterWorkouts(String _selectedWorkout) {
+    return _workouts
+        .where((workout) => workout.workout == _selectedWorkout)
+        .toList();
   }
 
   void updateWorkout(Workout workout) {
@@ -89,12 +91,14 @@ class WorkoutListModel extends ChangeNotifier {
         _workouts[0].workout);
   }
 
-  Future<List<Workout>> addWorkouts(String filename) async {
+  Future<List<Workout>> addWorkouts(String _selectedWorkout) async {
     var _list = <Workout>[];
-    _list = _workouts.where((workout) => workout.workout == filename).toList();
+    _list = _workouts
+        .where((workout) => workout.workout == _selectedWorkout)
+        .toList();
     if (_list.isEmpty) {
-      final repo = await createRepository(filename);
-      await repo.loadWorkouts(filename).then(
+      final repo = await createRepository(_selectedWorkout);
+      await repo.loadWorkouts(_selectedWorkout).then(
         (loadedWorkouts) {
           _list.addAll(loadedWorkouts.map(Workout.fromEntity));
         },
@@ -104,10 +108,11 @@ class WorkoutListModel extends ChangeNotifier {
     return _list;
   }
 
-  Future<LocalStorageRepository> createRepository(String filename) async {
+  Future<LocalStorageRepository> createRepository(
+      String _selectedWorkout) async {
     final repo = LocalStorageRepository(
         localStorage: KeyValueStorage(await SharedPreferences.getInstance()),
-        filename: filename);
+        filename: _selectedWorkout);
     return repo;
   }
 

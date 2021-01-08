@@ -15,7 +15,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   final prefs = await SharedPreferences.getInstance();
-  final user = prefs.getString('user');
+  final filename = prefs.getString('user');
   final title = prefs.getString('title');
   runApp(
     // DevicePreview(
@@ -23,7 +23,7 @@ Future<void> main() async {
     //   builder: (context) =>
     MyApp(
       repository: LocalStorageRepository(localStorage: KeyValueStorage(prefs)),
-      user: user,
+      filename: filename,
       title: title,
     ),
     // ),
@@ -31,10 +31,10 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({@required this.repository, this.user, this.title});
+  const MyApp({@required this.repository, this.filename, this.title});
 
   final WorkoutsRepository repository;
-  final String user;
+  final String filename;
   final String title;
 
   @override
@@ -43,12 +43,12 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<WorkoutListModel>(
           create: (_) => WorkoutListModel(repository: repository)
-            ..loadWorkouts()
-            ..setTitle(user, title),
+            ..loadWorkouts(filename)
+            ..setTitle(filename, title),
         ),
         ChangeNotifierProvider<NavigatorModel>(
           create: (_) =>
-              NavigatorModel()..currentIndex = (user == null ? 2 : 0),
+              NavigatorModel()..currentIndex = (filename == null ? 2 : 0),
         ),
       ],
       child: MaterialApp(

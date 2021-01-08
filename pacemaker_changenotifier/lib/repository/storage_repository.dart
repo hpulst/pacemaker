@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/repository/workouts_repository.dart';
 import 'package:pacemaker_changenotifier/util/json_services.dart';
 
@@ -28,6 +29,7 @@ class LocalStorageRepository implements WorkoutsRepository {
       await localStorage.saveWorkouts(workouts, key);
       return workouts;
     } on Exception catch (e) {
+      debugPrint('Error caught: $e');
       return workouts;
     }
   }

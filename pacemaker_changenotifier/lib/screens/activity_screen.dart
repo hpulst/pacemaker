@@ -14,7 +14,6 @@ class _ActivityScreenState extends State<ActivityScreen> {
     final model = context.watch<WorkoutListModel>();
     final selectedWorkout = model.selectedWorkout;
     final selectedTitle = model.selectedTitle;
-    print('selectedTitle: $selectedTitle');
 
     if (selectedTitle == 'Workout') {
       return Scaffold(

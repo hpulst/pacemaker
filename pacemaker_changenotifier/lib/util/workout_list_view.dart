@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
+import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:provider/provider.dart';
 import 'activity_tiles.dart';
 
@@ -12,128 +13,85 @@ class WorkoutListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final workouts = context
-        .select((WorkoutListModel model) => model.filterWorkouts(filename));
-    return MediaQuery.removePadding(
-      context: context,
-      removeTop: true,
-      child: ListView.builder(
-        itemCount: workouts.length,
-        itemBuilder: (context, int index) {
-          final workout = workouts[index];
-          if (isExplore) {
-            return Column(
-              children: [
-                ActivityTile(
-                  complexObject: workout,
-                  isExplore: isExplore,
-                ),
-              ],
-            );
-          }
-          return Column(
-            children: [
-              if (workout.complete == complete)
-                ActivityTile(
-                  complexObject: workout,
-                  isExplore: isExplore,
-                ),
-            ],
-          );
-        },
-      ),
+    return Selector<WorkoutListModel, List<Workout>>(
+      selector: (_, model) => model.filterWorkouts(filename),
+      builder: (context, workouts, _) {
+        return AnimatedWorkoutList(
+            list: workouts, isExplore: isExplore, complete: complete);
+      },
     );
   }
 }
 
-// class WorkoutListView extends StatelessWidget {
-//   const WorkoutListView({this.filename, this.complete, this.isExplore});
+class AnimatedWorkoutList extends StatefulWidget {
+  const AnimatedWorkoutList({
+    @required this.list,
+    @required this.isExplore,
+    @required this.complete,
+  });
 
-//   final String filename;
-//   final bool complete;
-//   final bool isExplore;
+  final List<Workout> list;
+  final bool isExplore;
+  final bool complete;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Selector<WorkoutListModel, List<Workout>>(
-//       selector: (_, model) => model.filterWorkouts(filename),
-//       builder: (context, workouts, _) {
-//         return AnimatedWorkoutList(
-//             list: workouts, isExplore: isExplore, complete: complete);
-//       },
-//     );
-//   }
-// }
+  @override
+  _AnimatedWorkoutListState createState() => _AnimatedWorkoutListState();
+}
 
-// class AnimatedWorkoutList extends StatefulWidget {
-//   const AnimatedWorkoutList({
-//     @required this.list,
-//     @required this.isExplore,
-//     @required this.complete,
-//   });
+class _AnimatedWorkoutListState extends State<AnimatedWorkoutList> {
+  Widget _buildRemovedItem(
+      Workout item, BuildContext context, Animation<double> animation) {
+    return ActivityTile(
+      complexObject: item,
+      isExplore: widget.isExplore,
+      animation: animation,
+    );
+  }
 
-//   final List<Workout> list;
-//   final bool isExplore;
-//   final bool complete;
+  @override
+  Widget build(BuildContext context) {
+    setState(() {
+      // debugPrint('too many rebuilds');
+    });
+    return AnimatedList(
+      initialItemCount: widget.list.length,
+      itemBuilder: (context, index, animation) {
+        final workout = widget.list[index];
 
-//   @override
-//   _AnimatedWorkoutListState createState() => _AnimatedWorkoutListState();
-// }
-
-// class _AnimatedWorkoutListState extends State<AnimatedWorkoutList> {
-//   Widget _buildRemovedItem(
-//       Workout item, BuildContext context, Animation<double> animation) {
-//     return ActivityTile(
-//       complexObject: item,
-//       isExplore: widget.isExplore,
-//       animation: animation,
-//     );
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     setState(() {
-//       // debugPrint('too many rebuilds');
-//     });
-//     return AnimatedList(
-//       initialItemCount: widget.list.length,
-//       itemBuilder: (context, index, animation) {
-//         final workout = widget.list[index];
-
-//         if (widget.isExplore) {
-//           return Column(
-//             children: [
-//               ActivityTile(
-//                 complexObject: workout,
-//                 isExplore: widget.isExplore,
-//                 animation: animation,
-//               ),
-//             ],
-//           );
-//         }
-//         return Column(
-//           children: [
-//             if (workout.complete == widget.complete)
-//               ActivityTile(
-//                 complexObject: workout,
-//                 isExplore: widget.isExplore,
-//                 animation: animation,
-//                 onComplete: () {
-//                   if (workout != null) {
-//                     if (workout.complete == false) {
-//                       final removedItem = workout;
-//                       AnimatedList.of(context).removeItem(
-//                         index,
-//                         (context, animation) =>
-//                             _buildRemovedItem(removedItem, context, animation),
-//                       );
-//                     }
-//                   }
-//                 },
-//               ),
-//           ],
-//         );
-//       },
-//     );
-//   }
-// }
+        if (widget.isExplore) {
+          return Column(
+            children: [
+              ActivityTile(
+                complexObject: workout,
+                isExplore: widget.isExplore,
+                animation: animation,
+              ),
+            ],
+          );
+        }
+        return Column(
+          children: [
+            if (workout.complete == widget.complete)
+              ActivityTile(
+                complexObject: workout,
+                isExplore: widget.isExplore,
+                animation: animation,
+                onComplete: () {
+                  if (workout != null) {
+                    if (workout.complete == false) {
+                      final removedItem = workout;
+                      AnimatedList.of(context).removeItem(
+                        index,
+                        (context, animation) =>
+                            _buildRemovedItem(removedItem, context, animation),
+                      );
+                    }
+                  }
+                },
+              ),
+          ],
+        );
+      },
+    );
+  }
+}

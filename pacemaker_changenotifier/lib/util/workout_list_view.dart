@@ -39,32 +39,28 @@ class AnimatedWorkoutList extends StatefulWidget {
 }
 
 class _AnimatedWorkoutListState extends State<AnimatedWorkoutList> {
-  Widget _buildRemovedItem(
-      Workout item, BuildContext context, Animation<double> animation) {
-    return ActivityTile(
-      complexObject: item,
-      isExplore: widget.isExplore,
-      animation: animation,
-    );
-  }
+  // Widget _buildRemovedItem(
+  //     Workout item, BuildContext context, Animation<double> animation) {
+  //   return ActivityTile(
+  //     complexObject: item,
+  //     isExplore: widget.isExplore,
+  //     animation: animation,
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
-    setState(() {
-      // debugPrint('too many rebuilds');
-    });
-    return AnimatedList(
-      initialItemCount: widget.list.length,
-      itemBuilder: (context, index, animation) {
+    return ListView.builder(
+      itemCount: widget.list.length,
+      itemBuilder: (context, index) {
         final workout = widget.list[index];
-
         if (widget.isExplore) {
           return Column(
             children: [
               ActivityTile(
                 complexObject: workout,
                 isExplore: widget.isExplore,
-                animation: animation,
+                // animation: animation,
               ),
             ],
           );
@@ -75,19 +71,19 @@ class _AnimatedWorkoutListState extends State<AnimatedWorkoutList> {
               ActivityTile(
                 complexObject: workout,
                 isExplore: widget.isExplore,
-                animation: animation,
-                onComplete: () {
-                  if (workout != null) {
-                    if (workout.complete == false) {
-                      final removedItem = workout;
-                      AnimatedList.of(context).removeItem(
-                        index,
-                        (context, animation) =>
-                            _buildRemovedItem(removedItem, context, animation),
-                      );
-                    }
-                  }
-                },
+                // animation: animation,
+                // onComplete: () {
+                //   if (workout != null) {
+                //     if (workout.complete == false) {
+                //       final removedItem = workout;
+                //       AnimatedList.of(context).removeItem(
+                //         index,
+                //         (context, animation) =>
+                //             _buildRemovedItem(removedItem, context, animation),
+                //       );
+                //     }
+                //   }
+                // },
               ),
           ],
         );

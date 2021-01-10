@@ -27,15 +27,11 @@ class _ActivityScreenState extends State<ActivityScreen> {
       );
     }
 
-    return NestedScrollView(
-      floatHeaderSlivers: true,
-      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) => [
-        SliverAppBar(
-          title: Text(selectedTitle),
-          centerTitle: true,
-          forceElevated: true,
-        )
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(selectedTitle),
+        centerTitle: true,
+      ),
       body: WorkoutListView(
         filename: selectedWorkout,
         complete: false,

@@ -41,7 +41,7 @@ class WorkoutListModel extends ChangeNotifier {
       );
       _isLoading = false;
       notifyListeners();
-    }).catchError((Error error) {
+    }).catchError((dynamic error) {
       _isLoading = false;
       notifyListeners();
       debugPrint('Error caught: $error');

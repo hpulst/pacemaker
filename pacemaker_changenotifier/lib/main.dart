@@ -6,10 +6,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home.dart';
 import 'models/navigator_model.dart';
+import 'page/explore_workouts_screen.dart';
 import 'repository/key_value_storage.dart';
 import 'repository/storage_repository.dart';
 import 'repository/workouts_repository.dart';
-import 'screens/explore_workouts_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

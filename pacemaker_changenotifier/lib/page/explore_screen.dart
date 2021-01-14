@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pacemaker_changenotifier/screens/about_screen.dart' as about;
+import 'package:pacemaker_changenotifier/page/about_screen.dart' as about;
 
 import '../models/explore_model.dart';
 import '../util/explore_tiles.dart';

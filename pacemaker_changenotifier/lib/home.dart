@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'models/navigator_model.dart';
-import 'screens/activity_screen.dart';
-import 'screens/explore_screen.dart';
-import 'screens/stats_screen.dart';
+import 'page/activity_screen.dart';
+import 'page/explore_screen.dart';
+import 'page/stats_screen.dart';
 
 class HomePage extends StatefulWidget {
   @override

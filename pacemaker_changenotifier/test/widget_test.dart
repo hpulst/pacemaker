@@ -4,35 +4,60 @@ import 'package:pacemaker_changenotifier/home.dart';
 import 'package:pacemaker_changenotifier/models/navigator_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
+import 'package:pacemaker_changenotifier/page/explore_screen.dart';
 import 'package:pacemaker_changenotifier/repository/workouts_repository.dart';
 import 'package:provider/provider.dart';
 import 'mock_repository.dart';
 
 void main() {
   group('HomeScreen', () {
+    final workoutListFinder = find.byKey(const Key('__todoList__'));
+    final workoutItem1Finder = find.byKey(const Key('WorkoutItem_1'));
+    final workoutItem2Finder = find.byKey(const Key('WorkoutItem_2'));
+    final workoutItem3Finder = find.byKey(const Key('WorkoutItem_2'));
+
     testWidgets('should display a list after loading workouts',
         (WidgetTester tester) async {
-      // Build our app and trigger a frame.
-      await tester.pumpWidget(const _TestWidget(
-        filename: '10Testing38',
-        title: '10 km in 38 min',
-      ));
+      await tester.pumpWidget(const _TestWidget());
       await tester.pump(Duration.zero);
+
+      final checkbox1 = find.descendant(
+          of: find.byKey(const Key('WorkoutItem__${1}__Checkbox')),
+          matching: find.byType(Focus));
+
+      expect(workoutListFinder, findsOneWidget);
+      expect(workoutItem1Finder, findsOneWidget);
+      expect(workoutItem2Finder, findsOneWidget);
+      expect(workoutItem3Finder, findsOneWidget);
+      expect(tester.getSemantics(checkbox1), isChecked(false));
     });
-    testWidgets(
-        'should remove workout after using checkbox', (tester) async {});
-    testWidgets('should display stats when switching tabs', (tester) async {});
+
+    testWidgets('should remove workout after using checkbox', (tester) async {
+      await tester.pumpWidget(const _TestWidget());
+      // await tester.pumpAndSettle(const Duration(seconds: 5));
+      // await tester.tap(find.byKey(const Key('WorkoutItem__${1}__Checkbox')));
+      // await tester.pumpAndSettle(const Duration(seconds: 5));
+      // expect(workoutItem1Finder, findsNothing);
+    });
+    testWidgets('should display stats when switching tabs', (tester) async {
+      await tester.pumpWidget(const _TestWidget());
+      await tester.pump(Duration.zero);
+      await tester.tap(find.byKey(const Key('__statsTab__')));
+
+      expect(
+          find.byKey(const Key('__circularPercentIndicator__')), findsWidgets);
+    });
   });
 }
 
 class _TestWidget extends StatelessWidget {
   const _TestWidget({
-    Key key,
     this.repository,
-    this.filename,
-    this.title,
+    String filename,
+    String title,
     this.workouts,
-  }) : super(key: key);
+  })  : filename = filename ?? '10Testing38',
+        title = title ?? '10 km in 38 min';
 
   final WorkoutsRepository repository;
   final String filename;
@@ -74,7 +99,7 @@ class _TestWidget extends StatelessWidget {
           pace: '',
           intensity: '',
           heartrate: '',
-          complete: true),
+          complete: false),
       Workout(
           id: '2',
           workout: '10Testing38',
@@ -99,4 +124,15 @@ class _TestWidget extends StatelessWidget {
           complete: false),
     ];
   }
+}
+
+Matcher isChecked(bool isChecked) {
+  return matchesSemantics(
+    isChecked: isChecked,
+    hasCheckedState: true,
+    hasEnabledState: true,
+    isEnabled: true,
+    isFocusable: true,
+    hasTapAction: true,
+  );
 }

@@ -32,15 +32,24 @@ class _MyHomePageState extends State<HomePage> {
         onTap: (int index) => provider.currentIndex = index,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.dehaze),
+            icon: Icon(
+              Icons.dehaze,
+              key: Key('__workout__'),
+            ),
             label: 'Workout',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.show_chart),
+            icon: Icon(
+              Icons.show_chart,
+              key: Key('__statsTab__'),
+            ),
             label: 'Stats',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
+            icon: Icon(
+              Icons.search,
+              key: Key('__explore__'),
+            ),
             label: 'Entdecken',
           ),
         ],

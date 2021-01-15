@@ -6,7 +6,12 @@ import 'package:provider/provider.dart';
 
 class ActivityTile extends StatelessWidget {
   const ActivityTile(
-      {this.complexObject, this.isExplore, this.animation, this.onComplete});
+      {Key key,
+      this.complexObject,
+      this.isExplore,
+      this.animation,
+      this.onComplete})
+      : super(key: key);
 
   @required
   final Workout complexObject;

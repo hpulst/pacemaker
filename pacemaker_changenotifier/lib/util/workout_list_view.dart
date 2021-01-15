@@ -51,6 +51,7 @@ class _AnimatedWorkoutListState extends State<AnimatedWorkoutList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      key: const Key('__todoList__'),
       itemCount: widget.list.length,
       itemBuilder: (context, index) {
         final workout = widget.list[index];
@@ -69,6 +70,7 @@ class _AnimatedWorkoutListState extends State<AnimatedWorkoutList> {
           children: [
             if (workout.complete == widget.complete)
               ActivityTile(
+                key: Key('WorkoutItem_${workout.id}'),
                 complexObject: workout,
                 isExplore: widget.isExplore,
                 // animation: animation,

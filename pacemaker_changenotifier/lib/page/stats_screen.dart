@@ -37,6 +37,7 @@ class StatsScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(20),
               child: CircularPercentIndicator(
+                key: const Key('__circularPercentIndicator__'),
                 radius: 180.0, //radius for circle
                 lineWidth: 15.0, //width of circle line
                 animation:

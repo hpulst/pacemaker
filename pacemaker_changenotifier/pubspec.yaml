@@ -34,7 +34,11 @@ dependencies:
   uuid: 
 
 dev_dependencies:
+  test:
+  integration_test:
   flutter_test:
+    sdk: flutter
+  flutter_driver:
     sdk: flutter
 
 # The following section is specific to Flutter.

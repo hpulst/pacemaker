@@ -2,20 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/models/explore_model.dart';
 
 class SimpleObjectView extends StatelessWidget {
-  const SimpleObjectView({Key key, @required this.simpleObjects})
+  const SimpleObjectView(
+      {Key key, @required this.simpleObjects, @required this.filename})
       : super(key: key);
 
   final List<dynamic> simpleObjects;
+  final String filename;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
+        key: Key('ExplorerList__$filename'),
         padding: EdgeInsets.zero,
         itemCount: simpleObjects.length,
         itemBuilder: (context, index) {
           return Container(
             child: ListTile(
+              key: Key('ExplorerItem__${simpleObjects[index].name}'),
               contentPadding: const EdgeInsets.all(6.0),
               leading: const CircularProgressIndicator(
                 strokeWidth: 4,

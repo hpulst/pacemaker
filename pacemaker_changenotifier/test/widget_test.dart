@@ -4,7 +4,6 @@ import 'package:pacemaker_changenotifier/home.dart';
 import 'package:pacemaker_changenotifier/models/navigator_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
-import 'package:pacemaker_changenotifier/page/explore_screen.dart';
 import 'package:pacemaker_changenotifier/repository/workouts_repository.dart';
 import 'package:provider/provider.dart';
 import 'mock_repository.dart';
@@ -70,7 +69,7 @@ class _TestWidget extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<WorkoutListModel>(
           create: (_) {
-            final repo = MockRepository(workouts ?? _defaultWorkouts);
+            final repo = MockRepository(workouts: workouts ?? _defaultWorkouts);
             return WorkoutListModel(repository: repo)
               ..loadWorkouts(filename)
               ..setTitle(filename, title);

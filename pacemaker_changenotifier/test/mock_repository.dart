@@ -3,9 +3,9 @@ import 'package:pacemaker_changenotifier/repository/workouts_repository.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
 
 class MockRepository implements WorkoutsRepository {
-  MockRepository(List<Workout> workouts, {String filename})
+  MockRepository({List<Workout> workouts, String filename})
       : key = filename ?? '',
-        entities = workouts.map((item) => item.toEntity()).toList();
+        entities = workouts?.map((item) => item.toEntity())?.toList();
 
   List<Workout> entities;
   int saveCount = 0;

@@ -57,7 +57,8 @@ class ExploreTab extends StatelessWidget {
         future: loadWorkouts(filename),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return SimpleObjectView(simpleObjects: snapshot.data);
+            return SimpleObjectView(
+                simpleObjects: snapshot.data, filename: filename);
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           }

@@ -3,6 +3,7 @@ import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
 import 'package:pacemaker_changenotifier/util/thumbnail.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/scheduler.dart';
 
 class ActivityTile extends StatelessWidget {
   const ActivityTile(
@@ -26,30 +27,30 @@ class ActivityTile extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Color(0xFFFAFAFA),
       ),
-      // child: SizeTransition(
-      //   axis: Axis.vertical,
-      //   sizeFactor: animation,
-      child: CustomListTile(
-        thumbnail: Container(
-          decoration: BoxDecoration(
-            color: buildColor(complexObject.intensity),
-            borderRadius: BorderRadius.circular(10.0),
+      child: SizeTransition(
+        axis: Axis.vertical,
+        sizeFactor: animation,
+        child: CustomListTile(
+          thumbnail: Container(
+            decoration: BoxDecoration(
+              color: buildColor(complexObject.intensity),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
           ),
+          isExplore: isExplore,
+          id: complexObject.id,
+          week: complexObject.week,
+          weekday: complexObject.weekday,
+          km: complexObject.km,
+          time: complexObject.time,
+          pace: complexObject.pace,
+          intensity: complexObject.intensity,
+          heartrate: complexObject.heartrate,
+          complete: complexObject.complete,
+          checkbox: RoundedCheckbox(
+              complexObject: complexObject, onComplete: onComplete),
         ),
-        isExplore: isExplore,
-        id: complexObject.id,
-        week: complexObject.week,
-        weekday: complexObject.weekday,
-        km: complexObject.km,
-        time: complexObject.time,
-        pace: complexObject.pace,
-        intensity: complexObject.intensity,
-        heartrate: complexObject.heartrate,
-        complete: complexObject.complete,
-        checkbox: RoundedCheckbox(
-            complexObject: complexObject, onComplete: onComplete),
       ),
-      // ),
     );
   }
 }
@@ -71,15 +72,18 @@ class RoundedCheckbox extends StatelessWidget {
       key: Key('WorkoutItem__${complexObject.id}__Checkbox'),
       value: complexObject.complete,
       onChanged: (complete) {
-        final model = context.read<WorkoutListModel>();
-        final workout =
-            model.workoutById(complexObject.id).copy(complete: complete);
-        model.updateWorkout(
-          workout,
-        );
-        // if (onComplete != null) {
-        //   onComplete();
-        // }
+        // timeDilation = 10.0;
+        if (onComplete != null) {
+          onComplete();
+        }
+        Future.delayed(const Duration(milliseconds: 5), () {
+          final model = context.read<WorkoutListModel>();
+          final workout =
+              model.workoutById(complexObject.id).copy(complete: complete);
+          model.updateWorkout(
+            workout,
+          );
+        });
       },
     );
   }

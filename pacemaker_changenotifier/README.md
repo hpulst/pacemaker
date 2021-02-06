@@ -2,8 +2,6 @@
 
 ### TODO
 
-- [ ]  Add AnimationList
-  - How to inform the _list, to remove an item?
 - [ ]  Add dates
 - [ ]  Add Calendar overview
 - [ ]  Use 'expand / collapse' list entry with ExpansionTile class or use details screen to reveal more workout information
@@ -15,6 +13,7 @@
 - [ ]  Add tests
 - [ ]  Add MaterialLocalizations
 
+- [x]  Add AnimationList
 - [x]  Add a Provider for Navigation
 - [x]  Save selected workout in SharedPreferences
 - [x]  Load JSON when workout is selected and add to Provider  

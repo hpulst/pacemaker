@@ -10,7 +10,9 @@ import 'mock_repository.dart';
 
 void main() {
   group('HomeScreen', () {
-    final workoutListFinder = find.byKey(const Key('__todoList__'));
+    final workoutListFinder = find.descendant(
+        of: find.byKey(const Key('__todoList__')),
+        matching: find.byType(AnimatedList));
     final workoutItem1Finder = find.byKey(const Key('WorkoutItem_1'));
     final workoutItem2Finder = find.byKey(const Key('WorkoutItem_2'));
     final workoutItem3Finder = find.byKey(const Key('WorkoutItem_2'));
@@ -25,18 +27,18 @@ void main() {
           matching: find.byType(Focus));
 
       expect(workoutListFinder, findsOneWidget);
-      expect(workoutItem1Finder, findsOneWidget);
-      expect(workoutItem2Finder, findsOneWidget);
-      expect(workoutItem3Finder, findsOneWidget);
+      expect(workoutItem1Finder, findsNothing);
+      expect(find.text('Ruhetag'), findsNothing);
+      expect(workoutItem3Finder, findsNothing);
       expect(tester.getSemantics(checkbox1), isChecked(false));
     });
 
     testWidgets('should remove workout after using checkbox', (tester) async {
       await tester.pumpWidget(const _TestWidget());
-      // await tester.pumpAndSettle(const Duration(seconds: 5));
-      // await tester.tap(find.byKey(const Key('WorkoutItem__${1}__Checkbox')));
-      // await tester.pumpAndSettle(const Duration(seconds: 5));
-      // expect(workoutItem1Finder, findsNothing);
+      await tester.pumpAndSettle(const Duration(seconds: 5));
+      await tester.tap(find.byKey(const Key('WorkoutItem__${1}__Checkbox')));
+      await tester.pumpAndSettle(const Duration(seconds: 5));
+      expect(workoutItem1Finder, findsNothing);
     });
     testWidgets('should display stats when switching tabs', (tester) async {
       await tester.pumpWidget(const _TestWidget());

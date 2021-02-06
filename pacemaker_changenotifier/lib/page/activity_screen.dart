@@ -3,12 +3,7 @@ import 'package:pacemaker_changenotifier/models/workout_list_model.dart';
 import 'package:pacemaker_changenotifier/util/workout_list_view.dart';
 import 'package:provider/provider.dart';
 
-class ActivityScreen extends StatefulWidget {
-  @override
-  _ActivityScreenState createState() => _ActivityScreenState();
-}
-
-class _ActivityScreenState extends State<ActivityScreen> {
+class ActivityScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final model = context.watch<WorkoutListModel>();

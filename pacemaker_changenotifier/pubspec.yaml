@@ -13,7 +13,6 @@ dependencies:
   cupertino_icons: 
   device_preview: ^0.5.5
   package_info: 
-  pedantic: ^1.9.2
   percent_indicator: ^2.1.9
   provider: ^4.3.2+3
   shared_preferences: ^0.5.12+4
@@ -21,6 +20,7 @@ dependencies:
   uuid: 
 
 dev_dependencies:
+  pedantic: ^1.9.2
   test: 
   integration_test:
   flutter_test:

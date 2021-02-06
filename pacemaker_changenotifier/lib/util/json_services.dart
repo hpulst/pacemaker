@@ -14,9 +14,9 @@ class JsonImport implements WorkoutsRepository {
       jsonWorkouts = await _loadAsset(filename);
       final List<dynamic> parsedJson = await jsonDecode(jsonWorkouts);
       workoutTable =
-          parsedJson.map((dynamic o) => Workout.fromJson(o)).toList();
+          parsedJson?.map((dynamic o) => Workout.fromJson(o))?.toList();
     } catch (e, s) {
-      debugPrint('Exception details:\n $e');
+      debugPrint('Exception details inside _loadAsset:\n $e');
       debugPrint('Stack trace:\n $s');
     }
 

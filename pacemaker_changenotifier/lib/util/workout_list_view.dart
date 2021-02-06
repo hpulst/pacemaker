@@ -57,7 +57,7 @@ class _AnimatedWorkoutListState extends State<AnimatedWorkoutList> {
   Widget build(BuildContext context) {
     final _listKey = ValueKey(widget.filename);
     return Container(
-      key: const Key('__todoList__'),
+      // key: const Key('__todoList__'),
       child: AnimatedList(
         key: _listKey,
         initialItemCount: widget.list.length,
@@ -78,7 +78,7 @@ class _AnimatedWorkoutListState extends State<AnimatedWorkoutList> {
             children: [
               if (workout.complete == widget.complete)
                 ActivityTile(
-                  key: Key('WorkoutItem_${workout.id}'),
+                  // key: Key('WorkoutItem_${workout.id}'),
                   complexObject: workout,
                   isExplore: widget.isExplore,
                   animation: animation,

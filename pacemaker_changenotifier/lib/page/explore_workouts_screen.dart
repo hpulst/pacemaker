@@ -120,7 +120,7 @@ class _AddWorkouts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-      key: const Key('__startButton__'),
+      // key: const Key('__startButton__'),
       child: const Text('Start'),
       onPressed: () {
         context.read<WorkoutListModel>().setWorkout(workoutTable);

@@ -4,7 +4,8 @@
 #
 # Google internally enforced rules.
 
-include: package:pedantic/analysis_options.yaml
+include: package:flutter_lints/flutter.yaml
+
 analyzer:
   enable-experiment:
     - non-nullable

@@ -7,9 +7,9 @@ import 'activity_tiles.dart';
 class WorkoutListView extends StatelessWidget {
   const WorkoutListView({this.filename, this.complete, this.isExplore});
 
-  final String filename;
-  final bool complete;
-  final bool isExplore;
+  final String? filename;
+  final bool? complete;
+  final bool? isExplore;
 
   @override
   Widget build(BuildContext context) {
@@ -28,16 +28,16 @@ class WorkoutListView extends StatelessWidget {
 
 class AnimatedWorkoutList extends StatefulWidget {
   const AnimatedWorkoutList({
-    @required this.list,
-    @required this.isExplore,
-    @required this.complete,
+    required this.list,
+    required this.isExplore,
+    required this.complete,
     this.filename,
   });
 
   final List<Workout> list;
-  final bool isExplore;
-  final bool complete;
-  final String filename;
+  final bool? isExplore;
+  final bool? complete;
+  final String? filename;
 
   @override
   _AnimatedWorkoutListState createState() => _AnimatedWorkoutListState();
@@ -63,7 +63,7 @@ class _AnimatedWorkoutListState extends State<AnimatedWorkoutList> {
         initialItemCount: widget.list.length,
         itemBuilder: (context, index, animation) {
           final workout = widget.list[index];
-          if (widget.isExplore) {
+          if (widget.isExplore!) {
             return Column(
               children: [
                 ActivityTile(

@@ -54,16 +54,16 @@ void main() {
 class _TestWidget extends StatelessWidget {
   const _TestWidget({
     this.repository,
-    String filename,
-    String title,
+    String? filename,
+    String? title,
     this.workouts,
   })  : filename = filename ?? '10Testing38',
         title = title ?? '10 km in 38 min';
 
-  final WorkoutsRepository repository;
+  final WorkoutsRepository? repository;
   final String filename;
   final String title;
-  final List<Workout> workouts;
+  final List<Workout>? workouts;
 
   @override
   Widget build(BuildContext context) {

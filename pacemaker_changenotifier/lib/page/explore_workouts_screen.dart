@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 class ExploreWorkouts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final ScreenArguments args = ModalRoute.of(context).settings.arguments;
+    final ScreenArguments args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
     final banner = MaterialBanner(
       backgroundColor: const Color(0xFFFAFAFA),
       content: Column(
@@ -25,14 +25,14 @@ class ExploreWorkouts extends StatelessWidget {
             ),
           ),
           Text(args.premarathon != null
-              ? args.premarathon + '\n' + args.pre10km
-              : args.pre10km),
+              ? args.premarathon! + '\n' + args.pre10km!
+              : args.pre10km!),
           Text(args.frequency ?? ''),
         ],
       ),
       actions: [
         _AddWorkouts(workoutTable: args.workoutTable),
-        FlatButton(
+        TextButton(
           onPressed: () {},
           child: const Text(
             'Reset',
@@ -42,7 +42,7 @@ class ExploreWorkouts extends StatelessWidget {
     );
     return Scaffold(
       appBar: AppBar(
-        title: Text(args.name),
+        title: Text(args.name!),
         centerTitle: true,
       ),
       body: NestedScrollView(
@@ -63,8 +63,8 @@ class ExploreWorkouts extends StatelessWidget {
 
 class FutureWorkouts extends StatefulWidget {
   const FutureWorkouts({
-    Key key,
-    @required this.args,
+    Key? key,
+    required this.args,
   }) : super(key: key);
 
   final ScreenArguments args;
@@ -73,7 +73,7 @@ class FutureWorkouts extends StatefulWidget {
 }
 
 class _FutureWorkoutsState extends State<FutureWorkouts> {
-  Future<List<Workout>> _workoutList;
+  Future<List<Workout>>? _workoutList;
 
   @override
   void initState() {
@@ -112,10 +112,10 @@ class _FutureWorkoutsState extends State<FutureWorkouts> {
 class _AddWorkouts extends StatelessWidget {
   const _AddWorkouts({
     this.workoutTable,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
-  final WorkoutTable workoutTable;
+  final WorkoutTable? workoutTable;
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +123,7 @@ class _AddWorkouts extends StatelessWidget {
       // key: const Key('__startButton__'),
       child: const Text('Start'),
       onPressed: () {
-        context.read<WorkoutListModel>().setWorkout(workoutTable);
+        context.read<WorkoutListModel>().setWorkout(workoutTable!);
         context.read<NavigatorModel>().currentIndex = 0;
         Navigator.pop(context);
       },

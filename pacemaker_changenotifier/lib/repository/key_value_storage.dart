@@ -10,21 +10,21 @@ class KeyValueStorage implements WorkoutsRepository {
   final JsonCodec codec;
 
   @override
-  Future<List<Workout>> loadWorkouts(String key) async {
+  Future<List<Workout>?> loadWorkouts(String? key) async {
     return codec
-        .decode(preferences.getString(key))['workouts']
+        .decode(preferences.getString(key!)!)['workouts']
         .cast<Map<String, Object>>()
         .map<Workout>(Workout.fromJson)
         .toList(growable: false);
   }
 
   @override
-  Future<bool> saveWorkouts(List<Workout> workouts, String key) {
+  Future<bool> saveWorkouts(List<Workout>? workouts, String? key) {
     return preferences.setString(
-      key,
+      key!,
       codec.encode(
         {
-          'workouts': workouts.map((workout) => workout.toJson()).toList(),
+          'workouts': workouts!.map((workout) => workout.toJson()).toList(),
         },
       ),
     );

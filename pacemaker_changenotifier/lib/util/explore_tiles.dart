@@ -3,10 +3,10 @@ import 'package:pacemaker_changenotifier/models/explore_model.dart';
 
 class SimpleObjectView extends StatelessWidget {
   const SimpleObjectView(
-      {Key key, @required this.simpleObjects, @required this.filename})
+      {Key? key, required this.simpleObjects, required this.filename})
       : super(key: key);
 
-  final List<dynamic> simpleObjects;
+  final List<dynamic>? simpleObjects;
   final String filename;
 
   @override
@@ -15,18 +15,18 @@ class SimpleObjectView extends StatelessWidget {
       body: ListView.builder(
         key: Key('ExplorerList__$filename'),
         padding: EdgeInsets.zero,
-        itemCount: simpleObjects.length,
+        itemCount: simpleObjects!.length,
         itemBuilder: (context, index) {
           return Container(
             child: ListTile(
-              key: Key('ExplorerItem__${simpleObjects[index].name}'),
+              key: Key('ExplorerItem__${simpleObjects![index].name}'),
               contentPadding: const EdgeInsets.all(6.0),
               leading: const CircularProgressIndicator(
                 strokeWidth: 4,
                 value: 0.8,
               ),
               title: Text(
-                simpleObjects[index].name,
+                simpleObjects![index].name,
                 style: const TextStyle(fontSize: 15.0),
               ),
               onTap: () {
@@ -34,12 +34,12 @@ class SimpleObjectView extends StatelessWidget {
                   context,
                   '/workouts',
                   arguments: ScreenArguments(
-                    workoutTable: simpleObjects[index],
-                    name: simpleObjects[index].name,
-                    workout: simpleObjects[index].workout,
-                    premarathon: simpleObjects[index].premarathon,
-                    pre10km: simpleObjects[index].pre10km,
-                    frequency: simpleObjects[index].frequency,
+                    workoutTable: simpleObjects![index],
+                    name: simpleObjects![index].name,
+                    workout: simpleObjects![index].workout,
+                    premarathon: simpleObjects![index].premarathon,
+                    pre10km: simpleObjects![index].pre10km,
+                    frequency: simpleObjects![index].frequency,
                   ),
                 );
               },
@@ -60,17 +60,17 @@ class SimpleObjectView extends StatelessWidget {
 
 class ScreenArguments {
   ScreenArguments(
-      {@required this.workoutTable,
-      @required this.name,
-      @required this.workout,
+      {required this.workoutTable,
+      required this.name,
+      required this.workout,
       this.premarathon,
       this.pre10km,
       this.frequency});
 
   final WorkoutTable workoutTable;
-  final String name;
-  final String workout;
-  final String premarathon;
-  final String pre10km;
-  final String frequency;
+  final String? name;
+  final String? workout;
+  final String? premarathon;
+  final String? pre10km;
+  final String? frequency;
 }

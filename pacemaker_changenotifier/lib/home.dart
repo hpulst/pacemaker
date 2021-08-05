@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<HomePage> {
-  int currentTab;
+  int? currentTab;
 
   @override
   Widget build(BuildContext context) {

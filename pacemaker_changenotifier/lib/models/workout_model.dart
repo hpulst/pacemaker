@@ -3,8 +3,8 @@ import 'package:uuid/uuid.dart';
 
 class Workout {
   Workout({
-    String id,
-    @required this.workout,
+    String? id,
+    required this.workout,
     this.week,
     this.weekday,
     this.km,
@@ -13,18 +13,18 @@ class Workout {
     this.intensity,
     this.heartrate,
     this.complete,
-  }) : id = id ?? Uuid().v4();
+  }) : id = id ?? const Uuid().v4();
 
   final String id;
-  final String workout;
-  final String week;
-  final String weekday;
-  final String km;
-  final String time;
-  final String pace;
-  final String intensity;
-  final String heartrate;
-  final bool complete;
+  final String? workout;
+  final String? week;
+  final String? weekday;
+  final String? km;
+  final String? time;
+  final String? pace;
+  final String? intensity;
+  final String? heartrate;
+  final bool? complete;
 
   static Workout fromEntity(Workout entity) {
     return Workout(
@@ -45,19 +45,19 @@ class Workout {
     // if (json == null) return null;
     return Workout(
       id: Uuid().v4(),
-      workout: json['workout'] as String,
-      week: json['week'] as String,
-      weekday: json['weekday'] as String,
-      km: json['km'] as String,
-      time: json['time'] as String,
-      pace: json['pace'] as String,
-      intensity: json['intensity'] as String,
-      heartrate: json['heartrate'] as String,
-      complete: json['complete'] as bool,
+      workout: json['workout'] as String?,
+      week: json['week'] as String?,
+      weekday: json['weekday'] as String?,
+      km: json['km'] as String?,
+      time: json['time'] as String?,
+      pace: json['pace'] as String?,
+      intensity: json['intensity'] as String?,
+      heartrate: json['heartrate'] as String?,
+      complete: json['complete'] as bool?,
     );
   }
 
-  Map<String, Object> toJson() {
+  Map<String, Object?> toJson() {
     return {
       'id': id,
       'workout': workout,
@@ -73,16 +73,16 @@ class Workout {
   }
 
   Workout copy({
-    String id,
-    String workout,
-    String week,
-    String weekday,
-    String km,
-    String time,
-    String pace,
-    String intensity,
-    String heartrate,
-    bool complete,
+    String? id,
+    String? workout,
+    String? week,
+    String? weekday,
+    String? km,
+    String? time,
+    String? pace,
+    String? intensity,
+    String? heartrate,
+    bool? complete,
   }) {
     return Workout(
       id: this.id,

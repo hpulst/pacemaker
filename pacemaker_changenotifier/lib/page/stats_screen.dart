@@ -53,7 +53,7 @@ class StatsScreen extends StatelessWidget {
                   style: const TextStyle(fontSize: 17.0),
                 ), //footer text
                 backgroundColor:
-                    Colors.lightBlue[50], //backround of progress bar
+                    Colors.lightBlue[50]!, //backround of progress bar
                 circularStrokeCap: CircularStrokeCap
                     .round, //corner shape of progress bar at start/end
                 progressColor:

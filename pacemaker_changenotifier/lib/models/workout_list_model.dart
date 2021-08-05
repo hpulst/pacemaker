@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'package:collection/collection.dart' show IterableExtension;
 import 'package:flutter/material.dart';
 import 'package:pacemaker_changenotifier/models/explore_model.dart';
 import 'package:pacemaker_changenotifier/models/workout_model.dart';
@@ -11,9 +12,9 @@ import '../repository/workouts_repository.dart';
 
 class WorkoutListModel extends ChangeNotifier {
   WorkoutListModel({
-    @required this.repository,
+    required this.repository,
     // VisibilityFilter filter,
-    List<Workout> workouts,
+    List<Workout>? workouts,
   }) : _workouts = workouts ?? [];
   // _filter = filter ?? VisibilityFilter.all;
 
@@ -21,23 +22,23 @@ class WorkoutListModel extends ChangeNotifier {
   final List<Workout> _workouts;
 
   // VisibilityFilter _filter;
-  String _selectedWorkout = '';
+  String? _selectedWorkout = '';
   String _selectedTitle = 'Workout';
   bool _isLoading = false;
 
-  String get selectedWorkout => _selectedWorkout;
+  String? get selectedWorkout => _selectedWorkout;
   String get selectedTitle => _selectedTitle;
   // VisibilityFilter get filter => _filter;
   UnmodifiableListView<Workout> get workouts => UnmodifiableListView(_workouts);
   bool get isLoading => _isLoading;
 
-  Future loadWorkouts(String selectedWorkout) {
+  Future loadWorkouts(String? selectedWorkout) {
     _isLoading = true;
     notifyListeners();
 
     return repository.loadWorkouts(selectedWorkout).then((loadedWorkouts) {
       _workouts.addAll(
-        loadedWorkouts.map(Workout.fromEntity),
+        loadedWorkouts!.map(Workout.fromEntity),
       );
       _isLoading = false;
       notifyListeners();
@@ -64,7 +65,7 @@ class WorkoutListModel extends ChangeNotifier {
   //   }).toList();
   // }
 
-  List<Workout> filterWorkouts(String _selectedWorkout) {
+  List<Workout> filterWorkouts(String? _selectedWorkout) {
     return _workouts
         .where((workout) => workout.workout == _selectedWorkout)
         .toList();
@@ -81,8 +82,8 @@ class WorkoutListModel extends ChangeNotifier {
     _uploadItems();
   }
 
-  Workout workoutById(String id) {
-    return _workouts.firstWhere((e) => e.id == id, orElse: () => null);
+  Workout? workoutById(String id) {
+    return _workouts.firstWhereOrNull((e) => e.id == id);
   }
 
   void _uploadItems() {
@@ -91,7 +92,7 @@ class WorkoutListModel extends ChangeNotifier {
         _workouts[0].workout);
   }
 
-  Future<List<Workout>> addWorkouts(String _selectedWorkout) async {
+  Future<List<Workout>> addWorkouts(String? _selectedWorkout) async {
     var _list = <Workout>[];
     _list = _workouts
         .where((workout) => workout.workout == _selectedWorkout)
@@ -100,7 +101,7 @@ class WorkoutListModel extends ChangeNotifier {
       final repo = await createRepository(_selectedWorkout);
       await repo.loadWorkouts(_selectedWorkout).then(
         (loadedWorkouts) {
-          _list.addAll(loadedWorkouts.map(Workout.fromEntity));
+          _list.addAll(loadedWorkouts!.map(Workout.fromEntity));
         },
       );
       _workouts.addAll(_list);
@@ -109,7 +110,7 @@ class WorkoutListModel extends ChangeNotifier {
   }
 
   Future<LocalStorageRepository> createRepository(
-      String _selectedWorkout) async {
+      String? _selectedWorkout) async {
     final repo = LocalStorageRepository(
         localStorage: KeyValueStorage(await SharedPreferences.getInstance()),
         filename: _selectedWorkout);
@@ -119,13 +120,13 @@ class WorkoutListModel extends ChangeNotifier {
   Future setWorkout(WorkoutTable workoutTable) async {
     final prefs = await SharedPreferences.getInstance();
 
-    await prefs.setString('user', workoutTable.workout);
-    await prefs.setString('title', workoutTable.name);
+    await prefs.setString('user', workoutTable.workout!);
+    await prefs.setString('title', workoutTable.name!);
 
     setTitle(prefs.getString('user'), prefs.getString('title'));
   }
 
-  void setTitle(String token, String title) {
+  void setTitle(String? token, String? title) {
     if (title != null) {
       _selectedTitle = title;
     }
@@ -136,7 +137,7 @@ class WorkoutListModel extends ChangeNotifier {
   int get numCompleted {
     return _workouts
         .where((Workout workout) =>
-            workout.complete && workout.workout == _selectedWorkout)
+            workout.complete! && workout.workout == _selectedWorkout)
         .toList()
         .length;
   }

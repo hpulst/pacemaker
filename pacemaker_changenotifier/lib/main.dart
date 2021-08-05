@@ -31,11 +31,11 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({@required this.repository, this.filename, this.title});
+  const MyApp({required this.repository, this.filename, this.title});
 
   final WorkoutsRepository repository;
-  final String filename;
-  final String title;
+  final String? filename;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {

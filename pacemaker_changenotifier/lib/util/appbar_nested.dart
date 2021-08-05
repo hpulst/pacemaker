@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class CustomSliverAppBar extends StatelessWidget with PreferredSizeWidget {
   const CustomSliverAppBar({
-    Key key,
-    @required this.myTabs,
-    @required this.title,
+    Key? key,
+    required this.myTabs,
+    required this.title,
   }) : super(key: key);
 
   final List<Tab> myTabs;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Color buildColor(String intensity) {
+Color buildColor(String? intensity) {
   switch (intensity) {
     case '':
       return Colors.primaries[12];

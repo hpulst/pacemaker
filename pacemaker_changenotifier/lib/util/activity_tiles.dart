@@ -7,7 +7,7 @@ import 'package:flutter/scheduler.dart';
 
 class ActivityTile extends StatelessWidget {
   const ActivityTile(
-      {Key key,
+      {Key? key,
       this.complexObject,
       this.isExplore,
       this.animation,
@@ -15,11 +15,11 @@ class ActivityTile extends StatelessWidget {
       : super(key: key);
 
   @required
-  final Workout complexObject;
+  final Workout? complexObject;
   @required
-  final bool isExplore;
-  final Animation animation;
-  final void Function() onComplete;
+  final bool? isExplore;
+  final Animation? animation;
+  final void Function()? onComplete;
 
   @override
   Widget build(BuildContext context) {
@@ -29,24 +29,24 @@ class ActivityTile extends StatelessWidget {
       ),
       child: SizeTransition(
         axis: Axis.vertical,
-        sizeFactor: animation,
+        sizeFactor: animation as Animation<double>,
         child: CustomListTile(
           thumbnail: Container(
             decoration: BoxDecoration(
-              color: buildColor(complexObject.intensity),
+              color: buildColor(complexObject!.intensity),
               borderRadius: BorderRadius.circular(10.0),
             ),
           ),
           isExplore: isExplore,
-          id: complexObject.id,
-          week: complexObject.week,
-          weekday: complexObject.weekday,
-          km: complexObject.km,
-          time: complexObject.time,
-          pace: complexObject.pace,
-          intensity: complexObject.intensity,
-          heartrate: complexObject.heartrate,
-          complete: complexObject.complete,
+          id: complexObject!.id,
+          week: complexObject!.week,
+          weekday: complexObject!.weekday,
+          km: complexObject!.km,
+          time: complexObject!.time,
+          pace: complexObject!.pace,
+          intensity: complexObject!.intensity,
+          heartrate: complexObject!.heartrate,
+          complete: complexObject!.complete,
           checkbox: RoundedCheckbox(
               complexObject: complexObject, onComplete: onComplete),
         ),
@@ -57,29 +57,29 @@ class ActivityTile extends StatelessWidget {
 
 class RoundedCheckbox extends StatelessWidget {
   const RoundedCheckbox({
-    Key key,
-    @required this.complexObject,
+    Key? key,
+    required this.complexObject,
     // @required
     this.onComplete,
   }) : super(key: key);
 
-  final Workout complexObject;
-  final void Function() onComplete;
+  final Workout? complexObject;
+  final void Function()? onComplete;
 
   @override
   Widget build(BuildContext context) {
     return Checkbox(
-      key: Key('WorkoutItem__${complexObject.id}__Checkbox'),
-      value: complexObject.complete,
+      key: Key('WorkoutItem__${complexObject!.id}__Checkbox'),
+      value: complexObject!.complete,
       onChanged: (complete) {
         // timeDilation = 10.0;
         if (onComplete != null) {
-          onComplete();
+          onComplete!();
         }
         Future.delayed(const Duration(milliseconds: 5), () {
           final model = context.read<WorkoutListModel>();
           final workout =
-              model.workoutById(complexObject.id).copy(complete: complete);
+              model.workoutById(complexObject!.id)!.copy(complete: complete);
           model.updateWorkout(
             workout,
           );
@@ -106,19 +106,19 @@ class CustomListTile extends StatefulWidget {
     this.checkbox,
   });
 
-  final Widget thumbnail;
-  final bool isExplore;
-  final int index;
-  final String id;
-  final String week;
-  final String weekday;
-  final String km;
-  final String time;
-  final String pace;
-  final String intensity;
-  final String heartrate;
-  final bool complete;
-  final Widget checkbox;
+  final Widget? thumbnail;
+  final bool? isExplore;
+  final int? index;
+  final String? id;
+  final String? week;
+  final String? weekday;
+  final String? km;
+  final String? time;
+  final String? pace;
+  final String? intensity;
+  final String? heartrate;
+  final bool? complete;
+  final Widget? checkbox;
 
   @override
   _CustomListTileState createState() => _CustomListTileState();
@@ -130,7 +130,7 @@ class _CustomListTileState extends State<CustomListTile> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 15.0),
       child: SizedBox(
-        height: widget.isExplore ? 60.0 : 80.0,
+        height: widget.isExplore! ? 60.0 : 80.0,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -169,7 +169,7 @@ class _CustomListTileState extends State<CustomListTile> {
                   const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
               child: Row(
                 children: <Widget>[
-                  widget.checkbox,
+                  widget.checkbox!,
                 ],
               ),
             ),
@@ -184,7 +184,7 @@ class _CustomListTileState extends State<CustomListTile> {
 
 class _Description extends StatelessWidget {
   const _Description({
-    Key key,
+    Key? key,
     this.isExplore,
     this.week,
     this.weekday,
@@ -196,19 +196,19 @@ class _Description extends StatelessWidget {
     this.complete,
   }) : super(key: key);
 
-  final bool isExplore;
-  final String week;
-  final String weekday;
-  final String km;
-  final String time;
-  final String pace;
-  final String intensity;
-  final String heartrate;
-  final bool complete;
+  final bool? isExplore;
+  final String? week;
+  final String? weekday;
+  final String? km;
+  final String? time;
+  final String? pace;
+  final String? intensity;
+  final String? heartrate;
+  final bool? complete;
 
   @override
   Widget build(BuildContext context) {
-    if (!isExplore) {
+    if (!isExplore!) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -219,7 +219,7 @@ class _Description extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    weekday + ' - ' + week,
+                    weekday! + ' - ' + week!,
                     style: const TextStyle(
                       fontSize: 11,
                     ),
@@ -227,7 +227,7 @@ class _Description extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(
-                    km,
+                    km!,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 16),
@@ -239,8 +239,8 @@ class _Description extends StatelessWidget {
                 Text(
                   pace != '' && pace != null
                       ? time != '' && time != null
-                          ? time + ' in ' + pace
-                          : pace
+                          ? time! + ' in ' + pace!
+                          : pace!
                       : '',
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontSize: 11),
@@ -250,7 +250,7 @@ class _Description extends StatelessWidget {
                 ),
                 Text(
                   intensity != '' && intensity != null
-                      ? intensity + ' mit max Herzfrequenz ' + heartrate
+                      ? intensity! + ' mit max Herzfrequenz ' + heartrate!
                       : '',
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontSize: 11.0),
@@ -270,7 +270,7 @@ class _Description extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  weekday + ' - ' + week,
+                  weekday! + ' - ' + week!,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -280,15 +280,15 @@ class _Description extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 3.0),
                 ),
                 Text(
-                  km,
+                  km!,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontSize: 11),
                 ),
                 Text(
                   pace != '' && pace != null
                       ? time != '' && time != null
-                          ? time + ' in ' + pace
-                          : pace
+                          ? time! + ' in ' + pace!
+                          : pace!
                       : '',
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontSize: 11),

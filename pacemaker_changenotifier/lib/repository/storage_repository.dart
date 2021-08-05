@@ -5,16 +5,16 @@ import 'package:pacemaker_changenotifier/util/json_services.dart';
 import '../models/workout_model.dart';
 
 class LocalStorageRepository implements WorkoutsRepository {
-  LocalStorageRepository({this.localStorage, String filename})
+  LocalStorageRepository({this.localStorage, String? filename})
       : key = filename ?? '';
 
-  final WorkoutsRepository localStorage;
+  final WorkoutsRepository? localStorage;
   final String key;
 
   WorkoutsRepository jsonClient = JsonImport();
 
   @override
-  Future<List<Workout>> loadWorkouts(String key) async {
+  Future<List<Workout>?> loadWorkouts(String? key) async {
     try {
       return await localStorage?.loadWorkouts(key);
     } catch (e) {
@@ -22,11 +22,11 @@ class LocalStorageRepository implements WorkoutsRepository {
     }
   }
 
-  Future<List<Workout>> loadJSON(String key) async {
-    var workouts = <Workout>[];
+  Future<List<Workout>?> loadJSON(String? key) async {
+    List<Workout>? workouts = <Workout>[];
     try {
       workouts = await jsonClient.loadWorkouts(key);
-      await localStorage.saveWorkouts(workouts, key);
+      await localStorage!.saveWorkouts(workouts, key);
       return workouts;
     } on Exception catch (e) {
       debugPrint('Error caught: $e');
@@ -35,10 +35,10 @@ class LocalStorageRepository implements WorkoutsRepository {
   }
 
   @override
-  Future saveWorkouts(List<Workout> workouts, String key) {
+  Future saveWorkouts(List<Workout>? workouts, String? key) {
     return Future.wait<dynamic>(
       [
-        localStorage.saveWorkouts(workouts, key),
+        localStorage!.saveWorkouts(workouts, key),
       ],
     );
   }

@@ -22,11 +22,11 @@ class WorkoutTable {
       frequency: json['frequency'],
     );
   }
-  final String name;
-  final String workout;
-  final String premarathon;
-  final String pre10km;
-  final String frequency;
+  final String? name;
+  final String? workout;
+  final String? premarathon;
+  final String? pre10km;
+  final String? frequency;
 }
 
 Future<List<WorkoutTable>> loadWorkouts(String filename) async {

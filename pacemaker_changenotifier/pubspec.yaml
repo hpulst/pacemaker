@@ -5,28 +5,30 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: 
-  device_preview: ^0.5.5
-  package_info: 
-  percent_indicator: ^2.1.9
-  provider: ^4.3.2+3
-  shared_preferences: ^0.5.12+4
-  url_launcher: ^5.7.10
-  uuid: 
+  device_preview:
+  package_info_plus: 
+  percent_indicator: 
+  provider: 
+  shared_preferences: 
+  url_launcher: 
+  uuid:
+  collection: ^1.15.0-nullsafety.4 
 
 dev_dependencies:
-  pedantic: ^1.9.2
-  test: 
-  integration_test:
-  flutter_test:
-    sdk: flutter
+  # test: 
+  # integration_test:
+  # flutter_test:
+  #   sdk: flutter
   flutter_driver:
     sdk: flutter
+  flutter_lints: ^1.0.4
+  
 
 flutter:
 
